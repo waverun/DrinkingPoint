@@ -13,6 +13,9 @@
 		50384B002B5DB286009DF7C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFF2B5DB286009DF7C7 /* Preview Assets.xcassets */; };
 		50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B012B5DB286009DF7C7 /* Persistence.swift */; };
 		50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50384B032B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld */; };
+		50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B0C2B5DB36C009DF7C7 /* MapView.swift */; };
+		50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B112B5EFAB9009DF7C7 /* LocationManager.swift */; };
+		50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B132B601C3D009DF7C7 /* ButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		50384AFF2B5DB286009DF7C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50384B012B5DB286009DF7C7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		50384B042B5DB286009DF7C7 /* DrinkingPoint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrinkingPoint.xcdatamodel; sourceTree = "<group>"; };
+		50384B0C2B5DB36C009DF7C7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		50384B112B5EFAB9009DF7C7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		50384B132B601C3D009DF7C7 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,9 @@
 		50384AF72B5DB282009DF7C7 /* DrinkingPoint */ = {
 			isa = PBXGroup;
 			children = (
+				50384B102B5EFA9C009DF7C7 /* Classes */,
 				50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */,
+				50384B0B2B5DB326009DF7C7 /* Views */,
 				50384AFA2B5DB282009DF7C7 /* ContentView.swift */,
 				50384AFC2B5DB286009DF7C7 /* Assets.xcassets */,
 				50384B012B5DB286009DF7C7 /* Persistence.swift */,
@@ -71,6 +79,23 @@
 				50384AFF2B5DB286009DF7C7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50384B0B2B5DB326009DF7C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50384B0C2B5DB36C009DF7C7 /* MapView.swift */,
+				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50384B102B5EFA9C009DF7C7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +170,9 @@
 			files = (
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
+				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
+				50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */,
+				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
 				50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */,
 			);
@@ -283,6 +311,9 @@
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -312,6 +343,9 @@
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,3 +1,4 @@
+/*
 //
 //  Persistence.swift
 //  DrinkingPoint
@@ -54,3 +55,4 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
+*/
