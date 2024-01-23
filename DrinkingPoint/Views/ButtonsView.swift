@@ -8,7 +8,7 @@ struct ButtonsView: View {
             Button(action: {
                 // Action for Button 1
             }) {
-                Image(systemName: "house.fill")
+                Image(systemName: "plus.circle")
             }
             .padding(.vertical, 8) // Reduced vertical padding
             .padding(.horizontal, 10) // Horizontal padding for touch area
