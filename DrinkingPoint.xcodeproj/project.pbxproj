@@ -16,6 +16,8 @@
 		50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B0C2B5DB36C009DF7C7 /* MapView.swift */; };
 		50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B112B5EFAB9009DF7C7 /* LocationManager.swift */; };
 		50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B132B601C3D009DF7C7 /* ButtonsView.swift */; };
+		50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */; };
+		50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B172B602E51009DF7C7 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		50384B0C2B5DB36C009DF7C7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		50384B112B5EFAB9009DF7C7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		50384B132B601C3D009DF7C7 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
+		50384B172B602E51009DF7C7 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				50384B0C2B5DB36C009DF7C7 /* MapView.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
+				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
+				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -170,7 +176,9 @@
 			files = (
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
+				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
+				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
 				50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
@@ -233,6 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -290,6 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;

@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var imagePickerViewModel = ImagePickerViewModel()
+
     var body: some View {
         ZStack {
             Color.gray.edgesIgnoringSafeArea(.all) // Set the background color for the entire view
 
             VStack(spacing: 0) { // Remove spacing to eliminate gaps
                 MapView()
-                ButtonsView()
+                ButtonsView(imagePickerViewModel: imagePickerViewModel)
             }
+        }
+        .sheet(isPresented: $imagePickerViewModel.isImagePickerPresented) {
+            ImagePickerView(image: self.$imagePickerViewModel.image)
         }
     }
 }

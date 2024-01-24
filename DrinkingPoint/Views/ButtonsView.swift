@@ -1,12 +1,15 @@
 import SwiftUI
 
 struct ButtonsView: View {
+    var imagePickerViewModel: ImagePickerViewModel
+
     var body: some View {
         HStack {
             Spacer() // Spacer before the first button
 
             Button(action: {
                 // Action for Button 1
+                imagePickerViewModel.showImagePicker()
             }) {
                 Image(systemName: "plus.circle")
             }
