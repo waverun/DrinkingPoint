@@ -321,6 +321,7 @@
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
@@ -334,7 +335,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.beRadio.beRadio.DrinkingPoint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waverun.DrinkingPoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -353,6 +354,7 @@
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
@@ -366,7 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.beRadio.beRadio.DrinkingPoint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waverun.DrinkingPoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
