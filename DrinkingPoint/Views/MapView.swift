@@ -3,7 +3,7 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     @ObservedObject var locationManager = LocationManager()
-    @StateObject private var imagePickerViewModel = ImagePickerViewModel()
+//    @StateObject private var imagePickerViewModel = ImagePickerViewModel()
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)

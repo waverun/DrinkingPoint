@@ -10,8 +10,9 @@ class ImagePickerViewModel: NSObject, ObservableObject, UIImagePickerControllerD
     }
 
     func uploadImageToFirebase() {
-//        guard let imageData = image?.jpegData(compressionQuality: 0.4) else { return }
+        guard let imageData = image?.jpegData(compressionQuality: 0.4) else { return }
 
+        uploadImage(imageData: imageData)
         // Create a reference to Firebase Storage
 //        let storageRef = Storage.storage().reference().child("your_path_here")
 

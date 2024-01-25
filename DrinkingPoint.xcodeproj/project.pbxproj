@@ -18,7 +18,6 @@
 		50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B132B601C3D009DF7C7 /* ButtonsView.swift */; };
 		50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */; };
 		50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B172B602E51009DF7C7 /* ImagePickerView.swift */; };
-		50384B1C2B616B0E009DF7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
 		50384B1F2B617124009DF7C7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 50384B1E2B617124009DF7C7 /* FirebaseAnalytics */; };
 		50384B212B617124009DF7C7 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 50384B202B617124009DF7C7 /* FirebaseAnalyticsOnDeviceConversion */; };
 		50384B232B617124009DF7C7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 50384B222B617124009DF7C7 /* FirebaseAnalyticsSwift */; };
@@ -47,6 +46,8 @@
 		50384B512B617124009DF7C7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 50384B502B617124009DF7C7 /* FirebaseStorage */; };
 		50384B532B617124009DF7C7 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 50384B522B617124009DF7C7 /* FirebaseStorageCombine-Community */; };
 		50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B542B6172CC009DF7C7 /* AppDelegate.swift */; };
+		50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B572B62A0BF009DF7C7 /* UploadImage.swift */; };
+		50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		50384B172B602E51009DF7C7 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50384B542B6172CC009DF7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50384B572B62A0BF009DF7C7 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				50384B102B5EFA9C009DF7C7 /* Classes */,
 				50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */,
+				50384B562B62A090009DF7C7 /* Functions */,
 				50384B0B2B5DB326009DF7C7 /* Views */,
 				50384AFA2B5DB282009DF7C7 /* ContentView.swift */,
 				50384AFC2B5DB286009DF7C7 /* Assets.xcassets */,
@@ -162,6 +165,14 @@
 				50384B542B6172CC009DF7C7 /* AppDelegate.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		50384B562B62A090009DF7C7 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +265,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */,
 				50384B002B5DB286009DF7C7 /* Preview Assets.xcassets in Resources */,
 				50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */,
-				50384B1C2B616B0E009DF7C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +283,7 @@
 				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
+				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
 				50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,

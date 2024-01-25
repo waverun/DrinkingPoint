@@ -32,6 +32,9 @@ struct ImagePickerView: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.originalImage] as? UIImage {
                 parent.image = image
+
+                guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
+                uploadImage(imageData: imageData)
             }
             parent.presentationMode.wrappedValue.dismiss()
         }
