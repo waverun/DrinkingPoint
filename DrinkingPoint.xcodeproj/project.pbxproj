@@ -50,6 +50,8 @@
 		50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
 		50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */; };
 		50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5C2B62C698009DF7C7 /* AddDocument.swift */; };
+		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
+		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		50384B572B62A0BF009DF7C7 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		50384B5C2B62C698009DF7C7 /* AddDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocument.swift; sourceTree = "<group>"; };
+		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			children = (
 				50384B102B5EFA9C009DF7C7 /* Classes */,
 				50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */,
+				50CE24602B66E713004CA5F7 /* Extensions */,
 				50384B562B62A090009DF7C7 /* Functions */,
 				50384B0B2B5DB326009DF7C7 /* Views */,
 				50384AFA2B5DB282009DF7C7 /* ContentView.swift */,
@@ -177,8 +182,17 @@
 			children = (
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				50384B5C2B62C698009DF7C7 /* AddDocument.swift */,
+				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		50CE24602B66E713004CA5F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50CE24612B66E732004CA5F7 /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,8 +309,10 @@
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
+				50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */,
 				50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */,
 				50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */,
+				50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

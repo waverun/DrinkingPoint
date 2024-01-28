@@ -30,7 +30,14 @@ func uploadImage(imageData: Data) {
             print("image updloaded succesfully. url: \(downloadURL)")
 
             if let userLocation = LocationManager.shared.location {
-                addDocument(data: ["latitdude" : userLocation.latitude, "longitude" : userLocation.longitude, "URL" : downloadURL.absoluteString])
+                addDocument(data: [
+                    "latitdude" : userLocation.latitude,
+                    "longitude" : userLocation.longitude,
+                    "URL" : downloadURL.absoluteString]) {
+                        DispatchQueue.main.async {
+                            showAlert(title: "Uploaded", message: "Drinking point was added succesfully")
+                        }
+                    }
             }
 
         }
