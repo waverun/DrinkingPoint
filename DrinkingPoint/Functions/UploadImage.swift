@@ -28,6 +28,11 @@ func uploadImage(imageData: Data) {
                 return
             }
             print("image updloaded succesfully. url: \(downloadURL)")
+
+            if let userLocation = LocationManager.shared.location {
+                addDocument(data: ["latitdude" : userLocation.latitude, "longitude" : userLocation.longitude, "URL" : downloadURL.absoluteString])
+            }
+
         }
     }
 }

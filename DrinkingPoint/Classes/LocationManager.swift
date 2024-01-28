@@ -1,6 +1,8 @@
 import CoreLocation
 
 class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
+    static let shared = LocationManager()
+
     private let locationManager = CLLocationManager()
     @Published var location: CLLocationCoordinate2D?
 

@@ -48,6 +48,8 @@
 		50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B542B6172CC009DF7C7 /* AppDelegate.swift */; };
 		50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B572B62A0BF009DF7C7 /* UploadImage.swift */; };
 		50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
+		50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */; };
+		50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5C2B62C698009DF7C7 /* AddDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50384B542B6172CC009DF7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50384B572B62A0BF009DF7C7 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
+		50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		50384B5C2B62C698009DF7C7 /* AddDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
 				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
 				50384B542B6172CC009DF7C7 /* AppDelegate.swift */,
+				50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
+				50384B5C2B62C698009DF7C7 /* AddDocument.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -280,11 +286,13 @@
 			files = (
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
+				50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */,
 				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
 				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
 				50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */,
+				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
 				50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */,

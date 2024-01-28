@@ -34,7 +34,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
                 parent.image = image
 
                 guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
-                uploadImage(imageData: imageData)
+                uploadImage(imageData: imageData) 
             }
             parent.presentationMode.wrappedValue.dismiss()
         }
