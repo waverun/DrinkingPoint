@@ -15,7 +15,7 @@ func uploadImage(imageData: Data) {
 
     // Upload the file to the path "images/rivers.jpg"
     _ = riversRef.putData(imageData, metadata: nil) { (metadata, error) in
-        guard let metadata = metadata else {
+        guard metadata != nil else {
             print("Uh-oh, an error occurred! \(error?.localizedDescription ?? "unknown error")")
             return
         }
