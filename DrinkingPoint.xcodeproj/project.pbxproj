@@ -52,6 +52,7 @@
 		50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5C2B62C698009DF7C7 /* AddDocument.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
+		50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		50384B5C2B62C698009DF7C7 /* AddDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocument.swift; sourceTree = "<group>"; };
 		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSnapshotListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				50384B5C2B62C698009DF7C7 /* AddDocument.swift */,
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
+				50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
 				50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */,
+				50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */,
 				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
