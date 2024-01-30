@@ -27,6 +27,7 @@ class MapViewManager {
     func makeMapView() -> MKMapView {
         mapView.showsUserLocation = true
         // Add any additional setup here
+        addSnapshotListener()
         return mapView
     }
 
@@ -37,9 +38,16 @@ class MapViewManager {
     }
 
     func updateRegion(userLocation: CLLocationCoordinate2D) {
+//        let userLocation = CLLocationCoordinate2D(latitude: 40.71, longitude: -74.0)
         let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
+    }
 
+    func addAnnotation(at coordinate: CLLocationCoordinate2D, withTitle title: String) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = title
+        mapView.addAnnotation(annotation)
     }
 }
 
