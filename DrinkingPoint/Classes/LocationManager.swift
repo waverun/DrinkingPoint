@@ -5,6 +5,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
 
     private let locationManager = CLLocationManager()
     @Published var location: CLLocationCoordinate2D?
+    var needToUpdateRegion = true
 
     override init() {
         super.init()
@@ -17,5 +18,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         self.location = location.coordinate
+        if needToUpdateRegion {
+            MapViewManager.shared.updateRegion(userLocation: self.location!)
+        }
     }
 }
