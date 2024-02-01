@@ -13,7 +13,7 @@
 		50384B002B5DB286009DF7C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFF2B5DB286009DF7C7 /* Preview Assets.xcassets */; };
 		50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B012B5DB286009DF7C7 /* Persistence.swift */; };
 		50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50384B032B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld */; };
-		50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B0C2B5DB36C009DF7C7 /* MapView.swift */; };
+		50384B0D2B5DB36C009DF7C7 /* MapViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */; };
 		50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B112B5EFAB9009DF7C7 /* LocationManager.swift */; };
 		50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B132B601C3D009DF7C7 /* ButtonsView.swift */; };
 		50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */; };
@@ -64,7 +64,7 @@
 		50384AFF2B5DB286009DF7C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50384B012B5DB286009DF7C7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		50384B042B5DB286009DF7C7 /* DrinkingPoint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrinkingPoint.xcdatamodel; sourceTree = "<group>"; };
-		50384B0C2B5DB36C009DF7C7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewManager.swift; sourceTree = "<group>"; };
 		50384B112B5EFAB9009DF7C7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		50384B132B601C3D009DF7C7 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		50384B0B2B5DB326009DF7C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				50384B0C2B5DB36C009DF7C7 /* MapView.swift */,
+				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
 			);
@@ -313,7 +313,7 @@
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
 				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
-				50384B0D2B5DB36C009DF7C7 /* MapView.swift in Sources */,
+				50384B0D2B5DB36C009DF7C7 /* MapViewManager.swift in Sources */,
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
