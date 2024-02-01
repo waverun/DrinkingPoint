@@ -39,9 +39,9 @@ func uploadImage(imageData: Data) {
                 addDocument(data: [
                     "latitude" : userLocation.latitude,
                     "longitude" : userLocation.longitude,
-                    "URL" : downloadURL.absoluteString]) { documentRef in 
+                    "URL" : downloadURL.absoluteString]) { documentID in
                         DispatchQueue.main.async {
-                            showAlert(title: "Uploaded", message: "Drinking point was added succesfully")
+                            showAlert(title: "Uploaded", message: "Drinking point was added succesfully", documentID: documentID)
                         }
                     }
             }
