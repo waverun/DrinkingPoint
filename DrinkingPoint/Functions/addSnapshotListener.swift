@@ -11,9 +11,11 @@ func addSnapshotListener() {
                 if (diff.type == .added) {
                     print("New city: \(diff.document.data())")
                     let data = diff.document.data()
-                    if let latitude = data["latitude"] as? Double, let longitude = data["longitude"] as? Double, let title = data["title"] as? String {
+                    if let latitude = data["latitude"] as? Double, let longitude = data["longitude"] as? Double,
+                        let title = data["title"] as? String,
+                        let imageURL = data["URL"] as? String {
                         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                        MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title)
+                        MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL)
                     }                }
                 if (diff.type == .modified) {
                     print("Modified city: \(diff.document.data())")

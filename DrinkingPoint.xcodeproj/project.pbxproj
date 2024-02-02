@@ -54,6 +54,7 @@
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
 		50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */; };
 		50CE24662B6AF17F004CA5F7 /* updateDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24652B6AF17F004CA5F7 /* updateDocument.swift */; };
+		50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSnapshotListener.swift; sourceTree = "<group>"; };
 		50CE24652B6AF17F004CA5F7 /* updateDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDocument.swift; sourceTree = "<group>"; };
+		50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
 				50384B542B6172CC009DF7C7 /* AppDelegate.swift */,
 				50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */,
+				50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
 				50384B0D2B5DB36C009DF7C7 /* MapViewManager.swift in Sources */,
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
+				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
 				50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */,
