@@ -5,6 +5,7 @@ class CustomAnnotation: NSObject, MKAnnotation {
     var title: String?
 //    var subtitle: String?
     var imageURL: String?
+    var image: UIImage?
 
     init(coordinate: CLLocationCoordinate2D, title: String, imageURL: String) {
         self.coordinate = coordinate

@@ -258,6 +258,10 @@ class MapViewManager: NSObject, MKMapViewDelegate {
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // Adjust size as needed for the callout
                 imageView.contentMode = .scaleAspectFit
                 annotationView?.leftCalloutAccessoryView = imageView
+
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(annotationCalloutTapped))
+                annotationView?.addGestureRecognizer(tapGesture)
+
             } else {
                 annotationView?.annotation = customAnnotation
             }
@@ -268,6 +272,7 @@ class MapViewManager: NSObject, MKMapViewDelegate {
                     if let data = data, let image = UIImage(data: data) {
                         DispatchQueue.main.async {
                             (annotationView?.leftCalloutAccessoryView as? UIImageView)?.image = image
+                            customAnnotation.image = image
                         }
                     }
                 }.resume()
@@ -277,6 +282,117 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         }
 
         return nil
+    }
+
+    @objc func annotationCalloutTapped(_ sender: UITapGestureRecognizer) {
+        if let annotationView = sender.view as? MKAnnotationView,
+           let customAnnotation = annotationView.annotation as? CustomAnnotation,
+           let image = customAnnotation.image,
+           let title = customAnnotation.title {
+            // Present the full-sized image
+            presentFullSizeImage(image: image, title: title)
+        }
+    }
+
+//    func presentFullSizeImage(image: UIImage, title: String) {
+//        if let topViewController = UIViewController.getTopViewController() {
+//            // Load and display the full-sized image
+//            // This could be a custom view controller or a UIImageView in a UIAlertController
+//            let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+//            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 250)) // Larger size
+//            imageView.contentMode = .scaleAspectFit
+//
+////            URLSession.shared.dataTask(with: url) { data, response, error in
+////                if let data = data, let image = UIImage(data: data) {
+//                    DispatchQueue.main.async {
+//                        imageView.image = image
+//                        alertController.view.addSubview(imageView)
+//                        topViewController.present(alertController, animated: true)
+//                    }
+////                }
+////            }.resume()
+//
+//            let okAction = UIAlertAction(title: "OK", style: .default)
+//            alertController.addAction(okAction)
+//        }
+//    }
+
+    func presentFullSizeImage(image: UIImage, title: String) {
+        if let topViewController = UIViewController.getTopViewController() {
+            // Create the overlay view
+            let overlayView = UIView()
+            overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            overlayView.frame = topViewController.view.bounds
+            overlayView.alpha = 0 // Start transparent for animation
+
+            // Create the image view
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleAspectFit
+            imageView.layer.cornerRadius = 8
+            imageView.clipsToBounds = true
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+
+            // Add the image view to the overlay
+            overlayView.addSubview(imageView)
+
+            // Constraints for imageView - centering it and setting max dimensions
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: overlayView.centerYAnchor, constant: -20), // Adjusted to make space for the button below
+                imageView.widthAnchor.constraint(lessThanOrEqualToConstant: 350),
+                imageView.heightAnchor.constraint(lessThanOrEqualToConstant: 350),
+                imageView.widthAnchor.constraint(lessThanOrEqualTo: overlayView.widthAnchor, multiplier: 0.8),
+                imageView.heightAnchor.constraint(lessThanOrEqualTo: overlayView.heightAnchor, multiplier: 0.8)
+            ])
+
+            // Close Button
+            func addCloseButton() {
+                var config = UIButton.Configuration.filled()
+                config.baseBackgroundColor = .white.withAlphaComponent(0.125)
+                config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
+
+                // Adjust the font size of the button title
+                config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+                    var outgoing = incoming
+                    outgoing.font = UIFont.systemFont(ofSize: 20) // Adjust the font size here
+                    return outgoing
+                }
+
+                // Set the button's title
+                config.title = "Close"
+
+                let closeButton = UIButton(configuration: config, primaryAction: nil)
+                closeButton.layer.cornerRadius = 15
+                closeButton.layer.masksToBounds = true
+
+                closeButton.translatesAutoresizingMaskIntoConstraints = false
+                overlayView.addSubview(closeButton)
+
+                NSLayoutConstraint.activate([
+                    closeButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+                    closeButton.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor)
+                ])
+
+                closeButton.addTarget(self, action: #selector(dismissOverlayView), for: .touchUpInside)
+            }
+
+            addCloseButton()
+            // Add the overlay to the view controller's view
+            topViewController.view.addSubview(overlayView)
+
+            // Animate the overlay to fade in
+            UIView.animate(withDuration: 0.3) {
+                overlayView.alpha = 1
+            }
+        }
+    }
+
+    @objc func dismissOverlayView(sender: UIButton) {
+        UIView.animate(withDuration: 0.3, animations: {
+            sender.superview?.alpha = 0
+        }) { completed in
+            sender.superview?.removeFromSuperview()
+        }
     }
 
 }
