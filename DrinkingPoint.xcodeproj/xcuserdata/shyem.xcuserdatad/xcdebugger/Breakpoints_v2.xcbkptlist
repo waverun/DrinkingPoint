@@ -524,8 +524,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "addSnapshotListener()"
             landmarkType = "9">
          </BreakpointContent>
@@ -540,8 +540,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "addSnapshotListener()"
             landmarkType = "9">
             <Locations>
@@ -603,8 +603,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4"
-            endingLineNumber = "4"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "addSnapshotListener()"
             landmarkType = "9">
          </BreakpointContent>
@@ -619,8 +619,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "addSnapshotListener()"
             landmarkType = "9">
          </BreakpointContent>
@@ -635,8 +635,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "addSnapshotListener()"
             landmarkType = "9">
             <Locations>
@@ -683,8 +683,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "addSnapshotListener()"
             landmarkType = "9">
          </BreakpointContent>
@@ -719,6 +719,22 @@
             endingLineNumber = "194"
             landmarkName = "MapViewManager"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1DE0C34-7B26-4E14-9DCA-DE3037A42300"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "addSnapshotListener()"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

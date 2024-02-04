@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502DA8D82B7019AB003B8813 /* calculateDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8D72B7019AB003B8813 /* calculateDistance.swift */; };
+		502DA8DA2B702322003B8813 /* findPointByLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8D92B702322003B8813 /* findPointByLocation.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502DA8D72B7019AB003B8813 /* calculateDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateDistance.swift; sourceTree = "<group>"; };
+		502DA8D92B702322003B8813 /* findPointByLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findPointByLocation.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
 				50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
+				502DA8D72B7019AB003B8813 /* calculateDistance.swift */,
+				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -320,11 +326,13 @@
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
+				502DA8D82B7019AB003B8813 /* calculateDistance.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
 				50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */,
 				50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */,
 				50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */,
 				50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */,
+				502DA8DA2B702322003B8813 /* findPointByLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

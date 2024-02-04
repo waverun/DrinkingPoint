@@ -1,5 +1,14 @@
 import MapKit
 
+var pointsAdded : [pointAdded] = []
+
+struct pointAdded {
+    var documentID: String
+    var latitude, longitude : Double
+    var title: String
+    var imageURL: String
+}
+
 func addSnapshotListener() {
     FirestoreManager.shared.db.collection("drinkingPoints") //.whereField("state", isEqualTo: "CA")
         .addSnapshotListener { querySnapshot, error in
@@ -14,8 +23,15 @@ func addSnapshotListener() {
                     if let latitude = data["latitude"] as? Double, let longitude = data["longitude"] as? Double,
                         let title = data["title"] as? String,
                         let imageURL = data["URL"] as? String {
+                        let documentID = diff.document.documentID // Access the documentID here
                         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                         MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL)
+
+                        if let point = findPointByLocation(latitude: latitude, longitude: longitude, withinMeters: 20) {
+
+                        } else {
+                            pointsAdded.append(pointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL))
+                        }
                     }                }
                 if (diff.type == .modified) {
                     print("Modified city: \(diff.document.data())")
