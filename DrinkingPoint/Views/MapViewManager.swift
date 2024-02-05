@@ -62,7 +62,9 @@ class MapViewManager: NSObject, MKMapViewDelegate {
 
     func addAnnotation(at coordinate: CLLocationCoordinate2D, withTitle title: String, imageURL: String) {
         let annotation = CustomAnnotation(coordinate: coordinate, title: title, imageURL: imageURL)
-        mapView.addAnnotation(annotation)
+        DispatchQueue.main.async { [weak self] in
+            self?.mapView.addAnnotation(annotation)
+        }
     }
 
     //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -243,40 +245,71 @@ class MapViewManager: NSObject, MKMapViewDelegate {
             let identifier = "CustomAnnotation"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
 
-            if annotationView == nil {
-                annotationView = MKMarkerAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
-                annotationView?.canShowCallout = true
+//            if annotationView == nil {
+//                annotationView = MKMarkerAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
+//                annotationView?.canShowCallout = true
+//
+//                // Set custom glyph image
+//                annotationView?.glyphImage = UIImage(systemName: "drop.fill") // Custom glyph image
+//                annotationView?.glyphTintColor = UIColor.systemBlue.withAlphaComponent(0.75) // Adjust as needed
+//
+//                // Make marker tint color clear to ensure no default pin/marker is visible
+//                annotationView?.markerTintColor = UIColor.clear
+//
+//                // Add an image view to the left callout accessory view for the asynchronous image load
+//                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // Adjust size as needed for the callout
+//                imageView.contentMode = .scaleAspectFit
+//                annotationView?.leftCalloutAccessoryView = imageView
+//
+//            } else {
+//                annotationView?.annotation = customAnnotation
+//            }
+// Asynchronously load the image for the callout accessory view
+//            if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
+//                URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+//                    if let data = data, let image = UIImage(data: data) {
+//                        DispatchQueue.main.async {
+//                            (annotationView?.leftCalloutAccessoryView as? UIImageView)?.image = image
+//                            customAnnotation.image = image
+//
+//                            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self?.annotationCalloutTapped))
+//                            annotationView?.leftCalloutAccessoryView?.addGestureRecognizer(tapGesture)
+//                            annotationView?.leftCalloutAccessoryView?.isUserInteractionEnabled = true
+//                        }
+//                    }
+//                }.resume()
+//            }
 
-                // Set custom glyph image
-                annotationView?.glyphImage = UIImage(systemName: "drop.fill") // Custom glyph image
-                annotationView?.glyphTintColor = UIColor.systemBlue.withAlphaComponent(0.75) // Adjust as needed
+            func setAnnotationView() {
+                if annotationView == nil {
+                    annotationView = MKMarkerAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
+                    annotationView?.canShowCallout = true
 
-                // Make marker tint color clear to ensure no default pin/marker is visible
-                annotationView?.markerTintColor = UIColor.clear
+                    // Make marker tint color clear
+                    annotationView?.markerTintColor = UIColor.clear
 
-                // Add an image view to the left callout accessory view for the asynchronous image load
-                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // Adjust size as needed for the callout
-                imageView.contentMode = .scaleAspectFit
-                annotationView?.leftCalloutAccessoryView = imageView
+                    // Use a button as the callout accessory view
+                    let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                    button.contentMode = .scaleAspectFit
+                    button.isUserInteractionEnabled = true // Button is interactive by default
 
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(annotationCalloutTapped))
-                annotationView?.addGestureRecognizer(tapGesture)
-
-            } else {
-                annotationView?.annotation = customAnnotation
-            }
-
-            // Asynchronously load the image for the callout accessory view
-            if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
-                URLSession.shared.dataTask(with: url) { data, response, error in
-                    if let data = data, let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            (annotationView?.leftCalloutAccessoryView as? UIImageView)?.image = image
-                            customAnnotation.image = image
-                        }
+                    // Asynchronously load the image for the button
+                    if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
+                        URLSession.shared.dataTask(with: url) { data, response, error in
+                            if let data = data, let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    button.setImage(image, for: .normal)
+                                }
+                            }
+                        }.resume()
                     }
-                }.resume()
+
+                    annotationView?.leftCalloutAccessoryView = button
+                } else {
+                    annotationView?.annotation = customAnnotation
+                }
             }
+            setAnnotationView()
 
             return annotationView
         }
@@ -284,13 +317,20 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         return nil
     }
 
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let customAnnotation = view.annotation as? CustomAnnotation,
+           let image = (control as? UIButton)?.image(for: .normal) {
+            // Now you have access to the image and the annotation
+            presentFullSizeImage(image: image)
+        }
+    }
+
     @objc func annotationCalloutTapped(_ sender: UITapGestureRecognizer) {
         if let annotationView = sender.view as? MKAnnotationView,
            let customAnnotation = annotationView.annotation as? CustomAnnotation,
-           let image = customAnnotation.image,
-           let title = customAnnotation.title {
+           let image = customAnnotation.image {
             // Present the full-sized image
-            presentFullSizeImage(image: image, title: title)
+            presentFullSizeImage(image: image)
         }
     }
 
@@ -317,7 +357,7 @@ class MapViewManager: NSObject, MKMapViewDelegate {
 //        }
 //    }
 
-    func presentFullSizeImage(image: UIImage, title: String) {
+    func presentFullSizeImage(image: UIImage) {
         if let topViewController = UIViewController.getTopViewController() {
             // Create the overlay view
             let overlayView = UIView()
