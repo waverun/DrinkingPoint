@@ -318,8 +318,8 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if let customAnnotation = view.annotation as? CustomAnnotation,
-           let image = (control as? UIButton)?.image(for: .normal) {
+//        if let customAnnotation = view.annotation as? CustomAnnotation,
+        if let image = (control as? UIButton)?.image(for: .normal) {
             // Now you have access to the image and the annotation
             presentFullSizeImage(image: image)
         }

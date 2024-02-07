@@ -1,8 +1,8 @@
 import MapKit
 
-var pointsAdded : [pointAdded] = []
+var pointsAdded : [PointAdded] = []
 
-struct pointAdded {
+struct PointAdded {
     var documentID: String
     var latitude, longitude : Double
     var title: String
@@ -30,10 +30,11 @@ func addSnapshotListener() {
                         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                         MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL)
 
-                        if let point = findPointByLocation(latitude: latitude, longitude: longitude, withinMeters: 20) {
+                        let points = findPointsByLocation(latitude: latitude, longitude: longitude, withinMeters: 20)
+                        for point in points {
                             removeDocument(documentID: point.documentID)
                         }
-                        pointsAdded.append(pointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL))
+                        pointsAdded.append(PointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL))
                     }
                 }
                 switch diff.type {
@@ -50,5 +51,4 @@ func addSnapshotListener() {
                 }
             }
         }
-
 }
