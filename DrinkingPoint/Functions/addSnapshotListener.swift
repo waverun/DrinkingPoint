@@ -57,6 +57,9 @@ func addSnapshotListener() {
 
                     let data = diff.document.data()
                     removePointByDocumentID(documentID)
+                    if let uniqueFileName = data["uniqueFileName"] as? String {
+                        deleteImage(imageRef: uniqueFileName)
+                    }
 //                    if let imageName = data[""]
                 }
             }

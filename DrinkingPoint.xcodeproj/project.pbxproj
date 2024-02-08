@@ -131,7 +131,6 @@
 		50384AEC2B5DB282009DF7C7 = {
 			isa = PBXGroup;
 			children = (
-				502DA8DD2B73C929003B8813 /* deleteImage.swift */,
 				50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */,
 				50384AF72B5DB282009DF7C7 /* DrinkingPoint */,
 				50384AF62B5DB282009DF7C7 /* Products */,
@@ -196,10 +195,11 @@
 		50384B562B62A090009DF7C7 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */,
+				502DA8DD2B73C929003B8813 /* deleteImage.swift */,
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				50384B5C2B62C698009DF7C7 /* AddDocument.swift */,
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
-				50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
 				502DA8D72B7019AB003B8813 /* calculateDistance.swift */,
 				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
