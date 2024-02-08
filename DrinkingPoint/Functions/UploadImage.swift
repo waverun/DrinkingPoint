@@ -39,15 +39,16 @@ func uploadImage(imageData: Data) {
                 addDocument(data: [
                     "latitude" : userLocation.latitude,
                     "longitude" : userLocation.longitude,
-//                    "title" : userLocation.title,
+                    //                    "title" : userLocation.title,
                     "URL" : downloadURL.absoluteString,
                     "uniqueFileName" : uniqueFileName]) { documentID in
                         DispatchQueue.main.async {
                             showAlert(title: "Uploaded", message: "Drinking point was added succesfully", documentID: documentID)
                         }
                     }
+            } else {
+                LocationManager.shared.checkLocationAuthorization()
             }
-
         }
     }
 }
