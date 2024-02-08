@@ -10,6 +10,13 @@ struct PointAdded {
 }
 
 func removePointByDocumentID(_ documentID: String) {
+    // First, filter the points to find those that should be removed
+    let removedPoints = pointsAdded.filter { $0.documentID == documentID }
+
+    for point in removedPoints {
+        MapViewManager.shared.removeAllAnnotations(byImageUrl: point.imageURL)
+    }
+
     pointsAdded.removeAll { $0.documentID == documentID }
 }
 
@@ -47,7 +54,10 @@ func addSnapshotListener() {
                     case .removed:
                     print("Removed city: \(diff.document.data())")
                     let documentID = diff.document.documentID // Access the documentID here
+
+                    let data = diff.document.data()
                     removePointByDocumentID(documentID)
+//                    if let imageName = data[""]
                 }
             }
         }

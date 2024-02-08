@@ -1,23 +1,6 @@
 import SwiftUI
 import MapKit
 
-//struct MapView: UIViewRepresentable {
-//
-//    func makeUIView(context: Context) -> MKMapView {
-//        let mapView = MKMapView(frame: .zero)
-//        mapView.showsUserLocation = true
-//        addSnapshotListener()
-//        return mapView
-//    }
-//
-//        func updateUIView(_ uiView: MKMapView, context: Context) {
-//            if let userLocation = LocationManager.shared.location {
-//                let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: 500, longitudinalMeters: 500)
-//                uiView.setRegion(region, animated: true)
-//            }
-//        }
-//}
-
 class MapViewManager: NSObject, MKMapViewDelegate {
     static let shared = MapViewManager()
 
@@ -33,8 +16,11 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         return map
     }()
 
+    var closeImageButton: UIButton?
+    var openImageAnnotation: MKAnnotation?
+
     func makeMapView() -> MKMapView {
-        mapView.showsUserLocation = true
+//        mapView.showsUserLocation = true
         // Add any additional setup here
         addSnapshotListener()
         return mapView
@@ -245,47 +231,14 @@ class MapViewManager: NSObject, MKMapViewDelegate {
             let identifier = "CustomAnnotation"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
 
-//            if annotationView == nil {
-//                annotationView = MKMarkerAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
-//                annotationView?.canShowCallout = true
-//
-//                // Set custom glyph image
-//                annotationView?.glyphImage = UIImage(systemName: "drop.fill") // Custom glyph image
-//                annotationView?.glyphTintColor = UIColor.systemBlue.withAlphaComponent(0.75) // Adjust as needed
-//
-//                // Make marker tint color clear to ensure no default pin/marker is visible
-//                annotationView?.markerTintColor = UIColor.clear
-//
-//                // Add an image view to the left callout accessory view for the asynchronous image load
-//                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // Adjust size as needed for the callout
-//                imageView.contentMode = .scaleAspectFit
-//                annotationView?.leftCalloutAccessoryView = imageView
-//
-//            } else {
-//                annotationView?.annotation = customAnnotation
-//            }
-// Asynchronously load the image for the callout accessory view
-//            if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
-//                URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-//                    if let data = data, let image = UIImage(data: data) {
-//                        DispatchQueue.main.async {
-//                            (annotationView?.leftCalloutAccessoryView as? UIImageView)?.image = image
-//                            customAnnotation.image = image
-//
-//                            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self?.annotationCalloutTapped))
-//                            annotationView?.leftCalloutAccessoryView?.addGestureRecognizer(tapGesture)
-//                            annotationView?.leftCalloutAccessoryView?.isUserInteractionEnabled = true
-//                        }
-//                    }
-//                }.resume()
-//            }
-
             func setAnnotationView() {
-                if annotationView == nil {
+//                if annotationView == nil {
                     annotationView = MKMarkerAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
                     annotationView?.canShowCallout = true
 
                     // Make marker tint color clear
+                    annotationView?.glyphTintColor = UIColor.systemBlue.withAlphaComponent(0.75) // Light blue color for glyph
+                    annotationView?.glyphImage = UIImage(systemName: "drop.fill") // Custom glyph image
                     annotationView?.markerTintColor = UIColor.clear
 
                     // Use a button as the callout accessory view
@@ -305,9 +258,9 @@ class MapViewManager: NSObject, MKMapViewDelegate {
                     }
 
                     annotationView?.leftCalloutAccessoryView = button
-                } else {
-                    annotationView?.annotation = customAnnotation
-                }
+//                } else {
+//                    annotationView?.annotation = customAnnotation
+//                }
             }
             setAnnotationView()
 
@@ -332,6 +285,34 @@ class MapViewManager: NSObject, MKMapViewDelegate {
             // Present the full-sized image
             presentFullSizeImage(image: image)
         }
+    }
+
+    func removeAllAnnotations(byImageUrl imageURL: String) {
+        let annotationsToRemove = mapView.annotations.filter { annotation in
+            // Check if the annotation's coordinate matches the target latitude and longitude
+            if let customAnnotation = annotation as? CustomAnnotation {
+                return customAnnotation.imageURL == imageURL
+            }
+            return false
+        }
+
+        // Remove the filtered annotations from the map view
+        if closeImageButton == nil,
+           let openImageAnnotation = openImageAnnotation,
+           !annotationsToRemove.contains(where: { $0 === openImageAnnotation } ) {
+            mapView.removeAnnotations(annotationsToRemove)
+            return
+        }
+
+        if let closeImageButton = closeImageButton {
+            dismissOverlayViewBeforeRemovAnnotation(sender: closeImageButton) { [weak self] in
+                self?.mapView.removeAnnotations(annotationsToRemove)
+                self?.closeImageButton = nil
+                self?.openImageAnnotation = nil
+            }
+            return
+        }
+        mapView.removeAnnotations(annotationsToRemove)
     }
 
 //    func presentFullSizeImage(image: UIImage, title: String) {
@@ -414,12 +395,12 @@ class MapViewManager: NSObject, MKMapViewDelegate {
                 ])
 
                 closeButton.addTarget(self, action: #selector(dismissOverlayView), for: .touchUpInside)
+                closeImageButton = closeButton
             }
 
             addCloseButton()
             // Add the overlay to the view controller's view
             topViewController.view.addSubview(overlayView)
-
             // Animate the overlay to fade in
             UIView.animate(withDuration: 0.3) {
                 overlayView.alpha = 1
@@ -435,6 +416,15 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         }
     }
 
+    func dismissOverlayViewBeforeRemovAnnotation(sender: UIButton, completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.3, animations: {
+            sender.superview?.alpha = 0
+        }) { [weak self] completed in
+            sender.superview?.removeFromSuperview()
+            self?.closeImageButton = nil
+            completion()
+        }
+    }
 }
 
 struct MapView: UIViewRepresentable {
