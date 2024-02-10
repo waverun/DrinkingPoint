@@ -11,6 +11,7 @@
 		502DA8DA2B702322003B8813 /* findPointByLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8D92B702322003B8813 /* findPointByLocation.swift */; };
 		502DA8DC2B7029E3003B8813 /* removeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8DB2B7029E3003B8813 /* removeDocument.swift */; };
 		502DA8DE2B73C929003B8813 /* deleteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8DD2B73C929003B8813 /* deleteImage.swift */; };
+		502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E12B7658F0003B8813 /* SearchView.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		502DA8D92B702322003B8813 /* findPointByLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findPointByLocation.swift; sourceTree = "<group>"; };
 		502DA8DB2B7029E3003B8813 /* removeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeDocument.swift; sourceTree = "<group>"; };
 		502DA8DD2B73C929003B8813 /* deleteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteImage.swift; sourceTree = "<group>"; };
+		502DA8E12B7658F0003B8813 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
+				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				50384B0D2B5DB36C009DF7C7 /* MapViewManager.swift in Sources */,
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
+				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				502DA8D82B7019AB003B8813 /* calculateDistance.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,

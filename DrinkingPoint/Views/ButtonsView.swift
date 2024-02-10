@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ButtonsView: View {
     var imagePickerViewModel: ImagePickerViewModel
+    @State private var showingSearchView = false
 
     var body: some View {
         HStack {
@@ -31,9 +32,12 @@ struct ButtonsView: View {
             Spacer() // Spacer between buttons
 
             Button(action: {
-                // Action for Button 3
+                self.showingSearchView = true
             }) {
-                Image(systemName: "person.fill")
+                Image(systemName: "magnifyingglass")
+            }
+            .sheet(isPresented: $showingSearchView) {
+                SearchView(selectedLocation: .constant(nil)) // Bind this to a state that your MapView can listen to
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 10)
