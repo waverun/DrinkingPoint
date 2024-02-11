@@ -12,7 +12,9 @@ struct SearchView: View {
             List(searchResults, id: \.self) { item in
                 Button(action: {
                     self.selectedLocation = item.placemark.coordinate
-                    MapViewManager.shared.onLocationSelected?(item.placemark.coordinate)
+                    let locationRadius: CLLocationDistance = item.placemark.radius
+
+                    MapViewManager.shared.onLocationSelected?(item.placemark.coordinate, locationRadius)
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     VStack(alignment: .leading) {
@@ -22,10 +24,11 @@ struct SearchView: View {
                 }
             }
             .navigationBarTitle(Text("Search Location"), displayMode: .inline)
-            .navigationBarItems(leading: Button("Cancel") {
+            .navigationBarItems(leading: Button("X") {
                 self.presentationMode.wrappedValue.dismiss()
             })
             .searchable(text: $query)
+            .foregroundColor(.blue)
             .onChange(of: query) { oldValue, newValue in
                 search(query: newValue)
             }

@@ -16,7 +16,7 @@ class MapViewManager: NSObject, MKMapViewDelegate {
 
     var closeImageButton: UIButton?
     var openImageAnnotation: MKAnnotation?
-    var onLocationSelected: ((CLLocationCoordinate2D) -> Void)?
+    var onLocationSelected: ((CLLocationCoordinate2D, CLLocationDistance) -> Void)?
 
     func makeMapView() -> MKMapView {
         addSnapshotListener()
@@ -29,9 +29,8 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         }
     }
 
-    func updateRegion(userLocation: CLLocationCoordinate2D) {
-        //        let userLocation = CLLocationCoordinate2D(latitude: 40.71, longitude: -74.0)
-        let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: 500, longitudinalMeters: 500)
+    func updateRegion(userLocation: CLLocationCoordinate2D, radius: CLLocationDistance = 500) {
+        let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: radius, longitudinalMeters: radius)
         mapView.setRegion(region, animated: true)
     }
 

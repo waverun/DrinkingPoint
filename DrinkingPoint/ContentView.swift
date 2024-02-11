@@ -17,9 +17,8 @@ struct ContentView: View {
             VStack(spacing: 0) { // Remove spacing to eliminate gaps
                 MapView()
                     .onAppear {
-                        MapViewManager.shared.onLocationSelected = { location in
-                            // Update the map region here
-                            MapViewManager.shared.updateRegion(userLocation: location)
+                        MapViewManager.shared.onLocationSelected = { location, radius in
+                            MapViewManager.shared.updateRegion(userLocation: location, radius: radius)
                         }
                     }
                 ButtonsView(imagePickerViewModel: imagePickerViewModel)
