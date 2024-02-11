@@ -15,6 +15,7 @@ struct SearchView: View {
                     let locationRadius: CLLocationDistance = item.placemark.radius
 
                     MapViewManager.shared.onLocationSelected?(item.placemark.coordinate, locationRadius)
+                    LocationManager.shared.needToUpdateRegion = false
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     VStack(alignment: .leading) {

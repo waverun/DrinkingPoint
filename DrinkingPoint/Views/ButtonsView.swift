@@ -21,7 +21,10 @@ struct ButtonsView: View {
             Spacer() // Spacer between buttons
 
             Button(action: {
-                // Action for Button 2
+                if let userLocation = LocationManager.shared.location {
+                    MapViewManager.shared.updateRegion(userLocation: userLocation)
+                }
+                LocationManager.shared.needToUpdateRegion = true
             }) {
                 Image(systemName: "location.fill")
             }

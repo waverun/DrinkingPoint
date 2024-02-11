@@ -85,6 +85,10 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         return nil
     }
 
+//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+//        LocationManager.shared.needToUpdateRegion = false
+//    }
+
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let image = (control as? UIButton)?.image(for: .normal) {
             // Now you have access to the image and the annotation
