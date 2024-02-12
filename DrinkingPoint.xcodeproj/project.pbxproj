@@ -13,6 +13,7 @@
 		502DA8DE2B73C929003B8813 /* deleteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8DD2B73C929003B8813 /* deleteImage.swift */; };
 		502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E12B7658F0003B8813 /* SearchView.swift */; };
 		502DA8E42B780AF0003B8813 /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E32B780AF0003B8813 /* MKPlacemark.swift */; };
+		502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		502DA8DD2B73C929003B8813 /* deleteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteImage.swift; sourceTree = "<group>"; };
 		502DA8E12B7658F0003B8813 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		502DA8E32B780AF0003B8813 /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
+		502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showRemoveDocumentAlert.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				50384B5C2B62C698009DF7C7 /* AddDocument.swift */,
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
+				502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
 				502DA8D72B7019AB003B8813 /* calculateDistance.swift */,
 				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
+				502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
 				50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */,
 				50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */,

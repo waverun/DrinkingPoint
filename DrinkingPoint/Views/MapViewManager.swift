@@ -35,6 +35,10 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     }
 
     func addAnnotation(at coordinate: CLLocationCoordinate2D, withTitle title: String, imageURL: String) {
+        var title = title
+        if title.isEmpty {
+            title = "Water"
+        }
         let annotation = CustomAnnotation(coordinate: coordinate, title: title, imageURL: imageURL)
         DispatchQueue.main.async { [weak self] in
             self?.mapView.addAnnotation(annotation)

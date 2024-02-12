@@ -50,7 +50,13 @@ func addSnapshotListener() {
                         addPoint()
                     case .modified:
                     print("Modified city: \(diff.document.data())")
+                        let data = diff.document.data()
                         addPoint()
+                        if let title = data["title"] as? String,
+                           title.isEmpty {
+                            let documentID = diff.document.documentID
+                            showRemoveDocumentAlert(documentID: documentID)
+                        }
                     case .removed:
                     print("Removed city: \(diff.document.data())")
                     let documentID = diff.document.documentID // Access the documentID here

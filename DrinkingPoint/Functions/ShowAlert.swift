@@ -35,8 +35,11 @@ func showAlert(title: String, message: String, documentID: String) {
 
     let okAction = UIAlertAction(title: "OK", style: .default) { _ in
         // Handle the text from the text field if needed
-        if let textField = alert.textFields?.first, let text = textField.text?.trimmingCharacters(in:  CharacterSet(charactersIn: " ")),
-            !text.isEmpty {
+        if let textField = alert.textFields?.first, let text = textField.text?.trimmingCharacters(in:  CharacterSet(charactersIn: " ")) {
+//            var title = text
+//            if text.isEmpty {
+//                title = "Water"
+//            }
             print("Text field text: \(text)")
             updateDocument(data: ["title" : text], documentID: documentID)
         }
