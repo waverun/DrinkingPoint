@@ -16,6 +16,7 @@
 		502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */; };
 		502DA8E92B7A7248003B8813 /* GeohashKit in Frameworks */ = {isa = PBXBuildFile; productRef = 502DA8E82B7A7248003B8813 /* GeohashKit */; };
 		502DA8EB2B7A9557003B8813 /* calculateDestinationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */; };
+		502DA8ED2B7B82A5003B8813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		502DA8E32B780AF0003B8813 /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
 		502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showRemoveDocumentAlert.swift; sourceTree = "<group>"; };
 		502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateDestinationPoint.swift; sourceTree = "<group>"; };
+		502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		50384AF72B5DB282009DF7C7 /* DrinkingPoint */ = {
 			isa = PBXGroup;
 			children = (
+				502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */,
 				50384B102B5EFA9C009DF7C7 /* Classes */,
 				50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */,
 				50CE24602B66E713004CA5F7 /* Extensions */,
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */,
+				502DA8ED2B7B82A5003B8813 /* LaunchScreen.storyboard in Resources */,
 				50384B002B5DB286009DF7C7 /* Preview Assets.xcassets in Resources */,
 				50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */,
 			);
@@ -500,13 +504,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoogleService-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -534,13 +539,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoogleService-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
