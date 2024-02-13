@@ -17,6 +17,7 @@
 		502DA8E92B7A7248003B8813 /* GeohashKit in Frameworks */ = {isa = PBXBuildFile; productRef = 502DA8E82B7A7248003B8813 /* GeohashKit */; };
 		502DA8EB2B7A9557003B8813 /* calculateDestinationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */; };
 		502DA8ED2B7B82A5003B8813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */; };
+		502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F02B7C0B1B003B8813 /* filterView.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showRemoveDocumentAlert.swift; sourceTree = "<group>"; };
 		502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateDestinationPoint.swift; sourceTree = "<group>"; };
 		502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		502DA8F02B7C0B1B003B8813 /* filterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterView.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
+				502DA8F02B7C0B1B003B8813 /* filterView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 			);
@@ -356,6 +359,7 @@
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
+				502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */,
 				502DA8D82B7019AB003B8813 /* calculateDistance.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,
 				50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */,

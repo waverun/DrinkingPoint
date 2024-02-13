@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreLocation
 
 struct ButtonsView: View {
     var imagePickerViewModel: ImagePickerViewModel
     @State private var showingSearchView = false
+    @State private var showingFilterView = false
 
     var body: some View {
         HStack {
@@ -13,6 +15,24 @@ struct ButtonsView: View {
                 imagePickerViewModel.showImagePicker()
             }) {
                 Image(systemName: "plus.circle")
+            }
+            .padding(.vertical, 8) // Reduced vertical padding
+            .padding(.horizontal, 10) // Horizontal padding for touch area
+            .foregroundColor(.white)
+
+            Spacer() // Spacer before the first button
+
+            Button(action: {
+                self.showingFilterView = true
+            }) {
+                Image(systemName: "book")
+            }
+            .sheet(isPresented: $showingFilterView) {
+                FilterView(isPresented: $showingFilterView, pointsAdded: pointsAdded) { selectedPoint in
+                    let location = CLLocationCoordinate2D(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
+                    LocationManager.shared.needToUpdateRegion = false
+                    MapViewManager.shared.updateRegion(userLocation: location)
+                }
             }
             .padding(.vertical, 8) // Reduced vertical padding
             .padding(.horizontal, 10) // Horizontal padding for touch area
