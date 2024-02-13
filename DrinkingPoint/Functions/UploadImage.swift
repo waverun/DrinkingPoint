@@ -1,6 +1,7 @@
 import Firebase
 import FirebaseStorage
-//import UIKit
+import CoreLocation
+import GeohashKit
 
 func uploadImage(imageData: Data) {
     // Data in memory
@@ -36,18 +37,29 @@ func uploadImage(imageData: Data) {
             print("image updloaded succesfully. url: \(downloadURL)")
 
             if let userLocation = LocationManager.shared.location {
-                addDocument(data: [
-                    "latitude" : userLocation.latitude,
-                    "longitude" : userLocation.longitude,
-                    //                    "title" : userLocation.title,
-                    "URL" : downloadURL.absoluteString,
-                    "uniqueFileName" : uniqueFileName]) { documentID in
-                        DispatchQueue.main.async {
-                            showAlert(title: "Uploaded", message: "Drinking point was added succesfully", documentID: documentID)
+//                let userLocation = calculateDestinationPoint(from: userLocation, distanceMeters: 1000, bearingDegrees: 90)
+//                MapViewManager.shared.updateRegion(userLocation: CLLocationCoordinate2D(latitude: 40.71279939264776, longitude: -73.99413542108108))
+                let location = Geohash.Coordinates(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                if let geohash = Geohash(coordinates: location, precision: 7) {
+                    addDocument(data: [
+                        "latitude" : userLocation.latitude,
+                        "longitude" : userLocation.longitude,
+                        "geohash" : geohash.geohash,
+                        "URL" : downloadURL.absoluteString,
+                        "uniqueFileName" : uniqueFileName]) { documentID in
+                            DispatchQueue.main.async {
+                                showAlert(title: "Uploaded", message: "Drinking point was added succesfully", documentID: documentID, uniqueFileName: uniqueFileName)
+                                let points = findPointsByLocation(latitude: userLocation.latitude, longitude: userLocation.longitude, withinMeters: 20)
+                                for point in points {
+                                    if point.uniqueFileName != uniqueFileName {
+                                        removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName)
+                                    }
+                                }
+                            }
                         }
-                    }
-            } else {
-                LocationManager.shared.checkLocationAuthorization()
+                } else {
+                    LocationManager.shared.checkLocationAuthorization()
+                }
             }
         }
     }

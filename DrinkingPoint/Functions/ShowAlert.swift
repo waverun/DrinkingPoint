@@ -17,7 +17,7 @@
 
 import UIKit
 
-func showAlert(title: String, message: String, documentID: String) {
+func showAlert(title: String, message: String, documentID: String, uniqueFileName: String) {
 
     guard let topViewController = UIViewController.getTopViewController() else {
         print("Top view controller not found")
@@ -36,12 +36,16 @@ func showAlert(title: String, message: String, documentID: String) {
     let okAction = UIAlertAction(title: "OK", style: .default) { _ in
         // Handle the text from the text field if needed
         if let textField = alert.textFields?.first, let text = textField.text?.trimmingCharacters(in:  CharacterSet(charactersIn: " ")) {
-//            var title = text
-//            if text.isEmpty {
-//                title = "Water"
-//            }
+            //            var title = text
+            //            if text.isEmpty {
+            //                title = "Water"
+            //            }
             print("Text field text: \(text)")
-            updateDocument(data: ["title" : text], documentID: documentID)
+            if text.isEmpty {
+                showRemoveDocumentAlert(documentID: documentID, uniqueFileName: uniqueFileName)
+            } else {
+                updateDocument(data: ["title" : text], documentID: documentID)
+            }
         }
     }
 

@@ -14,6 +14,8 @@
 		502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E12B7658F0003B8813 /* SearchView.swift */; };
 		502DA8E42B780AF0003B8813 /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E32B780AF0003B8813 /* MKPlacemark.swift */; };
 		502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */; };
+		502DA8E92B7A7248003B8813 /* GeohashKit in Frameworks */ = {isa = PBXBuildFile; productRef = 502DA8E82B7A7248003B8813 /* GeohashKit */; };
+		502DA8EB2B7A9557003B8813 /* calculateDestinationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -72,6 +74,7 @@
 		502DA8E12B7658F0003B8813 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		502DA8E32B780AF0003B8813 /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
 		502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showRemoveDocumentAlert.swift; sourceTree = "<group>"; };
+		502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateDestinationPoint.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 				50384B292B617124009DF7C7 /* FirebaseAppDistribution-Beta in Frameworks */,
 				50384B2D2B617124009DF7C7 /* FirebaseAuthCombine-Community in Frameworks */,
 				50384B4B2B617124009DF7C7 /* FirebasePerformance in Frameworks */,
+				502DA8E92B7A7248003B8813 /* GeohashKit in Frameworks */,
 				50384B432B617124009DF7C7 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				50384B512B617124009DF7C7 /* FirebaseStorage in Frameworks */,
 				50384B352B617124009DF7C7 /* FirebaseDynamicLinks in Frameworks */,
@@ -212,6 +216,7 @@
 				502DA8D72B7019AB003B8813 /* calculateDistance.swift */,
 				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
 				502DA8DB2B7029E3003B8813 /* removeDocument.swift */,
+				502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				50384B4E2B617124009DF7C7 /* FirebaseRemoteConfigSwift */,
 				50384B502B617124009DF7C7 /* FirebaseStorage */,
 				50384B522B617124009DF7C7 /* FirebaseStorageCombine-Community */,
+				502DA8E82B7A7248003B8813 /* GeohashKit */,
 			);
 			productName = DrinkingPoint;
 			productReference = 50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */;
@@ -300,6 +306,7 @@
 			mainGroup = 50384AEC2B5DB282009DF7C7;
 			packageReferences = (
 				50384B1D2B617124009DF7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				502DA8E72B7A7248003B8813 /* XCRemoteSwiftPackageReference "geohashkit" */,
 			);
 			productRefGroup = 50384AF62B5DB282009DF7C7 /* Products */;
 			projectDirPath = "";
@@ -340,6 +347,7 @@
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
 				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
 				50384B0D2B5DB36C009DF7C7 /* MapViewManager.swift in Sources */,
+				502DA8EB2B7A9557003B8813 /* calculateDestinationPoint.swift in Sources */,
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
@@ -572,6 +580,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		502DA8E72B7A7248003B8813 /* XCRemoteSwiftPackageReference "geohashkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ualch9/geohashkit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		50384B1D2B617124009DF7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -583,6 +599,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		502DA8E82B7A7248003B8813 /* GeohashKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502DA8E72B7A7248003B8813 /* XCRemoteSwiftPackageReference "geohashkit" */;
+			productName = GeohashKit;
+		};
 		50384B1E2B617124009DF7C7 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50384B1D2B617124009DF7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

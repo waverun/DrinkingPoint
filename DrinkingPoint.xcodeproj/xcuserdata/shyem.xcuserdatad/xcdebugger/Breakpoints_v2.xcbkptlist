@@ -524,9 +524,9 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "addSnapshotListener()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "addSnapshotListener(forRegion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -540,8 +540,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "addPoint()"
             landmarkType = "9">
             <Locations>
@@ -588,89 +588,9 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "addSnapshotListener()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36868158-014F-47F6-8CF7-615C703D96E9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DrinkingPoint/Functions/UploadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "uploadImage(imageData:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F8BECE2-5E47-4139-8E3B-EEB6E3072382"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DrinkingPoint/Functions/UploadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "uploadImage(imageData:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "7F8BECE2-5E47-4139-8E3B-EEB6E3072382 - b56db1104d2de6db"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseStorage.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DrinkingPoint.uploadImage(imageData: Foundation.Data) -&gt; ()"
-                  moduleName = "DrinkingPoint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/UploadImage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "31">
-               </Location>
-               <Location
-                  uuid = "7F8BECE2-5E47-4139-8E3B-EEB6E3072382 - b56db1104d2de719"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseStorage.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DrinkingPoint.uploadImage(imageData: Foundation.Data) -&gt; ()"
-                  moduleName = "DrinkingPoint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/UploadImage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D1AD808F-000E-4C5A-AE65-1FF98342437B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DrinkingPoint/Functions/UploadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "uploadImage(imageData:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "addSnapshotListener(forRegion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -684,9 +604,9 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "addSnapshotListener()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "addSnapshotListener(forRegion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -700,8 +620,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "addPoint()"
             landmarkType = "9">
          </BreakpointContent>
@@ -716,8 +636,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "addPoint()"
             landmarkType = "9">
          </BreakpointContent>
@@ -732,8 +652,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "addPoint()"
             landmarkType = "9">
             <Locations>
@@ -780,8 +700,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "addPoint()"
             landmarkType = "9">
             <Locations>
@@ -828,10 +748,10 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "annotationCalloutTapped(_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -844,8 +764,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "addPoint()"
             landmarkType = "9">
             <Locations>
@@ -894,7 +814,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "4"
             endingLineNumber = "4"
-            landmarkName = "removeDocument(documentID:)"
+            landmarkName = "removeDocument(documentID:uniqueFileName:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -927,6 +847,36 @@
                   endingLineNumber = "5"
                   offsetFromSymbolStart = "57">
                </Location>
+               <Location
+                  uuid = "77D5536C-BAA5-4D7A-8812-762C89DAA834 - 2d97913820d1f1d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DrinkingPoint.removeDocument(documentID: Swift.String, uniqueFileName: Swift.String) -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/removeDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4"
+                  endingLineNumber = "4"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "77D5536C-BAA5-4D7A-8812-762C89DAA834 - 95e5947326a99771"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DrinkingPoint.removeDocument(documentID: Swift.String, uniqueFileName: Swift.String) -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/removeDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "97">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -940,8 +890,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "addPoint()"
             landmarkType = "9">
          </BreakpointContent>
@@ -956,8 +906,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "removePointByDocumentID(_:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -972,10 +922,10 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "removeAllAnnotations(byImageUrl:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -988,10 +938,10 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "MapView"
-            landmarkType = "14">
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "updateUIView(_:context:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "F34EBA57-F120-47A4-9F6C-E7C1D9D6D7FF - aa9e551d6a1cbbe"
@@ -1036,10 +986,10 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "mapView(_:viewFor:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1052,8 +1002,8 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "addAnnotation(at:withTitle:imageURL:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1068,8 +1018,8 @@
             filePath = "DrinkingPoint/Functions/addSnapshotListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "7"
-            endingLineNumber = "7"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
             landmarkName = "PointAdded"
             landmarkType = "14">
          </BreakpointContent>
@@ -1084,8 +1034,8 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "addAnnotation(at:withTitle:imageURL:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1100,10 +1050,10 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "mapView(_:viewFor:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1116,8 +1066,8 @@
             filePath = "DrinkingPoint/Views/MapViewManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "setAnnotationView()"
             landmarkType = "9">
          </BreakpointContent>
@@ -1141,54 +1091,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9434F749-B66E-452F-82B0-308FDA8FB1D0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DrinkingPoint/Views/MapViewManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "addAnnotation(at:withTitle:imageURL:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9434F749-B66E-452F-82B0-308FDA8FB1D0 - 5815a6942464f941"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrinkingPoint.MapViewManager.mapView(_: __C.MKMapView, annotationView: __C.MKAnnotationView, calloutAccessoryControlTapped: __C.UIControl) -&gt; ()"
-                  moduleName = "DrinkingPoint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Views/MapViewManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "137">
-               </Location>
-               <Location
-                  uuid = "9434F749-B66E-452F-82B0-308FDA8FB1D0 - 95a02585424aa598"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrinkingPoint.MapViewManager.mapView(_: __C.MKMapView, regionDidChangeAnimated: Swift.Bool) -&gt; ()"
-                  moduleName = "DrinkingPoint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Views/MapViewManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A6570D6E-BDA3-45D0-BEB1-C1D9F4E64D42"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1198,7 +1100,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
             endingLineNumber = "6"
-            landmarkName = "removeDocument(documentID:)"
+            landmarkName = "removeDocument(documentID:uniqueFileName:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1214,7 +1116,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
             endingLineNumber = "8"
-            landmarkName = "removeDocument(documentID:)"
+            landmarkName = "removeDocument(documentID:uniqueFileName:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1246,7 +1148,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "4"
             endingLineNumber = "4"
-            landmarkName = "updateDocument(data:documentID:)"
+            landmarkName = "updateDocument(data:documentID:onSuccess:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -1344,6 +1246,102 @@
                   offsetFromSymbolStart = "185">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37D4B306-0BB5-4F19-9F31-39469A2EE5EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Functions/UploadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "uploadImage(imageData:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "37D4B306-0BB5-4F19-9F31-39469A2EE5EF - bc14e2bd9283f8f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseStorage.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DrinkingPoint.uploadImage(imageData: Foundation.Data) -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/UploadImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1325">
+               </Location>
+               <Location
+                  uuid = "37D4B306-0BB5-4F19-9F31-39469A2EE5EF - bc14e2bd9283f898"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseStorage.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DrinkingPoint.uploadImage(imageData: Foundation.Data) -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/UploadImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1385">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F43FB8B5-C54F-404A-87C9-848FB2CB0C1A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Functions/UploadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "uploadImage(imageData:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21BB1FA0-2A06-4D4C-8059-CBD0B8219CFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Views/MapViewManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "makeMapView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD32C7F2-62D5-469D-B1C6-B176C5EB3C93"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Functions/deleteImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "deleteImage(imageRef:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

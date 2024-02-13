@@ -17,9 +17,12 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     var closeImageButton: UIButton?
     var openImageAnnotation: MKAnnotation?
     var onLocationSelected: ((CLLocationCoordinate2D, CLLocationDistance) -> Void)?
+    var lastRegionUsedForListener: MKCoordinateRegion?
 
     func makeMapView() -> MKMapView {
-        addSnapshotListener()
+        if let region = lastRegionUsedForListener {
+            addSnapshotListener(forRegion: region)
+        }
         return mapView
     }
 
@@ -30,8 +33,8 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     }
 
     func updateRegion(userLocation: CLLocationCoordinate2D, radius: CLLocationDistance = 500) {
-        let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: radius, longitudinalMeters: radius)
-        mapView.setRegion(region, animated: true)
+        lastRegionUsedForListener = MKCoordinateRegion(center: userLocation, latitudinalMeters: radius, longitudinalMeters: radius)
+        mapView.setRegion(lastRegionUsedForListener!, animated: true)
     }
 
     func addAnnotation(at coordinate: CLLocationCoordinate2D, withTitle title: String, imageURL: String) {
@@ -89,10 +92,39 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         return nil
     }
 
-//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        LocationManager.shared.needToUpdateRegion = false
-//    }
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        // Check if lastRegionUsedForListener is significantly different from mapView.region
+        guard let lastRegion = lastRegionUsedForListener else {
+            // No last region, so set up the listener and store the current region
+            addSnapshotListener(forRegion: mapView.region)
+            lastRegionUsedForListener = mapView.region
+            return
+        }
+        // Determine if the change is significant enough to warrant updating the listener
+        // This can be done by comparing the center coordinates and/or the span
+        let significantChange = hasRegionChangedSignificantly(lastRegion, mapView.region)
 
+        if significantChange {
+            addSnapshotListener(forRegion: mapView.region)
+            lastRegionUsedForListener = mapView.region
+        }
+    }
+
+    func hasRegionChangedSignificantly(_ oldRegion: MKCoordinateRegion, _ newRegion: MKCoordinateRegion) -> Bool {
+        // Implement logic to determine if the change between oldRegion and newRegion is significant
+        // This could be a simple distance check between the centers and/or a comparison of the spans
+        let centerChange = distanceBetween(oldRegion.center, newRegion.center)
+        let spanChange = fabs(oldRegion.span.latitudeDelta - newRegion.span.latitudeDelta) > 0.001 || fabs(oldRegion.span.longitudeDelta - newRegion.span.longitudeDelta) > 0.001
+
+        return centerChange > 50 || spanChange // Example threshold, adjust based on your needs
+    }
+
+    func distanceBetween(_ coordinate1: CLLocationCoordinate2D, _ coordinate2: CLLocationCoordinate2D) -> CLLocationDistance {
+        let location1 = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longitude)
+        let location2 = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longitude)
+
+        return location1.distance(from: location2)
+    }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let image = (control as? UIButton)?.image(for: .normal) {
             // Now you have access to the image and the annotation
