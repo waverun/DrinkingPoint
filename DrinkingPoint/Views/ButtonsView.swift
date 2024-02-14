@@ -19,6 +19,7 @@ struct ButtonsView: View {
                 imagePickerViewModel.showImagePicker()
             }) {
                 Image(systemName: "plus.circle")
+                    .imageScale(.large) // Options: .small, .medium, .large
             }
             .padding(.vertical, 8) // Reduced vertical padding
             .padding(.horizontal, 10) // Horizontal padding for touch area
@@ -30,6 +31,7 @@ struct ButtonsView: View {
                 self.showingFilterView = true
             }) {
                 Image(systemName: "book")
+                    .imageScale(.large) // Options: .small, .medium, .large
             }
             .sheet(isPresented: $showingFilterView) {
                 FilterView(isPresented: $showingFilterView, pointsAdded: pointsAdded) { selectedPoint in
@@ -51,6 +53,7 @@ struct ButtonsView: View {
                 LocationManager.shared.needToUpdateRegion = true
             }) {
                 Image(systemName: "location.fill")
+                    .imageScale(.large) // Options: .small, .medium, .large
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 10)
@@ -64,6 +67,7 @@ struct ButtonsView: View {
                 }
             }) {
                 Image(systemName: "location.north.line.fill")
+                    .imageScale(.large) // Options: .small, .medium, .large
             }
 //            .sheet(isPresented: $showingNavigationOptions) {
 //                // Assuming you have access to the lastAnnotationSelected
@@ -81,6 +85,7 @@ struct ButtonsView: View {
                 self.showingSearchView = true
             }) {
                 Image(systemName: "magnifyingglass")
+                    .imageScale(.large) // Options: .small, .medium, .large
             }
             .sheet(isPresented: $showingSearchView) {
                 SearchView(selectedLocation: .constant(nil)) // Bind this to a state that your MapView can listen to
