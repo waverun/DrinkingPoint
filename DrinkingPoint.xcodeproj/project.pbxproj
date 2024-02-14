@@ -21,6 +21,7 @@
 		502DA8F32B7CE6A6003B8813 /* navigationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */; };
 		502DA8F52B7CE7A2003B8813 /* openInMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F42B7CE7A2003B8813 /* openInMaps.swift */; };
 		502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */; };
+		502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F82B7D4AEF003B8813 /* BlurView.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationAlert.swift; sourceTree = "<group>"; };
 		502DA8F42B7CE7A2003B8813 /* openInMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openInMaps.swift; sourceTree = "<group>"; };
 		502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationOptionModal.swift; sourceTree = "<group>"; };
+		502DA8F82B7D4AEF003B8813 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		50384B0B2B5DB326009DF7C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				502DA8F82B7D4AEF003B8813 /* BlurView.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
 				502DA8F02B7C0B1B003B8813 /* filterView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
@@ -367,6 +370,7 @@
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
+				502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */,
 				502DA8F32B7CE6A6003B8813 /* navigationAlert.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */,
