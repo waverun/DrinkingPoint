@@ -36,6 +36,8 @@ struct NavigationOptionModal: View {
                             Text(title)
                                 .font(.headline)
                                 .padding()
+                                .fixedSize(horizontal: false, vertical: true) // Allows text to wrap
+                                .lineLimit(nil) // Removes the line limit
                         }
                     }
 
