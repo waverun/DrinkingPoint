@@ -18,6 +18,7 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     var openImageAnnotation: MKAnnotation?
     var onLocationSelected: ((CLLocationCoordinate2D, CLLocationDistance) -> Void)?
     var lastRegionUsedForListener: MKCoordinateRegion?
+    var lastAnnotationSelected: CustomAnnotation?
 
     func makeMapView() -> MKMapView {
         if let region = lastRegionUsedForListener {
@@ -254,6 +255,24 @@ class MapViewManager: NSObject, MKMapViewDelegate {
             sender.superview?.removeFromSuperview()
             self?.closeImageButton = nil
             completion()
+        }
+    }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation else { return }
+
+        // Perform any actions you need when the callout is about to be shown.
+        // For example, you might want to store the selected annotation,
+        // update some UI elements, or log some information.
+        // If you need to track the opening of a specific annotation's callout,
+        // you can check if the annotation is one of your custom annotations.
+        if let customAnnotation = annotation as? CustomAnnotation {
+            print("Callout for annotation '\(customAnnotation.title ?? "")' is about to be shown.")
+
+            // Now you have access to your custom annotation,
+            // and you can perform actions specific to it.
+            lastAnnotationSelected = customAnnotation
+            // Additional custom logic for when a specific annotation's callout is selected...
         }
     }
 }

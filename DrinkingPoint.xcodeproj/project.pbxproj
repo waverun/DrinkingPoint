@@ -18,6 +18,9 @@
 		502DA8EB2B7A9557003B8813 /* calculateDestinationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */; };
 		502DA8ED2B7B82A5003B8813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */; };
 		502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F02B7C0B1B003B8813 /* filterView.swift */; };
+		502DA8F32B7CE6A6003B8813 /* navigationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */; };
+		502DA8F52B7CE7A2003B8813 /* openInMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F42B7CE7A2003B8813 /* openInMaps.swift */; };
+		502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -79,6 +82,9 @@
 		502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateDestinationPoint.swift; sourceTree = "<group>"; };
 		502DA8EC2B7B82A5003B8813 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		502DA8F02B7C0B1B003B8813 /* filterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterView.swift; sourceTree = "<group>"; };
+		502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationAlert.swift; sourceTree = "<group>"; };
+		502DA8F42B7CE7A2003B8813 /* openInMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openInMaps.swift; sourceTree = "<group>"; };
+		502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationOptionModal.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,10 +194,11 @@
 		50384B0B2B5DB326009DF7C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
 				502DA8F02B7C0B1B003B8813 /* filterView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
+				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
+				502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 			);
 			path = Views;
@@ -212,17 +219,19 @@
 		50384B562B62A090009DF7C7 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */,
-				502DA8DD2B73C929003B8813 /* deleteImage.swift */,
-				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				50384B5C2B62C698009DF7C7 /* AddDocument.swift */,
+				50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */,
+				502DA8D72B7019AB003B8813 /* calculateDistance.swift */,
+				502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */,
+				502DA8DD2B73C929003B8813 /* deleteImage.swift */,
+				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
+				502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */,
+				502DA8F42B7CE7A2003B8813 /* openInMaps.swift */,
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
 				502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
-				502DA8D72B7019AB003B8813 /* calculateDistance.swift */,
-				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
+				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				502DA8DB2B7029E3003B8813 /* removeDocument.swift */,
-				502DA8EA2B7A9557003B8813 /* calculateDestinationPoint.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -358,6 +367,7 @@
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
+				502DA8F32B7CE6A6003B8813 /* navigationAlert.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */,
 				502DA8D82B7019AB003B8813 /* calculateDistance.swift in Sources */,
@@ -365,10 +375,12 @@
 				50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */,
 				50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */,
 				50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */,
+				502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */,
 				502DA8E42B780AF0003B8813 /* MKPlacemark.swift in Sources */,
 				502DA8DC2B7029E3003B8813 /* removeDocument.swift in Sources */,
 				50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */,
 				502DA8DA2B702322003B8813 /* findPointByLocation.swift in Sources */,
+				502DA8F52B7CE7A2003B8813 /* openInMaps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

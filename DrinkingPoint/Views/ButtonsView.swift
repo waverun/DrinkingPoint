@@ -5,6 +5,10 @@ struct ButtonsView: View {
     var imagePickerViewModel: ImagePickerViewModel
     @State private var showingSearchView = false
     @State private var showingFilterView = false
+//    @State private var showingNavigationOptions = false
+
+    @Binding var showingNavigationOptions: Bool // Add this line
+    @Binding var selectedAnnotation: CustomAnnotation? // Add this line
 
     var body: some View {
         HStack {
@@ -48,6 +52,25 @@ struct ButtonsView: View {
             }) {
                 Image(systemName: "location.fill")
             }
+            .padding(.vertical, 8)
+            .padding(.horizontal, 10)
+            .foregroundColor(.white)
+
+            Spacer() // Spacer between buttons
+
+            Button(action: {
+                if MapViewManager.shared.lastAnnotationSelected != nil {
+                    showingNavigationOptions = true
+                }
+            }) {
+                Image(systemName: "location.north.line.fill")
+            }
+//            .sheet(isPresented: $showingNavigationOptions) {
+//                // Assuming you have access to the lastAnnotationSelected
+//                if let lastAnnotation = MapViewManager.shared.lastAnnotationSelected {
+//                    NavigationOptionModal(annotation: lastAnnotation, isPresented: $showingNavigationOptions)
+//                }
+//            }
             .padding(.vertical, 8)
             .padding(.horizontal, 10)
             .foregroundColor(.white)
