@@ -24,6 +24,7 @@
 		502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F82B7D4AEF003B8813 /* BlurView.swift */; };
 		502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8FA2B7D66A3003B8813 /* ImageCache.swift */; };
 		502DA8FE2B7D6723003B8813 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8FD2B7D6723003B8813 /* CachedAsyncImage.swift */; };
+		502DA8FF2B7E82AF003B8813 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -64,7 +65,6 @@
 		50384B532B617124009DF7C7 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 50384B522B617124009DF7C7 /* FirebaseStorageCombine-Community */; };
 		50384B552B6172CC009DF7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B542B6172CC009DF7C7 /* AppDelegate.swift */; };
 		50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B572B62A0BF009DF7C7 /* UploadImage.swift */; };
-		50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
 		50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */; };
 		50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5C2B62C698009DF7C7 /* AddDocument.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
@@ -346,8 +346,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50384B592B62A4C8009DF7C7 /* GoogleService-Info.plist in Resources */,
 				502DA8ED2B7B82A5003B8813 /* LaunchScreen.storyboard in Resources */,
+				502DA8FF2B7E82AF003B8813 /* GoogleService-Info.plist in Resources */,
 				50384B002B5DB286009DF7C7 /* Preview Assets.xcassets in Resources */,
 				50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */,
 			);
@@ -531,7 +531,6 @@
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GoogleService-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Drink Points";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
@@ -567,7 +566,6 @@
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GoogleService-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Drink Points";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
