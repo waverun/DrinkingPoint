@@ -73,17 +73,23 @@ class MapViewManager: NSObject, MKMapViewDelegate {
                     button.isUserInteractionEnabled = true // Button is interactive by default
 
                     // Asynchronously load the image for the button
-                    if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
-                        URLSession.shared.dataTask(with: url) { data, response, error in
-                            if let data = data, let image = UIImage(data: data) {
-                                DispatchQueue.main.async {
-                                    button.setImage(image, for: .normal)
-                                }
-                            }
-                        }.resume()
-                    }
+//                    if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
+//                        URLSession.shared.dataTask(with: url) { data, response, error in
+//                            if let data = data, let image = UIImage(data: data) {
+//                                DispatchQueue.main.async {
+//                                    button.setImage(image, for: .normal)
+//                                }
+//                            }
+//                        }.resume()
+//                    }
 
-                    annotationView?.leftCalloutAccessoryView = button
+                if let imageURL = customAnnotation.imageURL, let url = URL(string: imageURL) {
+                    fetchImage(for: url) { image in
+                        button.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+                        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+                    }
+                }
+                annotationView?.leftCalloutAccessoryView = button
             }
             setAnnotationView()
 
@@ -133,14 +139,14 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         }
     }
 
-    @objc func annotationCalloutTapped(_ sender: UITapGestureRecognizer) {
-        if let annotationView = sender.view as? MKAnnotationView,
-           let customAnnotation = annotationView.annotation as? CustomAnnotation,
-           let image = customAnnotation.image {
-            // Present the full-sized image
-            presentFullSizeImage(image: image)
-        }
-    }
+//    @objc func annotationCalloutTapped(_ sender: UITapGestureRecognizer) {
+//        if let annotationView = sender.view as? MKAnnotationView,
+//           let customAnnotation = annotationView.annotation as? CustomAnnotation,
+//           let image = customAnnotation.image {
+//            // Present the full-sized image
+//            presentFullSizeImage(image: image)
+//        }
+//    }
 
     func removeAllAnnotations(byImageUrl imageURL: String) {
         let annotationsToRemove = mapView.annotations.filter { annotation in
@@ -274,6 +280,30 @@ class MapViewManager: NSObject, MKMapViewDelegate {
             lastAnnotationSelected = customAnnotation
             // Additional custom logic for when a specific annotation's callout is selected...
         }
+    }
+
+    func fetchImage(for url: URL, completion: @escaping (UIImage?) -> Void) {
+        let cacheKey = NSURL(string: url.absoluteString)!
+
+        // Check cache first
+        if let cachedImage = ImageCache.shared.image(for: cacheKey) {
+            completion(cachedImage)
+            return
+        }
+
+        // Load from network
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, let downloadedImage = UIImage(data: data) else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                ImageCache.shared.setImage(downloadedImage, for: cacheKey)
+                completion(downloadedImage)
+            }
+        }.resume()
     }
 }
 

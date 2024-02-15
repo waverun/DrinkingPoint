@@ -22,6 +22,8 @@
 		502DA8F52B7CE7A2003B8813 /* openInMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F42B7CE7A2003B8813 /* openInMaps.swift */; };
 		502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */; };
 		502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F82B7D4AEF003B8813 /* BlurView.swift */; };
+		502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8FA2B7D66A3003B8813 /* ImageCache.swift */; };
+		502DA8FE2B7D6723003B8813 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8FD2B7D6723003B8813 /* CachedAsyncImage.swift */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		502DA8F42B7CE7A2003B8813 /* openInMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openInMaps.swift; sourceTree = "<group>"; };
 		502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationOptionModal.swift; sourceTree = "<group>"; };
 		502DA8F82B7D4AEF003B8813 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		502DA8FA2B7D66A3003B8813 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		502DA8FD2B7D6723003B8813 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		50384AF52B5DB282009DF7C7 /* DrinkingPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkingPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkingPointApp.swift; sourceTree = "<group>"; };
 		50384AFA2B5DB282009DF7C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				502DA8F82B7D4AEF003B8813 /* BlurView.swift */,
 				50384B132B601C3D009DF7C7 /* ButtonsView.swift */,
+				502DA8FD2B7D6723003B8813 /* CachedAsyncImage.swift */,
 				502DA8F02B7C0B1B003B8813 /* filterView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
 				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
@@ -215,6 +220,7 @@
 				50384B542B6172CC009DF7C7 /* AppDelegate.swift */,
 				50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */,
 				50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */,
+				502DA8FA2B7D66A3003B8813 /* ImageCache.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			files = (
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
 				502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */,
+				502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
 				50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */,
 				50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */,
@@ -381,6 +388,7 @@
 				50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */,
 				502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */,
 				502DA8E42B780AF0003B8813 /* MKPlacemark.swift in Sources */,
+				502DA8FE2B7D6723003B8813 /* CachedAsyncImage.swift in Sources */,
 				502DA8DC2B7029E3003B8813 /* removeDocument.swift in Sources */,
 				50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */,
 				502DA8DA2B702322003B8813 /* findPointByLocation.swift in Sources */,

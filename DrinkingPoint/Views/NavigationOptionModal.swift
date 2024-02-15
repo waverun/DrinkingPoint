@@ -22,11 +22,12 @@ struct NavigationOptionModal: View {
                     HStack {
                         // AsyncImage introduced in iOS 15.0 for async loading.
                         if let imageURL = annotation.imageURL, let url = URL(string: imageURL) {
-                            AsyncImage(url: url) { image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
-                            }
+//                            AsyncImage(url: url) { image in
+//                                image.resizable()
+//                            } placeholder: {
+//                                ProgressView()
+//                            }
+                            CachedAsyncImage(url: url)
                             .frame(width: 100, height: 100)
                             .cornerRadius(8)
                         }

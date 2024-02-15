@@ -24,11 +24,12 @@ struct FilterView: View {
 
                 List(filteredPoints, id: \.documentID) { point in
                     HStack {
-                        AsyncImage(url: URL(string: point.imageURL)) { image in
-                            image.resizable()
-                        } placeholder: {
-                            ProgressView()
-                        }
+//                        AsyncImage(url: URL(string: point.imageURL)) { image in
+//                            image.resizable()
+//                        } placeholder: {
+//                            ProgressView()
+//                        }
+                        CachedAsyncImage(url: URL(string: point.imageURL)!)
                         .frame(width: 50, height: 50)
                         .cornerRadius(8)
 
