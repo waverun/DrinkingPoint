@@ -13,6 +13,13 @@ struct FilterView: View {
         }
     }
 
+    private func distanceWithUnits(for point: PointAdded) -> String {
+        guard let userLocation = LocationManager.shared.location else {
+            return ""
+        }
+        return formatDistanceWithUnits(lat1: userLocation.latitude, lon1: userLocation.longitude, lat2: point.latitude, lon2: point.longitude)
+    }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -24,16 +31,11 @@ struct FilterView: View {
 
                 List(filteredPoints, id: \.documentID) { point in
                     HStack {
-//                        AsyncImage(url: URL(string: point.imageURL)) { image in
-//                            image.resizable()
-//                        } placeholder: {
-//                            ProgressView()
-//                        }
                         CachedAsyncImage(url: URL(string: point.imageURL)!)
                         .frame(width: 50, height: 50)
                         .cornerRadius(8)
 
-                        Text(point.title)
+                        Text(point.title + " " + distanceWithUnits(for: point))
                             .foregroundColor(.primary) // Ensures that text color adapts to light/dark mode
                     }
                     .onTapGesture {

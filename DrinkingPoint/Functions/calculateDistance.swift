@@ -29,11 +29,13 @@ func isLessThan20MetersApart(lat1: Double, lon1: Double, lat2: Double, lon2: Dou
     }
 }
 
-//// Example usage
-//let lat1 = 32.9697
-//let lon1 = -96.80322
-//let lat2 = 32.969702
-//let lon2 = -96.803220
-//
-//let result = isLessThan20MetersApart(lat1: lat1, lon1: lon1, lat2: lat2, lon2: lon2)
-//print("Are the points less than 20 meters apart? \(result ? "Yes" : "No")")
+func formatDistanceWithUnits(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> String {
+    let distance = calculateDistance(lat1: lat1, lon1: lon1, lat2: lat2, lon2: lon2)
+
+    switch true {
+        case distance < 1000:
+            return "(\(Int(distance)) m)"
+        default:
+            return "(\(String(format: "%.1f", distance / 1000)) km)"
+    }
+}
