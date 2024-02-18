@@ -717,8 +717,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
-            landmarkName = "annotationCalloutTapped(_:)"
-            landmarkType = "7">
+            landmarkName = "MapViewManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1403,8 +1403,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "annotationCalloutTapped(_:)"
-            landmarkType = "7">
+            landmarkName = "MapViewManager"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "F5F2675A-729B-4B5B-B23F-51883D285846 - 4d0eeff8bd24f4a5"

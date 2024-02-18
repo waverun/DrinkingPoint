@@ -39,3 +39,10 @@ func formatDistanceWithUnits(lat1: Double, lon1: Double, lat2: Double, lon2: Dou
             return "(\(String(format: "%.1f", distance / 1000)) km)"
     }
 }
+
+func distanceWithUnits(for point: PointAdded) -> String {
+    guard let userLocation = LocationManager.shared.location else {
+        return ""
+    }
+    return formatDistanceWithUnits(lat1: userLocation.latitude, lon1: userLocation.longitude, lat2: point.latitude, lon2: point.longitude)
+}
