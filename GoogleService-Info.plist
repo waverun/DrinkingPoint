@@ -28,5 +28,7 @@
 	<string>drinkingpoint-d355b</string>
 	<key>STORAGE_BUCKET</key>
 	<string>drinkingpoint-d355b.appspot.com</string>
+    <key>FirebaseAppDelegateProxyEnabled</key>
+    <false/>
 </dict>
 </plist>

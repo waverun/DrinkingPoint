@@ -16,11 +16,32 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         self.locationManager.startUpdatingLocation()
     }
 
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let location = locations.last else { return }
+//        self.location = location.coordinate
+//        if needToUpdateRegion {
+//            MapViewManager.shared.updateRegion(userLocation: self.location!)
+//        }
+//    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        self.location = location.coordinate
-        if needToUpdateRegion {
-            MapViewManager.shared.updateRegion(userLocation: self.location!)
+        // Iterate through all available locations
+        for location in locations.reversed() {
+            let coordinate = location.coordinate
+
+            // Update the current location with the coordinate
+            self.location = coordinate
+
+            if self.location == nil {
+                continue
+            }
+
+            // Check if there's a need to update the region and do so if necessary
+            if needToUpdateRegion {
+                MapViewManager.shared.updateRegion(userLocation: coordinate)
+                // Assuming you only want to update the region once based on the first valid location
+                break
+            }
         }
     }
 
