@@ -531,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkingPoint/DrinkingPoint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"DrinkingPoint/Preview Content\"";
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
@@ -539,10 +539,10 @@
 				INFOPLIST_FILE = DrinkingPoint/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Drink Points";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Drink Points needs access to your camera to let you capture and upload photos of water points. Sharing new or updated drink point photos helps the community find reliable water sources. Your photos make a difference!";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Drink Points requires access to your location to show nearby water points on the map and help you easily find hydration spots. Your location is also used when you wish to add new drink points, ensuring accurate mapping of water sources. Location data is only used within the app to improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -568,7 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkingPoint/DrinkingPoint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"DrinkingPoint/Preview Content\"";
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
@@ -576,10 +576,10 @@
 				INFOPLIST_FILE = DrinkingPoint/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Drink Points";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Add a Drinking point photo";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Drink Points needs access to your camera to let you capture and upload photos of water points. Sharing new or updated drink point photos helps the community find reliable water sources. Your photos make a difference!";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access your location when in use";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Not needed";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Drink Points requires access to your location to show nearby water points on the map and help you easily find hydration spots. Your location is also used when you wish to add new drink points, ensuring accurate mapping of water sources. Location data is only used within the app to improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
