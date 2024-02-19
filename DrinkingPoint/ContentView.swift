@@ -9,8 +9,9 @@ struct ContentView: View {
         ZStack {
             Color.gray.edgesIgnoringSafeArea(.all) // Set the background color for the entire view
 
-            VStack(spacing: 0) { // Remove spacing to eliminate gaps
+//            VStack(spacing: 0) { // Remove spacing to eliminate gaps
                 MapView()
+                    .edgesIgnoringSafeArea(.all) // Ensure MapView expands to the available space
                     .onAppear {
                         MapViewManager.shared.onLocationSelected = { location, radius in
                             MapViewManager.shared.updateRegion(userLocation: location, radius: radius)
@@ -20,7 +21,7 @@ struct ContentView: View {
                     get: { MapViewManager.shared.lastAnnotationSelected },
                     set: { _ in }
                 )) // Pass a binding to the ButtonsView
-            }
+//            }
 
             // Conditionally show the modal view
             if showingNavigationOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
