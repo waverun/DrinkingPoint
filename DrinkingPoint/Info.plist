@@ -8,8 +8,6 @@
 	<string>AIzaSyAYWC43xzl3oS3HTxbB9yYp4DsASjH9-gU</string>
 	<key>BUNDLE_ID</key>
 	<string>com.waverun.DrinkingPoint</string>
-	<key>CFBundleGetInfoString</key>
-	<string>LSMinimumSystemVersion</string>
 	<key>GCM_SENDER_ID</key>
 	<string>666348998581</string>
 	<key>GOOGLE_APP_ID</key>
@@ -25,7 +23,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>LSMinimumSystemVersion</key>
-	<string>14.4.0</string>
+	<string>14.3.0</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>PROJECT_ID</key>
