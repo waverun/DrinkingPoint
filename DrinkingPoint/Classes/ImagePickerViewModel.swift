@@ -9,22 +9,22 @@ class ImagePickerViewModel: NSObject, ObservableObject, UIImagePickerControllerD
         self.isImagePickerPresented = true
     }
 
-    func uploadImageToFirebase() {
-        guard let imageData = image?.jpegData(compressionQuality: 0.4) else { return }
+//    func uploadImageToFirebase() {
+//        guard let imageData = image?.jpegData(compressionQuality: 0.4) else { return }
+//
+//        showUploadTermsAlert() {
+//            uploadImage(imageData: imageData)
+//            self.isImagePickerPresented = false
+//        }
+//    }
 
-        showUploadTermsAlert() {
-            uploadImage(imageData: imageData)
-            self.isImagePickerPresented = false
-        }
-    }
-
-    // UIImagePickerControllerDelegate methods
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        if let selectedImage = info[.originalImage] as? UIImage {
-            self.image = selectedImage
-            uploadImageToFirebase()
-        }
-    }
+//    // UIImagePickerControllerDelegate methods
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+//        if let selectedImage = info[.originalImage] as? UIImage {
+//            self.image = selectedImage
+//            uploadImageToFirebase()
+//        }
+//    }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.isImagePickerPresented = false

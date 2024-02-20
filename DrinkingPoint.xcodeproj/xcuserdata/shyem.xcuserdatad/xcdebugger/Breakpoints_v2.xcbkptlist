@@ -32,8 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
-            landmarkType = "7">
+            landmarkName = "ImagePickerViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "A9F3D9ED-BBEB-46F5-8B3E-FF9E7B131E35 - 186bb73a3f1e822d"
@@ -270,8 +270,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "Coordinator"
-            landmarkType = "3">
+            landmarkName = "imagePickerControllerDidCancel(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -286,8 +286,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "uploadImageToFirebase()"
-            landmarkType = "7">
+            landmarkName = "ImagePickerViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "D11DC6A8-609F-4196-B7AF-501B4F04C87A - 2af21a06de828a41"
@@ -1635,7 +1635,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5BB6B6E6-92C3-4E98-9741-5E335138E23D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DrinkingPoint/Classes/ImagePickerViewModel.swift"
@@ -1643,8 +1643,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "uploadImageToFirebase()"
-            landmarkType = "7">
+            landmarkName = "ImagePickerViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "5BB6B6E6-92C3-4E98-9741-5E335138E23D - b2f2983e9de320c9"
@@ -1683,7 +1683,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FBCCE757-F592-4113-A525-8384CCBCC99C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DrinkingPoint/Classes/ImagePickerViewModel.swift"
@@ -1691,8 +1691,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "uploadImageToFirebase()"
-            landmarkType = "7">
+            landmarkName = "ImagePickerViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "FBCCE757-F592-4113-A525-8384CCBCC99C - 2af21a06de828a41"
