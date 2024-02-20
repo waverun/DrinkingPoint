@@ -12,18 +12,10 @@ class ImagePickerViewModel: NSObject, ObservableObject, UIImagePickerControllerD
     func uploadImageToFirebase() {
         guard let imageData = image?.jpegData(compressionQuality: 0.4) else { return }
 
-        uploadImage(imageData: imageData)
-        // Create a reference to Firebase Storage
-//        let storageRef = Storage.storage().reference().child("your_path_here")
-
-        // Upload the image
-//        storageRef.putData(imageData, metadata: nil) { metadata, error in
-//            guard metadata != nil else {
-//                // Handle the error
-//                return
-//            }
-            // Image uploaded successfully
-//        }
+        showUploadTermsAlert() {
+            uploadImage(imageData: imageData)
+            self.isImagePickerPresented = false
+        }
     }
 
     // UIImagePickerControllerDelegate methods
@@ -32,7 +24,6 @@ class ImagePickerViewModel: NSObject, ObservableObject, UIImagePickerControllerD
             self.image = selectedImage
             uploadImageToFirebase()
         }
-        self.isImagePickerPresented = false
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
