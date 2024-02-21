@@ -1,9 +1,17 @@
 import SwiftUI
 
 struct ReportOptionModal: View {
-//    let contentImageURL: String // Assuming this is the URL to the image you want to show
     let annotation: CustomAnnotation
     @Binding var isPresented: Bool
+
+    // Dynamic height adjustment based on build configuration
+    var dynamicHeight: CGFloat {
+#if DEBUG
+        return 350 // Increased height for Debug mode to accommodate additional debug button
+#else
+        return 330 // Standard height for Release mode
+#endif
+    }
 
     func reportDocument(reason: String) {
         updateDocument(data: ["reportReason" : reason], documentID: annotation.documentID)
@@ -13,7 +21,7 @@ struct ReportOptionModal: View {
         VStack {
             ZStack {
                 BlurView(style: .systemMaterial) // You can choose different styles like .dark, .light, etc.
-                    .frame(width: 250, height: 330)
+                    .frame(width: 250, height: dynamicHeight)
                     .cornerRadius(12)
                     .shadow(radius: 8)
 
@@ -78,10 +86,19 @@ struct ReportOptionModal: View {
                         isPresented = false
                     }
 
-//                    Spacer()
+#if DEBUG
+                    Divider()
+
+                    Button("Show flaged points") {
+                        // Handle report for spam or misleading
+                        getDocumentsIn(fieldName: "reportReason", values: ["ic","hb","sm"]) { reportedPoints in
+                        }
+                        isPresented = false
+                    }
+#endif
                 }
                 .padding()
-                .frame(width: 250, height: 330)
+                .frame(width: 250, height: dynamicHeight)
                 .foregroundColor(.blue)
             }
             .clipShape(RoundedRectangle(cornerRadius: 12))
