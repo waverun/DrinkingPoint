@@ -62,14 +62,21 @@ func addSnapshotListener(forRegion: MKCoordinateRegion) {
                            let uniqueFileName = data["uniqueFileName"] as? String {
                             let documentID = diff.document.documentID // Access the documentID here
                             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                            MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL)
-                            
+
 //                            let points = findPointsByLocation(latitude: latitude, longitude: longitude, withinMeters: 20)
 //                            for point in points {
 //                                removeDocument(documentID: point.documentID)
 //                            }
                             removePointByDocumentID(documentID)
+
+                            let reportReason = data["reportReason"] as? String ?? ""
+                            guard reportReason.isEmpty else {
+                                print("Point " + title + " ignored due to reportReason: " + reportReason)
+                                return
+                            }
                             pointsAdded.append(PointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL, uniqueFileName: uniqueFileName))
+
+                            MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL, documentID: documentID)
                         }
                     }
                     switch diff.type {

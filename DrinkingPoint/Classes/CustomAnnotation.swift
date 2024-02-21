@@ -6,11 +6,13 @@ class CustomAnnotation: NSObject, MKAnnotation {
 //    var subtitle: String?
     var imageURL: String?
     var image: UIImage?
+    var documentID: String
 
-    init(coordinate: CLLocationCoordinate2D, title: String, imageURL: String) {
+    init(coordinate: CLLocationCoordinate2D, title: String, imageURL: String, documentID: String) {
         self.coordinate = coordinate
         self.title = title
 //        self.subtitle = subtitle
         self.imageURL = imageURL
+        self.documentID = documentID
     }
 }

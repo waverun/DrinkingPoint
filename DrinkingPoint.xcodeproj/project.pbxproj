@@ -73,6 +73,7 @@
 		50CE24662B6AF17F004CA5F7 /* updateDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24652B6AF17F004CA5F7 /* updateDocument.swift */; };
 		50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */; };
 		50DAAEE82B85343600EA0C1E /* showUploadTermsAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEE72B85343600EA0C1E /* showUploadTermsAlert.swift */; };
+		50DAAEEA2B85482300EA0C1E /* ReportOptionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		50CE24652B6AF17F004CA5F7 /* updateDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDocument.swift; sourceTree = "<group>"; };
 		50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		50DAAEE72B85343600EA0C1E /* showUploadTermsAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showUploadTermsAlert.swift; sourceTree = "<group>"; };
+		50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportOptionModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
 				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */,
+				50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 			);
 			path = Views;
@@ -376,6 +379,7 @@
 				50CE24662B6AF17F004CA5F7 /* updateDocument.swift in Sources */,
 				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
 				502DA8DE2B73C929003B8813 /* deleteImage.swift in Sources */,
+				50DAAEEA2B85482300EA0C1E /* ReportOptionModal.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
 				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
@@ -535,7 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkingPoint/DrinkingPoint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"DrinkingPoint/Preview Content\"";
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;
@@ -572,7 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkingPoint/DrinkingPoint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"DrinkingPoint/Preview Content\"";
 				DEVELOPMENT_TEAM = NRTGJB9J65;
 				ENABLE_PREVIEWS = YES;

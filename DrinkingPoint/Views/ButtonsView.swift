@@ -99,6 +99,7 @@ struct ButtonsView: View {
     @State private var showingFilterView = false
 
     @Binding var showingNavigationOptions: Bool // Add this line
+    @Binding var showingReportOptions: Bool // Add this line
     @Binding var selectedAnnotation: CustomAnnotation? // Add this line
 
     var body: some View {
@@ -166,6 +167,22 @@ struct ButtonsView: View {
                     }
                 }) {
                     Image(systemName: "location.north.line.fill")
+                        .imageScale(.large) // Options: .small, .medium, .large
+                        .foregroundColor(.primary)
+                }
+                .padding(.vertical, 8)
+                .padding(.horizontal, 10)
+                .background(Color.black.opacity(0.25)) // Black background with low alpha
+                .clipShape(Circle()) // Makes the background rounded
+
+                Spacer() // Spacer between buttons
+
+                Button(action: {
+                    if MapViewManager.shared.lastAnnotationSelected != nil {
+                        showingReportOptions = true
+                    }
+                }) {
+                    Image(systemName: "flag")
                         .imageScale(.large) // Options: .small, .medium, .large
                         .foregroundColor(.primary)
                 }

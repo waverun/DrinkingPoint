@@ -7,9 +7,7 @@ struct NavigationOptionModal: View {
     var body: some View {
         VStack {
             ZStack {
-//                 Use BlurView as the background
                 BlurView(style: .systemMaterial) // You can choose different styles like .dark, .light, etc.
-//                .padding()
                 .frame(width: 250, height: 300)
                 .cornerRadius(12)
                 .shadow(radius: 8)
@@ -22,11 +20,6 @@ struct NavigationOptionModal: View {
                     HStack {
                         // AsyncImage introduced in iOS 15.0 for async loading.
                         if let imageURL = annotation.imageURL, let url = URL(string: imageURL) {
-//                            AsyncImage(url: url) { image in
-//                                image.resizable()
-//                            } placeholder: {
-//                                ProgressView()
-//                            }
                             CachedAsyncImage(url: url)
                             .frame(width: 100, height: 100)
                             .cornerRadius(8)
@@ -66,9 +59,6 @@ struct NavigationOptionModal: View {
 
                 .padding()
                 .frame(width: 250, height: 300)
-//                .background(Color.white)
-//                .cornerRadius(12)
-//                .shadow(radius: 8)
                 .foregroundColor(.blue)
             }
             // Use clipShape to apply the rounded corners to the entire ZStack, including the BlurView

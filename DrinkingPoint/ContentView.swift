@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var imagePickerViewModel = ImagePickerViewModel()
     @State private var showingNavigationOptions = false
+    @State private var showingReportOptions = false
 
     // This state is now being updated directly from MapViewManager's lastAnnotationSelected.
     var body: some View {
@@ -17,7 +18,7 @@ struct ContentView: View {
                             MapViewManager.shared.updateRegion(userLocation: location, radius: radius)
                         }
                     }
-                ButtonsView(imagePickerViewModel: imagePickerViewModel, showingNavigationOptions: $showingNavigationOptions, selectedAnnotation: Binding(
+            ButtonsView(imagePickerViewModel: imagePickerViewModel, showingNavigationOptions: $showingNavigationOptions, showingReportOptions: $showingReportOptions, selectedAnnotation: Binding(
                     get: { MapViewManager.shared.lastAnnotationSelected },
                     set: { _ in }
                 )) // Pass a binding to the ButtonsView
@@ -26,6 +27,10 @@ struct ContentView: View {
             // Conditionally show the modal view
             if showingNavigationOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
                 NavigationOptionModal(annotation: annotation, isPresented: $showingNavigationOptions)
+            }
+
+            if showingReportOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
+                ReportOptionModal(annotation: annotation, isPresented: $showingReportOptions)
             }
         }
         .sheet(isPresented: $imagePickerViewModel.isImagePickerPresented) {
