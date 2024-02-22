@@ -7,7 +7,9 @@ struct ReportedPointsView: View {
 
     @State private var filterText: String = ""
     @State private var distanceFilter: Double? // Distance in meters
-//    var pointsReported: [PointAdded]
+    @State private var selectedPoints: Set<String> = [] // Track selected points by their documentID
+    @State private var selectAll: Bool = false // Track whether to select or deselect all
+
     var onPointSelected: (PointAdded) -> Void
 
     var filteredPoints: [PointAdded] {
@@ -31,6 +33,23 @@ struct ReportedPointsView: View {
         return coordinate1.distance(from: coordinate2) // Distance in meters
     }
 
+    private func toggleSelection(for point: PointAdded) {
+        if selectedPoints.contains(point.documentID) {
+            selectedPoints.remove(point.documentID)
+        } else {
+            selectedPoints.insert(point.documentID)
+        }
+    }
+
+    private func toggleSelectAll() {
+        if selectAll {
+            selectedPoints.removeAll()
+        } else {
+            selectedPoints = Set(filteredPoints.map { $0.documentID })
+        }
+        selectAll.toggle()
+    }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -49,8 +68,19 @@ struct ReportedPointsView: View {
                         .padding(.horizontal)
                 }
 
+                Button(selectAll ? "Uncheck All" : "Check All") {
+                    toggleSelectAll()
+                }
+                .padding()
+
                 List(filteredPoints, id: \.documentID) { point in
                     HStack {
+
+                        Image(systemName: selectedPoints.contains(point.documentID) ? "checkmark.square" : "square")
+                            .onTapGesture {
+                                toggleSelection(for: point)
+                            }
+
                         CachedAsyncImage(url: URL(string: point.imageURL)!)
                             .frame(width: 50, height: 50)
                             .cornerRadius(8)

@@ -1957,8 +1957,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "filteredPoints"
             landmarkType = "24">
          </BreakpointContent>
@@ -1973,8 +1973,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "filteredPoints"
             landmarkType = "24">
             <Locations>
@@ -2021,8 +2021,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "filteredPoints"
             landmarkType = "24">
          </BreakpointContent>
@@ -2037,8 +2037,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "filteredPoints"
             landmarkType = "24">
          </BreakpointContent>

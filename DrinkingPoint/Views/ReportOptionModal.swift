@@ -8,7 +8,7 @@ struct ReportOptionModal: View {
     // Dynamic height adjustment based on build configuration
     var dynamicHeight: CGFloat {
 #if DEBUG
-        return 360 // Increased height for Debug mode to accommodate additional debug button
+        return 370 // Increased height for Debug mode to accommodate additional debug button
 #else
         return 330 // Standard height for Release mode
 #endif
