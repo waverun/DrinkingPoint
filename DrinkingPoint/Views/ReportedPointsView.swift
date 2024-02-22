@@ -50,6 +50,26 @@ struct ReportedPointsView: View {
         selectAll.toggle()
     }
 
+    private func unflagPoints() {
+        // Example action for unflagging points
+        for id in selectedPoints {
+            // Call unflag function here
+            if let point = filteredPoints.first(where: { $0.documentID == id}) {
+                print("Unflagging point: \(point.title)")
+            }
+        }
+    }
+
+    private func deletePoints() {
+        // Example action for deleting points
+        for id in selectedPoints {
+            // Call delete function here
+            if let point = filteredPoints.first(where: { $0.documentID == id}) {
+                print("Deleting point: \(point.title)")
+            }
+        }
+    }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -68,10 +88,42 @@ struct ReportedPointsView: View {
                         .padding(.horizontal)
                 }
 
-                Button(selectAll ? "Uncheck All" : "Check All") {
-                    toggleSelectAll()
+                HStack(spacing: 10) {
+                    Button("Unflag Points") {
+                        unflagPoints()
+                    }
+                    .padding(.vertical, 10) // Add padding inside the button for height
+                    .padding(.horizontal, 20) // Add padding inside the button for width
+                    .foregroundColor(.white) // Set the text color
+                    .background(Color.blue) // Set the background color
+                    .cornerRadius(10) // Rounded edges
+
+                    Spacer()
+
+                    Button("Delete Points") {
+                        deletePoints()
+                    }
+                    .padding(.vertical, 10) // Add padding inside the button for height
+                    .padding(.horizontal, 20) // Add padding inside the button for width
+                    .foregroundColor(.white) // Set the text color
+                    .background(Color.blue) // Set the background color
+                    .cornerRadius(10) // Rounded edges
                 }
-                .padding()
+
+                .padding(.horizontal)
+                .padding(.top)
+
+                HStack {
+                    Button(selectAll ? "Uncheck All" : "Check All") {
+                        toggleSelectAll()
+                    }
+                    .foregroundColor(.blue) // Apply color to make it look like text only
+                    .padding(.leading, 5) // Ensure it's aligned close to the list items
+
+                    Spacer() // Pushes the button to the left
+                }
+                .padding(.top, 10)
+                .padding(.leading, 15)
 
                 List(filteredPoints, id: \.documentID) { point in
                     HStack {
@@ -93,6 +145,8 @@ struct ReportedPointsView: View {
                         self.isPresented = false
                     }
                 }
+//                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                //                    .listStyle(PlainListStyle()) // Use PlainListStyle to reduce extra padding around List
             }
             .navigationTitle("Reported Points")
             .navigationBarTitleDisplayMode(.inline)
@@ -104,6 +158,7 @@ struct ReportedPointsView: View {
                 }
             }
             .foregroundColor(.blue)
+            //            }
         }
     }
 }
