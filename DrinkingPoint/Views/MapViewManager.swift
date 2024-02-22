@@ -20,6 +20,13 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     var lastRegionUsedForListener: MKCoordinateRegion?
     var lastAnnotationSelected: CustomAnnotation?
 
+    func signalAnnotationRemoved(documentID: String) {
+        if let lastAnnotationSelected = lastAnnotationSelected,
+           lastAnnotationSelected.documentID == documentID {
+            self.lastAnnotationSelected = nil
+        }
+    }
+
     func makeMapView() -> MKMapView {
         if let region = lastRegionUsedForListener {
             addSnapshotListener(forRegion: region)

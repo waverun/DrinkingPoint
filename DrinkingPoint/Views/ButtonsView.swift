@@ -8,6 +8,7 @@ struct ButtonsView: View {
 
     @Binding var showingNavigationOptions: Bool // Add this line
     @Binding var showingReportOptions: Bool // Add this line
+    @Binding var showingReportedPoints: Bool // Add this line
     @Binding var selectedAnnotation: CustomAnnotation? // Add this line
 
     var body: some View {
@@ -88,6 +89,8 @@ struct ButtonsView: View {
                 Button(action: {
                     if MapViewManager.shared.lastAnnotationSelected != nil {
                         showingReportOptions = true
+                    } else {
+                        showingReportedPoints = true
                     }
                 }) {
                     Image(systemName: "flag")

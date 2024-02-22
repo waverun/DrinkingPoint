@@ -19,7 +19,7 @@ struct ContentView: View {
                             MapViewManager.shared.updateRegion(userLocation: location, radius: radius)
                         }
                     }
-            ButtonsView(imagePickerViewModel: imagePickerViewModel, showingNavigationOptions: $showingNavigationOptions, showingReportOptions: $showingReportOptions, selectedAnnotation: Binding(
+            ButtonsView(imagePickerViewModel: imagePickerViewModel, showingNavigationOptions: $showingNavigationOptions, showingReportOptions: $showingReportOptions, showingReportedPoints: $showingReportedPoints, selectedAnnotation: Binding(
                     get: { MapViewManager.shared.lastAnnotationSelected },
                     set: { _ in }
                 )) // Pass a binding to the ButtonsView

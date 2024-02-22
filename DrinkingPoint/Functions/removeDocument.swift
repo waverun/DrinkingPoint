@@ -9,7 +9,12 @@ func removeDocument(documentID: String, uniqueFileName: String, completion: (() 
             }
         } else {
             print("Document successfully removed!")
-            deleteImage(imageRef: uniqueFileName, completion: completion)
+            deleteImage(imageRef: uniqueFileName) {
+                MapViewManager.shared.signalAnnotationRemoved(documentID: documentID)
+                if let completion = completion {
+                    completion()
+                }
+            }
         }
     }
 }
