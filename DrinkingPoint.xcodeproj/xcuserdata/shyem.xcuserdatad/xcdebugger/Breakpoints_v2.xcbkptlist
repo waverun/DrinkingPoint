@@ -781,7 +781,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "4"
             endingLineNumber = "4"
-            landmarkName = "removeDocument(documentID:uniqueFileName:)"
+            landmarkName = "removeDocument(documentID:uniqueFileName:completion:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -1067,7 +1067,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
             endingLineNumber = "6"
-            landmarkName = "removeDocument(documentID:uniqueFileName:)"
+            landmarkName = "removeDocument(documentID:uniqueFileName:completion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1081,9 +1081,9 @@
             filePath = "DrinkingPoint/Functions/removeDocument.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
-            landmarkName = "removeDocument(documentID:uniqueFileName:)"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "removeDocument(documentID:uniqueFileName:completion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1115,7 +1115,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "4"
             endingLineNumber = "4"
-            landmarkName = "updateDocument(data:documentID:)"
+            landmarkName = "updateDocument(data:documentID:completion:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -1934,22 +1934,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9EF64C8-D09B-48A4-A223-B6D0EC0B806C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DrinkingPoint/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B99077F2-4D4B-448D-8043-E1BB89EABB01"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1957,8 +1941,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "filteredPoints"
             landmarkType = "24">
          </BreakpointContent>
@@ -1973,8 +1957,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "filteredPoints"
             landmarkType = "24">
             <Locations>
@@ -2021,8 +2005,8 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "filteredPoints"
             landmarkType = "24">
          </BreakpointContent>
@@ -2037,25 +2021,9 @@
             filePath = "DrinkingPoint/Views/ReportedPointsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "filteredPoints"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7E492BEC-1D80-466D-8D78-237E329561F1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DrinkingPoint/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

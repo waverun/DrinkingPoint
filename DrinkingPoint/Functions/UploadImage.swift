@@ -49,12 +49,13 @@ func uploadImage(imageData: Data) {
                         "uniqueFileName" : uniqueFileName]) { documentID in
                             DispatchQueue.main.async {
                                 showAlert(title: "Uploaded", message: "Drinking point was added succesfully", documentID: documentID, uniqueFileName: uniqueFileName)
-                                let points = findPointsByLocation(latitude: userLocation.latitude, longitude: userLocation.longitude, withinMeters: 20)
-                                for point in points {
-                                    if point.uniqueFileName != uniqueFileName {
-                                        removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName)
-                                    }
-                                }
+                                removeClosePoints(location: userLocation, uniqueFileName: uniqueFileName)
+//                                let points = findPointsByLocation(latitude: userLocation.latitude, longitude: userLocation.longitude, withinMeters: 20)
+//                                for point in points {
+//                                    if point.uniqueFileName != uniqueFileName {
+//                                        removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName)
+//                                    }
+//                                }
                             }
                         }
                 } else {

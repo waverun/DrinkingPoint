@@ -3,7 +3,8 @@ import MapKit
 
 struct ReportedPointsView: View {
     @Binding var isPresented: Bool
-    @Binding var pointsReported: [PointAdded] // Change to Binding
+//    @Binding var pointsReported: [PointAdded] // Change to Binding
+    @EnvironmentObject var viewModel: ReportedPointsViewModel
 
     @State private var filterText: String = ""
     @State private var distanceFilter: Double? // Distance in meters
@@ -13,7 +14,7 @@ struct ReportedPointsView: View {
     var onPointSelected: (PointAdded) -> Void
 
     var filteredPoints: [PointAdded] {
-        pointsReported.filter { point in
+        viewModel.reportedPoints.filter { point in
             // Filter by title
             let titleMatch = filterText.isEmpty || point.title.localizedCaseInsensitiveContains(filterText)
 
@@ -51,22 +52,44 @@ struct ReportedPointsView: View {
     }
 
     private func unflagPoints() {
+        let dispatchGroup = DispatchGroup()
+
         // Example action for unflagging points
         for id in selectedPoints {
             // Call unflag function here
             if let point = filteredPoints.first(where: { $0.documentID == id}) {
                 print("Unflagging point: \(point.title)")
+                dispatchGroup.enter()
+                updateDocument(data: ["reportReason": ""], documentID: point.documentID) {
+                    let location = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+                    removeClosePoints(location: location, uniqueFileName: point.uniqueFileName, dispatchGroup: dispatchGroup)
+                    dispatchGroup.leave()
+                }
             }
+        }
+        dispatchGroup.notify(queue: .main) {
+            // All updates are complete, now fetch the latest data
+            viewModel.fetchReportedPoints()
         }
     }
 
     private func deletePoints() {
+        let dispatchGroup = DispatchGroup()
+
         // Example action for deleting points
         for id in selectedPoints {
             // Call delete function here
             if let point = filteredPoints.first(where: { $0.documentID == id}) {
+                dispatchGroup.enter()
                 print("Deleting point: \(point.title)")
+                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
+                    dispatchGroup.leave()
+                }
             }
+        }
+        dispatchGroup.notify(queue: .main) {
+            // All updates are complete, now fetch the latest data
+            viewModel.fetchReportedPoints()
         }
     }
 

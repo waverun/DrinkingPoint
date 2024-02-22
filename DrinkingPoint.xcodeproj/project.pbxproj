@@ -77,6 +77,7 @@
 		50DAAEEC2B861C9D00EA0C1E /* getDocumentsIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEEB2B861C9D00EA0C1E /* getDocumentsIn.swift */; };
 		50DAAEEE2B863A0A00EA0C1E /* ReportedPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */; };
 		50DAAEF02B8766BA00EA0C1E /* ReportedPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */; };
+		50DAAEF22B87C62700EA0C1E /* removeClosePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		50DAAEEB2B861C9D00EA0C1E /* getDocumentsIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDocumentsIn.swift; sourceTree = "<group>"; };
 		50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsView.swift; sourceTree = "<group>"; };
 		50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsViewModel.swift; sourceTree = "<group>"; };
+		50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeClosePoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				50DAAEEB2B861C9D00EA0C1E /* getDocumentsIn.swift */,
 				502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */,
 				502DA8F42B7CE7A2003B8813 /* openInMaps.swift */,
+				50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */,
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
 				502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */,
 				50DAAEE72B85343600EA0C1E /* showUploadTermsAlert.swift */,
@@ -400,6 +403,7 @@
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
 				502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */,
+				50DAAEF22B87C62700EA0C1E /* removeClosePoints.swift in Sources */,
 				502DA8F32B7CE6A6003B8813 /* navigationAlert.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */,

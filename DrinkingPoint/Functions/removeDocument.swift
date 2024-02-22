@@ -1,15 +1,15 @@
 import FirebaseFirestore
 
-func removeDocument(documentID: String, uniqueFileName: String) {
+func removeDocument(documentID: String, uniqueFileName: String, completion: (() -> Void)? = nil) {
     FirestoreManager.shared.db.collection("drinkingPoints").document(documentID).delete() { err in
         if let err = err {
             print("Error removing document: \(err)")
+            if let completion = completion {
+                completion()
+            }
         } else {
             print("Document successfully removed!")
-//            if let point = pointsAdded.first(where: { $0.documentID == documentID }) {
-//                let uniqueFileName = point.uniqueFileName
-                deleteImage(imageRef: uniqueFileName)
-//            }
+            deleteImage(imageRef: uniqueFileName, completion: completion)
         }
     }
 }
