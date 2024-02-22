@@ -90,7 +90,9 @@ struct ButtonsView: View {
                     if MapViewManager.shared.lastAnnotationSelected != nil {
                         showingReportOptions = true
                     } else {
+                        #if DEBUG
                         showingReportedPoints = true
+                        #endif
                     }
                 }) {
                     Image(systemName: "flag")

@@ -33,12 +33,12 @@ struct ReportOptionModal: View {
 
                     HStack {
                         // Display the image as the title, similar to the NavigationOptionModal
-                        if let imageURL = annotation.imageURL {
-                            AsyncImage(url: URL(string: imageURL)) { image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
-                            }
+                        if let imageURL = annotation.imageURL, let url = URL(string: imageURL) {
+                            CachedAsyncImage(url: url)
+//                                image.resizable()
+//                            } placeholder: {
+//                                ProgressView()
+//                            }
                             .frame(width: 100, height: 100)
                             .cornerRadius(8)
                         }
