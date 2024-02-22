@@ -3,9 +3,11 @@ import MapKit
 
 struct ReportedPointsView: View {
     @Binding var isPresented: Bool
+    @Binding var pointsReported: [PointAdded] // Change to Binding
+
     @State private var filterText: String = ""
     @State private var distanceFilter: Double? // Distance in meters
-    var pointsReported: [PointAdded]
+//    var pointsReported: [PointAdded]
     var onPointSelected: (PointAdded) -> Void
 
     var filteredPoints: [PointAdded] {
@@ -22,7 +24,6 @@ struct ReportedPointsView: View {
             }
         }
     }
-
     // Function to calculate distance between two points in meters
     private func calculateDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
         let coordinate1 = CLLocation(latitude: lat1, longitude: lon1)
@@ -63,7 +64,7 @@ struct ReportedPointsView: View {
                     }
                 }
             }
-            .navigationTitle("Select a Point")
+            .navigationTitle("Reported Points")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -12,13 +12,13 @@ func getDocumentsIn(fieldName: String, values: [String], onSuccess: @escaping ([
                 if let latitude = data["latitude"] as? Double,
                    let longitude = data["longitude"] as? Double,
                    let title = data["title"] as? String,
-                   let imageURL = data["imageURL"] as? String,
+                   let imageURL = data["URL"] as? String,
                    let uniqueFileName = data["uniqueFileName"] as? String {
                     let reportedPoint = PointAdded(documentID: document.documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL, uniqueFileName: uniqueFileName)
                     reportedPoints.append(reportedPoint)
                 }
             }
-            onSuccess(pointsAdded)
+            onSuccess(reportedPoints)
         }
     }
 }

@@ -3,11 +3,12 @@ import SwiftUI
 struct ReportOptionModal: View {
     let annotation: CustomAnnotation
     @Binding var isPresented: Bool
+    var onShowFlaggedPoints: ([PointAdded]) -> Void = { _ in }
 
     // Dynamic height adjustment based on build configuration
     var dynamicHeight: CGFloat {
 #if DEBUG
-        return 350 // Increased height for Debug mode to accommodate additional debug button
+        return 360 // Increased height for Debug mode to accommodate additional debug button
 #else
         return 330 // Standard height for Release mode
 #endif
@@ -92,6 +93,8 @@ struct ReportOptionModal: View {
                     Button("Show flaged points") {
                         // Handle report for spam or misleading
                         getDocumentsIn(fieldName: "reportReason", values: ["ic","hb","sm"]) { reportedPoints in
+                            self.onShowFlaggedPoints(reportedPoints)
+//                            isPresented = false
                         }
                         isPresented = false
                     }

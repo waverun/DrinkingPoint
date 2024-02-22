@@ -76,6 +76,7 @@
 		50DAAEEA2B85482300EA0C1E /* ReportOptionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */; };
 		50DAAEEC2B861C9D00EA0C1E /* getDocumentsIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEEB2B861C9D00EA0C1E /* getDocumentsIn.swift */; };
 		50DAAEEE2B863A0A00EA0C1E /* ReportedPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */; };
+		50DAAEF02B8766BA00EA0C1E /* ReportedPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportOptionModal.swift; sourceTree = "<group>"; };
 		50DAAEEB2B861C9D00EA0C1E /* getDocumentsIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDocumentsIn.swift; sourceTree = "<group>"; };
 		50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsView.swift; sourceTree = "<group>"; };
+		50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,12 +231,13 @@
 		50384B102B5EFA9C009DF7C7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
-				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
 				50384B542B6172CC009DF7C7 /* AppDelegate.swift */,
-				50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */,
 				50CE24672B6C3651004CA5F7 /* CustomAnnotation.swift */,
+				50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */,
 				502DA8FA2B7D66A3003B8813 /* ImageCache.swift */,
+				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
+				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
+				50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				50CE24662B6AF17F004CA5F7 /* updateDocument.swift in Sources */,
 				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
 				502DA8DE2B73C929003B8813 /* deleteImage.swift in Sources */,
+				50DAAEF02B8766BA00EA0C1E /* ReportedPointsViewModel.swift in Sources */,
 				50DAAEEA2B85482300EA0C1E /* ReportOptionModal.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
