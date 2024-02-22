@@ -33,6 +33,20 @@ struct ButtonsView: View {
                 Spacer() // Spacer before the first button
 
                 Button(action: {
+                    // Action for Button 1
+                }) {
+                    Image(systemName: "person.crop.circle.badge.plus")
+                        .imageScale(.large) // Options: .small, .medium, .large
+                        .foregroundColor(.primary)
+                }
+                .padding(.vertical, 8) // Reduced vertical padding
+                .padding(.horizontal, 10) // Horizontal padding for touch area
+                .background(Color.black.opacity(0.25)) // Black background with low alpha
+                .clipShape(Circle()) // Makes the background rounded
+
+                Spacer() // Spacer before the first button
+
+                Button(action: {
                     self.showingFilterView = true
                 }) {
                     Image(systemName: "book")
