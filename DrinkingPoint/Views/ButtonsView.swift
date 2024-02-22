@@ -41,9 +41,10 @@ struct ButtonsView: View {
                 }
                 .sheet(isPresented: $showingFilterView) {
                     FilterView(isPresented: $showingFilterView, pointsAdded: pointsAdded) { selectedPoint in
-                        let location = CLLocationCoordinate2D(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
-                        LocationManager.shared.needToUpdateRegion = false
-                        MapViewManager.shared.updateRegion(userLocation: location)
+//                        let location = CLLocationCoordinate2D(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
+//                        LocationManager.shared.needToUpdateRegion = false
+//                        MapViewManager.shared.updateRegion(userLocation: location)
+                        MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
                     }
                 }
                 .padding(.vertical, 8) // Reduced vertical padding

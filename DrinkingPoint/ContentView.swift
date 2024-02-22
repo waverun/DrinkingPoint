@@ -40,7 +40,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingReportedPoints) {
             ReportedPointsView(isPresented: $showingReportedPoints) { selectedPoint in
-                // Handle point selection
+                MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
             }
         }
         .sheet(isPresented: $imagePickerViewModel.isImagePickerPresented) {

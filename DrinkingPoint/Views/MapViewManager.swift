@@ -20,6 +20,12 @@ class MapViewManager: NSObject, MKMapViewDelegate {
     var lastRegionUsedForListener: MKCoordinateRegion?
     var lastAnnotationSelected: CustomAnnotation?
 
+    func goToSelectedPoint(latitude: Double, longitude: Double) {
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        LocationManager.shared.needToUpdateRegion = false
+        updateRegion(userLocation: location)
+    }
+
     func signalAnnotationRemoved(documentID: String) {
         if let lastAnnotationSelected = lastAnnotationSelected,
            lastAnnotationSelected.documentID == documentID {

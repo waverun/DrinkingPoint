@@ -70,10 +70,12 @@ func addSnapshotListener(forRegion: MKCoordinateRegion) {
                             removePointByDocumentID(documentID)
 
                             let reportReason = data["reportReason"] as? String ?? ""
+                            #if !DEBUG
                             guard reportReason.isEmpty else {
                                 print("Point " + title + " ignored due to reportReason: " + reportReason)
                                 return
                             }
+                            #endif
                             pointsAdded.append(PointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL, uniqueFileName: uniqueFileName))
 
                             MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL, documentID: documentID)
