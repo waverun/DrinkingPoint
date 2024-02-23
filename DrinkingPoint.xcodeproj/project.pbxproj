@@ -24,7 +24,6 @@
 		502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8F82B7D4AEF003B8813 /* BlurView.swift */; };
 		502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8FA2B7D66A3003B8813 /* ImageCache.swift */; };
 		502DA8FE2B7D6723003B8813 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DA8FD2B7D6723003B8813 /* CachedAsyncImage.swift */; };
-		502DA8FF2B7E82AF003B8813 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */; };
 		50384AF92B5DB282009DF7C7 /* DrinkingPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AF82B5DB282009DF7C7 /* DrinkingPointApp.swift */; };
 		50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384AFA2B5DB282009DF7C7 /* ContentView.swift */; };
 		50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50384AFC2B5DB286009DF7C7 /* Assets.xcassets */; };
@@ -78,6 +77,7 @@
 		50DAAEEE2B863A0A00EA0C1E /* ReportedPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */; };
 		50DAAEF02B8766BA00EA0C1E /* ReportedPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */; };
 		50DAAEF22B87C62700EA0C1E /* removeClosePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */; };
+		50DAAEF42B88B87000EA0C1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DAAEF32B88B87000EA0C1E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +111,6 @@
 		50384B132B601C3D009DF7C7 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
 		50384B172B602E51009DF7C7 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50384B542B6172CC009DF7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50384B572B62A0BF009DF7C7 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsView.swift; sourceTree = "<group>"; };
 		50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsViewModel.swift; sourceTree = "<group>"; };
 		50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeClosePoints.swift; sourceTree = "<group>"; };
+		50DAAEF32B88B87000EA0C1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 		50384AEC2B5DB282009DF7C7 = {
 			isa = PBXGroup;
 			children = (
-				50384B1B2B616B0D009DF7C7 /* GoogleService-Info.plist */,
+				50DAAEF32B88B87000EA0C1E /* GoogleService-Info.plist */,
 				50384AF72B5DB282009DF7C7 /* DrinkingPoint */,
 				50384AF62B5DB282009DF7C7 /* Products */,
 			);
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				502DA8ED2B7B82A5003B8813 /* LaunchScreen.storyboard in Resources */,
-				502DA8FF2B7E82AF003B8813 /* GoogleService-Info.plist in Resources */,
+				50DAAEF42B88B87000EA0C1E /* GoogleService-Info.plist in Resources */,
 				50384B002B5DB286009DF7C7 /* Preview Assets.xcassets in Resources */,
 				50384AFD2B5DB286009DF7C7 /* Assets.xcassets in Resources */,
 			);
