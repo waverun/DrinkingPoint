@@ -5,6 +5,7 @@ struct ButtonsView: View {
     var imagePickerViewModel: ImagePickerViewModel
     @State private var showingSearchView = false
     @State private var showingFilterView = false
+    @State private var showingLoginActionSheet = false
 
     @Binding var showingNavigationOptions: Bool // Add this line
     @Binding var showingReportOptions: Bool // Add this line
@@ -33,7 +34,7 @@ struct ButtonsView: View {
                 Spacer() // Spacer before the first button
 
                 Button(action: {
-                    // Action for Button 1
+                    self.showingLoginActionSheet = true
                 }) {
                     Image(systemName: "person.crop.circle.badge.plus")
                         .imageScale(.large) // Options: .small, .medium, .large
@@ -43,7 +44,23 @@ struct ButtonsView: View {
                 .padding(.horizontal, 10) // Horizontal padding for touch area
                 .background(Color.black.opacity(0.25)) // Black background with low alpha
                 .clipShape(Circle()) // Makes the background rounded
-
+                .actionSheet(isPresented: $showingLoginActionSheet) {
+                    ActionSheet(title: Text("Login Options"),
+                                message: Text("Choose your login method."),
+                                buttons: [
+                                    .default(Text("Add User/Password Account")) {
+                                        // Handle Add User/Password Account action
+                                    },
+                                    .default(Text("Login with Google")) {
+                                        // Handle Login with Google action
+                                    },
+                                    .default(Text("Login with Apple")) {
+                                        // Handle Login with Apple action
+                                    },
+                                    .cancel()
+                                ])
+                }
+                
                 Spacer() // Spacer before the first button
 
                 Button(action: {
