@@ -6,6 +6,7 @@ struct ButtonsView: View {
     @State private var showingSearchView = false
     @State private var showingFilterView = false
     @State private var showingLoginActionSheet = false
+    @State private var showingSignUpView = false
 
     @Binding var showingNavigationOptions: Bool // Add this line
     @Binding var showingReportOptions: Bool // Add this line
@@ -49,7 +50,7 @@ struct ButtonsView: View {
                                 message: Text("Choose your login method."),
                                 buttons: [
                                     .default(Text("Add User/Password Account")) {
-                                        // Handle Add User/Password Account action
+                                        self.showingSignUpView = true
                                     },
                                     .default(Text("Login with Google")) {
                                         // Handle Login with Google action
@@ -60,7 +61,10 @@ struct ButtonsView: View {
                                     .cancel()
                                 ])
                 }
-                
+                .sheet(isPresented: $showingSignUpView) {
+                    SignUpView() // Assuming SignUpView is your sign-up view
+                }
+
                 Spacer() // Spacer before the first button
 
                 Button(action: {

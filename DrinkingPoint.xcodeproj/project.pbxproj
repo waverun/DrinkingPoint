@@ -78,6 +78,9 @@
 		50DAAEF02B8766BA00EA0C1E /* ReportedPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */; };
 		50DAAEF22B87C62700EA0C1E /* removeClosePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */; };
 		50DAAEF42B88B87000EA0C1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DAAEF32B88B87000EA0C1E /* GoogleService-Info.plist */; };
+		50DAAEF92B88C53400EA0C1E /* UserAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEF82B88C53400EA0C1E /* UserAuthManager.swift */; };
+		50DAAEFB2B88C56B00EA0C1E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEFA2B88C56B00EA0C1E /* SignUpView.swift */; };
+		50DAAEFD2B88C59E00EA0C1E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAAEFC2B88C59E00EA0C1E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +130,9 @@
 		50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPointsViewModel.swift; sourceTree = "<group>"; };
 		50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeClosePoints.swift; sourceTree = "<group>"; };
 		50DAAEF32B88B87000EA0C1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		50DAAEF82B88C53400EA0C1E /* UserAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthManager.swift; sourceTree = "<group>"; };
+		50DAAEFA2B88C56B00EA0C1E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		50DAAEFC2B88C59E00EA0C1E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,11 +228,13 @@
 				502DA8FD2B7D6723003B8813 /* CachedAsyncImage.swift */,
 				502DA8F02B7C0B1B003B8813 /* filterView.swift */,
 				50384B172B602E51009DF7C7 /* ImagePickerView.swift */,
+				50DAAEFC2B88C59E00EA0C1E /* LoginView.swift */,
 				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */,
 				50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */,
 				50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
+				50DAAEFA2B88C56B00EA0C1E /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
 				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
 				50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */,
+				50DAAEF82B88C53400EA0C1E /* UserAuthManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -402,11 +411,13 @@
 				502DA8DE2B73C929003B8813 /* deleteImage.swift in Sources */,
 				50DAAEF02B8766BA00EA0C1E /* ReportedPointsViewModel.swift in Sources */,
 				50DAAEEA2B85482300EA0C1E /* ReportOptionModal.swift in Sources */,
+				50DAAEF92B88C53400EA0C1E /* UserAuthManager.swift in Sources */,
 				50384B122B5EFAB9009DF7C7 /* LocationManager.swift in Sources */,
 				50384B182B602E51009DF7C7 /* ImagePickerView.swift in Sources */,
 				50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */,
 				50384B0D2B5DB36C009DF7C7 /* MapViewManager.swift in Sources */,
 				502DA8EB2B7A9557003B8813 /* calculateDestinationPoint.swift in Sources */,
+				50DAAEFB2B88C56B00EA0C1E /* SignUpView.swift in Sources */,
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
@@ -424,6 +435,7 @@
 				502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */,
 				502DA8E42B780AF0003B8813 /* MKPlacemark.swift in Sources */,
 				50DAAEE82B85343600EA0C1E /* showUploadTermsAlert.swift in Sources */,
+				50DAAEFD2B88C59E00EA0C1E /* LoginView.swift in Sources */,
 				502DA8FE2B7D6723003B8813 /* CachedAsyncImage.swift in Sources */,
 				502DA8DC2B7029E3003B8813 /* removeDocument.swift in Sources */,
 				50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */,
