@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @ObservedObject var authManager = UserAuthManager()
+//    @ObservedObject var authManager = UserAuthManager()
     @Environment(\.presentationMode) var presentationMode // To dismiss the view
+    @EnvironmentObject var authManager: UserAuthManager
 
     @State private var email = ""
     @State private var password = ""
@@ -76,7 +77,11 @@ struct SignUpView: View {
 
         authManager.signUp(email: email, password: password) { success, error in
             if success {
-                errorMessage = ""
+                DispatchQueue.main.async {
+                    self.presentationMode.wrappedValue.dismiss()
+                    // Assuming auto-login after signup, so you might not need to explicitly show LoginView
+                    // If you need to show LoginView for any reason, consider a shared state or notification
+                }
             } else {
                 errorMessage = error
             }

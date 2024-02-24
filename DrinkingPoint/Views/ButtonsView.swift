@@ -13,6 +13,35 @@ struct ButtonsView: View {
     @Binding var showingReportedPoints: Bool // Add this line
     @Binding var selectedAnnotation: CustomAnnotation? // Add this line
 
+    @EnvironmentObject var authManager: UserAuthManager
+
+    func getActionSheetButtons() -> [ActionSheet.Button] {
+        let logoutButton = ActionSheet.Button.destructive(Text("Log Out")) {
+            authManager.signOut()
+        }
+
+        let signUpButton = ActionSheet.Button.default(Text("Add User/Password Account")) {
+            showingSignUpView = true
+        }
+
+        let loginWithGoogleButton = ActionSheet.Button.default(Text("Login with Google")) {
+            // Your Google login logic here
+        }
+
+        let loginWithAppleButton = ActionSheet.Button.default(Text("Login with Apple")) {
+            // Your Apple login logic here
+        }
+
+        let cancelButton = ActionSheet.Button.cancel()
+
+        // Dynamically adjust the buttons based on authentication status
+        var buttons: [ActionSheet.Button] = authManager.isUserAuthenticated ?
+        [logoutButton, cancelButton] :
+        [signUpButton, loginWithGoogleButton, loginWithAppleButton, cancelButton]
+
+        return buttons
+    }
+
     var body: some View {
         VStack {
             Spacer()
@@ -37,7 +66,7 @@ struct ButtonsView: View {
                 Button(action: {
                     self.showingLoginActionSheet = true
                 }) {
-                    Image(systemName: "person.crop.circle.badge.plus")
+                    Image(systemName: authManager.isUserAuthenticated ? "person.crop.circle.badge" : "person.crop.circle.badge.plus")
                         .imageScale(.large) // Options: .small, .medium, .large
                         .foregroundColor(.primary)
                 }
@@ -48,18 +77,21 @@ struct ButtonsView: View {
                 .actionSheet(isPresented: $showingLoginActionSheet) {
                     ActionSheet(title: Text("Login Options"),
                                 message: Text("Choose your login method."),
-                                buttons: [
-                                    .default(Text("Add User/Password Account")) {
-                                        self.showingSignUpView = true
-                                    },
-                                    .default(Text("Login with Google")) {
-                                        // Handle Login with Google action
-                                    },
-                                    .default(Text("Login with Apple")) {
-                                        // Handle Login with Apple action
-                                    },
-                                    .cancel()
-                                ])
+                                buttons: 
+                                    getActionSheetButtons()
+//                                    [
+//                                    .default(Text("Add User/Password Account")) {
+//                                        self.showingSignUpView = true
+//                                    },
+//                                    .default(Text("Login with Google")) {
+//                                        // Handle Login with Google action
+//                                    },
+//                                    .default(Text("Login with Apple")) {
+//                                        // Handle Login with Apple action
+//                                    },
+//                                    .cancel()
+//                                ]
+                    )
                 }
                 .sheet(isPresented: $showingSignUpView) {
                     SignUpView() // Assuming SignUpView is your sign-up view

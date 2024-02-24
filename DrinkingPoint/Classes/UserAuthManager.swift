@@ -3,6 +3,27 @@ import Combine
 
 class UserAuthManager: ObservableObject {
     @Published var lastSignedInEmail: String? = UserDefaults.standard.string(forKey: "lastSignedInEmail")
+    @Published var isUserAuthenticated: Bool = false
+    @Published var currentUserEmail: String? = nil
+    @Published var currentUserUID: String? = nil
+
+    var handle: AuthStateDidChangeListenerHandle?
+
+    init() {
+        // Add the listener and update the authentication state based on whether a user is signed in or not
+        handle = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            self?.isUserAuthenticated = user != nil
+            self?.currentUserEmail = user?.email
+            self?.currentUserUID = user?.uid
+        }
+    }
+
+    deinit {
+        // Don't forget to remove the listener when this object is deallocated
+        if let handle = handle {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
+    }
 
     func signUp(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
@@ -35,6 +56,18 @@ class UserAuthManager: ObservableObject {
             } else {
                 completion(true, nil)
             }
+        }
+    }
+
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            isUserAuthenticated = false
+            currentUserEmail = nil
+            currentUserUID = nil
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+            // Handle the error if needed
         }
     }
 }

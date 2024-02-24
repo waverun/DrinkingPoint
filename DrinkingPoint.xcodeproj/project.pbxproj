@@ -178,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				50DAAEF32B88B87000EA0C1E /* GoogleService-Info.plist */,
-				50DAAEF52B88BF7200EA0C1E /* Alerts */,
 				50384AF72B5DB282009DF7C7 /* DrinkingPoint */,
 				50384AF62B5DB282009DF7C7 /* Products */,
 			);
@@ -284,13 +283,6 @@
 				502DA8E32B780AF0003B8813 /* MKPlacemark.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		50DAAEF52B88BF7200EA0C1E /* Alerts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
