@@ -8,6 +8,8 @@ struct ButtonsView: View {
     @State private var showingLoginActionSheet = false
     @State private var showingSignUpView = false
     @State private var showingLoginView = false
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
 
     @Binding var showingNavigationOptions: Bool // Add this line
     @Binding var showingReportOptions: Bool // Add this line
@@ -30,7 +32,12 @@ struct ButtonsView: View {
         }
 
         let loginWithGoogleButton = ActionSheet.Button.default(Text("Login with Google")) {
-            // Your Google login logic here
+            signInWithGoogle() { errorMessage in
+                if let errorMessage = errorMessage {
+                    self.alertMessage = errorMessage
+                    self.showingAlert = true
+                }
+            }
         }
 
         let loginWithAppleButton = ActionSheet.Button.default(Text("Login with Apple")) {
@@ -40,7 +47,7 @@ struct ButtonsView: View {
         let cancelButton = ActionSheet.Button.cancel()
 
         // Dynamically adjust the buttons based on authentication status
-        var buttons: [ActionSheet.Button] = authManager.isUserAuthenticated ?
+        let buttons: [ActionSheet.Button] = authManager.isUserAuthenticated ?
         [logoutButton, cancelButton] :
         [loginButton, signUpButton, loginWithGoogleButton, loginWithAppleButton, cancelButton]
 
@@ -208,6 +215,9 @@ struct ButtonsView: View {
             }
             .padding(.top, 15) // Additional padding at the bottom to push the buttons down
             .background(Color.clear) // Gray background for the entire HStack
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Login Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
 }
