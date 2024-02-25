@@ -7,6 +7,7 @@ struct ButtonsView: View {
     @State private var showingFilterView = false
     @State private var showingLoginActionSheet = false
     @State private var showingSignUpView = false
+    @State private var showingLoginView = false
 
     @Binding var showingNavigationOptions: Bool // Add this line
     @Binding var showingReportOptions: Bool // Add this line
@@ -24,6 +25,10 @@ struct ButtonsView: View {
             showingSignUpView = true
         }
 
+        let loginButton = ActionSheet.Button.default(Text("Login")) {
+            showingLoginView = true
+        }
+
         let loginWithGoogleButton = ActionSheet.Button.default(Text("Login with Google")) {
             // Your Google login logic here
         }
@@ -37,7 +42,7 @@ struct ButtonsView: View {
         // Dynamically adjust the buttons based on authentication status
         var buttons: [ActionSheet.Button] = authManager.isUserAuthenticated ?
         [logoutButton, cancelButton] :
-        [signUpButton, loginWithGoogleButton, loginWithAppleButton, cancelButton]
+        [loginButton, signUpButton, loginWithGoogleButton, loginWithAppleButton, cancelButton]
 
         return buttons
     }
@@ -66,7 +71,7 @@ struct ButtonsView: View {
                 Button(action: {
                     self.showingLoginActionSheet = true
                 }) {
-                    Image(systemName: authManager.isUserAuthenticated ? "person.crop.circle.badge" : "person.crop.circle.badge.plus")
+                    Image(systemName: authManager.isUserAuthenticated ? "person.crop.circle" : "person.crop.circle.badge.plus")
                         .imageScale(.large) // Options: .small, .medium, .large
                         .foregroundColor(.primary)
                 }
@@ -95,6 +100,9 @@ struct ButtonsView: View {
                 }
                 .sheet(isPresented: $showingSignUpView) {
                     SignUpView() // Assuming SignUpView is your sign-up view
+                }
+                .sheet(isPresented: $showingLoginView) {
+                    LoginView() // Assuming SignUpView is your sign-up view
                 }
 
                 Spacer() // Spacer before the first button

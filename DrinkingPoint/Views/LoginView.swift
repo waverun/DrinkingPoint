@@ -1,53 +1,77 @@
 import SwiftUI
 struct LoginView: View {
     @ObservedObject var authManager = UserAuthManager()
+    @Environment(\.presentationMode) var presentationMode
+
     @State private var email: String = UserDefaults.standard.string(forKey: "lastSignedInEmail") ?? ""
     @State private var password = ""
     @State private var showPassword = false
     @State private var errorMessage: String?
 
     var body: some View {
-        VStack {
-            TextField("Email", text: $email)
-                .keyboardType(.emailAddress)
-                .autocapitalization(.none)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            if showPassword {
-                TextField("Password", text: $password)
-            } else {
-                SecureField("Password", text: $password)
-            }
-
-            Button(action: { self.showPassword.toggle() }) {
-                Text(showPassword ? "Hide Password" : "Show Password")
-            }
-
-            Button("Login") {
-                authManager.signIn(email: email, password: password) { success, message in
-                    if success {
-                        // Navigate to the next screen or update the UI accordingly
+        NavigationView {
+            VStack {
+                Text("Login")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 20) // Adds space below the title
+                
+                TextField("Email", text: $email)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                    if showPassword {
+                        TextField("Password", text: $password)
                     } else {
-                        self.errorMessage = message
+                        SecureField("Password", text: $password)
+                    }
+
+                HStack() {
+                    Button(action: { self.showPassword.toggle() }) {
+                        Text(showPassword ? "Hide Password" : "Show Password")
+                    }
+
+                    Spacer()
+
+                    Button("Forgot Password?") {
+                        authManager.resetPassword(email: email) { success, message in
+                            if success {
+                            } else {
+                                self.errorMessage = message
+                            }
+                        }
                     }
                 }
-            }
+                
+                Spacer()
 
-            if let errorMessage = errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-            }
-
-            Button("Forgot Password?") {
-                authManager.resetPassword(email: email) { success, message in
-                    if success {
-                        // Show success message to the user
-                    } else {
-                        self.errorMessage = message
+                Button("Login") {
+                    authManager.signIn(email: email, password: password) { success, message in
+                        if success {
+                            self.presentationMode.wrappedValue.dismiss()
+                        } else {
+                            self.errorMessage = message
+                        }
                     }
                 }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .cornerRadius(40)
+                .padding(.horizontal, 50)
+
+                if let errorMessage = errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                }
+                Spacer()
             }
+            .padding()
+            .navigationBarItems(trailing: Button("Cancel") {
+                self.presentationMode.wrappedValue.dismiss()
+            })
         }
-        .padding()
     }
 }
