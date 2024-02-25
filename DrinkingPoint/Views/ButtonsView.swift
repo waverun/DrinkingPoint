@@ -80,9 +80,16 @@ struct ButtonsView: View {
                 .background(Color.black.opacity(0.25)) // Black background with low alpha
                 .clipShape(Circle()) // Makes the background rounded
                 .actionSheet(isPresented: $showingLoginActionSheet) {
-                    ActionSheet(title: Text("Login Options"),
-                                message: Text("Choose your login method."),
-                                buttons: 
+                    var titleText = "Login Options"
+                    var messageText = "Choose your login method."
+                    if authManager.isUserAuthenticated,
+                       let email = authManager.currentUserEmail {
+                        titleText = "Loged in as"
+                        messageText = email
+                    }
+                    return ActionSheet(title: Text(titleText),
+                                message: Text(messageText),
+                                buttons:
                                     getActionSheetButtons()
 //                                    [
 //                                    .default(Text("Add User/Password Account")) {

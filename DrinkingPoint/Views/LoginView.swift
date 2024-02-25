@@ -7,6 +7,7 @@ struct LoginView: View {
     @State private var password = ""
     @State private var showPassword = false
     @State private var errorMessage: String?
+    @State private var successMessage: String?
 
     var body: some View {
         NavigationView {
@@ -37,7 +38,10 @@ struct LoginView: View {
                     Button("Forgot Password?") {
                         authManager.resetPassword(email: email) { success, message in
                             if success {
+                                self.errorMessage = nil // Clear any existing error messages
+                                self.successMessage = "A password reset email has been sent."
                             } else {
+                                self.successMessage = nil // Clear any existing success messages
                                 self.errorMessage = message
                             }
                         }
@@ -62,10 +66,17 @@ struct LoginView: View {
                 .cornerRadius(40)
                 .padding(.horizontal, 50)
 
+                if let successMessage = successMessage {
+                    Text(successMessage)
+                        .foregroundColor(.green)
+                        .padding()
+                }
+
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
                 }
+
                 Spacer()
             }
             .padding()
