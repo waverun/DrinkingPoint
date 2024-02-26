@@ -41,7 +41,7 @@ struct ButtonsView: View {
         }
 
         let loginWithAppleButton = ActionSheet.Button.default(Text("Login with Apple")) {
-            // Your Apple login logic here
+            authManager.signInWithApple()
         }
 
         let cancelButton = ActionSheet.Button.cancel()
@@ -89,10 +89,11 @@ struct ButtonsView: View {
                 .actionSheet(isPresented: $showingLoginActionSheet) {
                     var titleText = "Login Options"
                     var messageText = "Choose your login method."
-                    if authManager.isUserAuthenticated,
-                       let email = authManager.currentUserEmail {
-                        titleText = "Loged in as"
-                        messageText = email
+                    if authManager.isUserAuthenticated {
+                       let email = authManager.currentUserEmail ?? ""
+                       let userName = authManager.currentUserName ?? ""
+                        titleText = "Logged in as"
+                        messageText = userName + (!email.isEmpty ? " (" + email + ")" : "")
                     }
                     return ActionSheet(title: Text(titleText),
                                 message: Text(messageText),
