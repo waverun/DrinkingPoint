@@ -66,6 +66,7 @@
 		50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B572B62A0BF009DF7C7 /* UploadImage.swift */; };
 		50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */; };
 		50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5C2B62C698009DF7C7 /* AddDocument.swift */; };
+		50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
 		50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */; };
@@ -121,6 +122,7 @@
 		50384B572B62A0BF009DF7C7 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		50384B5C2B62C698009DF7C7 /* AddDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocument.swift; sourceTree = "<group>"; };
+		50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showLoginRequiredAlert.swift; sourceTree = "<group>"; };
 		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		50CE24632B66FC00004CA5F7 /* addSnapshotListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSnapshotListener.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
 				502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */,
 				50DAAEE72B85343600EA0C1E /* showUploadTermsAlert.swift */,
+				50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				502DA8DB2B7029E3003B8813 /* removeDocument.swift */,
@@ -403,6 +406,7 @@
 			files = (
 				50DAAEEC2B861C9D00EA0C1E /* getDocumentsIn.swift in Sources */,
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
+				50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */,
 				50DAAF042B8B66EB00EA0C1E /* signInWithGoogle.swift in Sources */,
 				502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */,
 				502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */,

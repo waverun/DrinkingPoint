@@ -1,6 +1,7 @@
 import SwiftUI
 struct LoginView: View {
-    @ObservedObject var authManager = UserAuthManager()
+//    @ObservedObject var authManager = UserAuthManager()
+    @EnvironmentObject var authManager: UserAuthManager
     @Environment(\.presentationMode) var presentationMode
 
     @State private var email: String = UserDefaults.standard.string(forKey: "lastSignedInEmail") ?? ""

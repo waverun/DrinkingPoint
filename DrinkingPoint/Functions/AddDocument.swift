@@ -1,6 +1,8 @@
 import FirebaseFirestore
 
-func addDocument(data: [String: Any], onSuccess: @escaping (String) -> Void) {
+func addDocument(userUID: String, data: [String: Any], onSuccess: @escaping (String) -> Void) {
+    var data = data
+    data["userUID"] = userUID
     let documentRef = FirestoreManager.shared.db.collection("drinkingPoints").document() // Get a reference to a new document
     documentRef.setData(data) { error in
         if let error = error {

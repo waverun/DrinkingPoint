@@ -23,6 +23,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        @EnvironmentObject var authManager: UserAuthManager
         var parent: ImagePickerView
 
         init(_ parent: ImagePickerView) {
@@ -35,8 +36,12 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
                 guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
 
+                guard let currentUserUID = authManager.currentUserUID else {
+                    return
+                }
+
                 showUploadTermsAlert {
-                    uploadImage(imageData: imageData)
+                    uploadImage(userUID: currentUserUID, imageData: imageData)
                     self.parent.presentationMode.wrappedValue.dismiss()
                 }
             }

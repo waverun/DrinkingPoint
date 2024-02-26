@@ -62,6 +62,12 @@ struct ButtonsView: View {
 
                 Button(action: {
                     // Action for Button 1
+                    guard authManager.isUserAuthenticated else {
+                        showLoginRequiredAlert(inOrder: "upload") {
+                            showingLoginActionSheet = true
+                        }
+                        return
+                    }
                     imagePickerViewModel.showImagePicker()
                 }) {
                     Image(systemName: "plus.circle")
@@ -76,7 +82,7 @@ struct ButtonsView: View {
                 Spacer() // Spacer before the first button
 
                 Button(action: {
-                    self.showingLoginActionSheet = true
+                    showingLoginActionSheet = true
                 }) {
                     Image(systemName: authManager.isUserAuthenticated ? "person.crop.circle" : "person.crop.circle.badge.plus")
                         .imageScale(.large) // Options: .small, .medium, .large
@@ -178,6 +184,12 @@ struct ButtonsView: View {
                 Spacer() // Spacer between buttons
 
                 Button(action: {
+                    guard authManager.isUserAuthenticated else {
+                        showLoginRequiredAlert(inOrder: "report a point") {
+                            showingLoginActionSheet = true
+                        }
+                        return
+                    }
                     if MapViewManager.shared.lastAnnotationSelected != nil {
                         showingReportOptions = true
                     } else {

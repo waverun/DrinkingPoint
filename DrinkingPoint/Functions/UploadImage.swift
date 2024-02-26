@@ -3,7 +3,7 @@ import FirebaseStorage
 import CoreLocation
 import GeohashKit
 
-func uploadImage(imageData: Data) {
+func uploadImage(userUID: String, imageData: Data) {
     // Data in memory
 //    let data = Data()
     let storage = Storage.storage()
@@ -41,7 +41,7 @@ func uploadImage(imageData: Data) {
 //                MapViewManager.shared.updateRegion(userLocation: CLLocationCoordinate2D(latitude: 40.71279939264776, longitude: -73.99413542108108))
                 let location = Geohash.Coordinates(latitude: userLocation.latitude, longitude: userLocation.longitude)
                 if let geohash = Geohash(coordinates: location, precision: 7) {
-                    addDocument(data: [
+                    addDocument(userUID: userUID, data: [
                         "latitude" : userLocation.latitude,
                         "longitude" : userLocation.longitude,
                         "geohash" : geohash.geohash,

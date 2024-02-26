@@ -86,16 +86,15 @@ class UserAuthManager: NSObject, ObservableObject {
         let nonce = randomNonceString()
         currentNonce = nonce
 
-        if let appleIDProvider = ASAuthorizationAppleIDProvider() {
-            let request = appleIDProvider.createRequest()
-            request.requestedScopes = [.fullName, .email]
-            request.nonce = sha256(nonce)
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = sha256(nonce)
 
-            let authController = ASAuthorizationController(authorizationRequests: [request])
-            authController.delegate = self
-            authController.presentationContextProvider = self
-            authController.performRequests()
-        }
+        let authController = ASAuthorizationController(authorizationRequests: [request])
+        authController.delegate = self
+        authController.presentationContextProvider = self
+        authController.performRequests()
     }
 
     // MARK: - ASAuthorizationControllerDelegate
