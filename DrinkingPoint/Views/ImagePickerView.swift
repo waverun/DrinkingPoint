@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ImagePickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var authManager: UserAuthManager
+
     @Binding var image: UIImage?
     var sourceType: UIImagePickerController.SourceType = .camera
 
@@ -19,15 +21,16 @@ struct ImagePickerView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, authManager: authManager)
     }
 
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        @EnvironmentObject var authManager: UserAuthManager
         var parent: ImagePickerView
+        var authManager: UserAuthManager // Add this
 
-        init(_ parent: ImagePickerView) {
+        init(_ parent: ImagePickerView, authManager: UserAuthManager) {
             self.parent = parent
+            self.authManager = authManager
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
