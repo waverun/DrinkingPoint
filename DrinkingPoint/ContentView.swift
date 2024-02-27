@@ -3,9 +3,11 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var imagePickerViewModel = ImagePickerViewModel()
     @StateObject private var reportedPointsViewModel = ReportedPointsViewModel() // Add this line
+    @StateObject private var userPointsViewModel = UserPointsViewModel() // Add this line
     @State private var showingNavigationOptions = false
     @State private var showingReportOptions = false
     @State private var showingReportedPoints = false
+    @State private var showingUserPoints = false
 
     // This state is now being updated directly from MapViewManager's lastAnnotationSelected.
     var body: some View {
@@ -19,7 +21,7 @@ struct ContentView: View {
                             MapViewManager.shared.updateRegion(userLocation: location, radius: radius)
                         }
                     }
-            ButtonsView(imagePickerViewModel: imagePickerViewModel, showingNavigationOptions: $showingNavigationOptions, showingReportOptions: $showingReportOptions, showingReportedPoints: $showingReportedPoints, selectedAnnotation: Binding(
+            ButtonsView(imagePickerViewModel: imagePickerViewModel, showingNavigationOptions: $showingNavigationOptions, showingReportOptions: $showingReportOptions, showingReportedPoints: $showingReportedPoints, showingUserPoints: $showingUserPoints, selectedAnnotation: Binding(
                     get: { MapViewManager.shared.lastAnnotationSelected },
                     set: { _ in }
                 )) // Pass a binding to the ButtonsView
@@ -30,10 +32,17 @@ struct ContentView: View {
             }
 
             if showingReportOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
-                ReportOptionModal(annotation: annotation, isPresented: $showingReportOptions) {_ in 
+                ReportOptionModal(annotation: annotation, isPresented: $showingReportOptions) { showFlagedOrUserPoints in
                     // Trigger fetching reported points
-                    self.reportedPointsViewModel.fetchReportedPoints()
-                    self.showingReportedPoints = true // Trigger the presentation of ReportedPointsView
+                    switch showFlagedOrUserPoints {
+                        case "showFlagedPoints":
+                            self.reportedPointsViewModel.fetchReportedPoints()
+                            self.showingReportedPoints = true // Trigger the presentation of ReportedPointsView
+                        case "showUserPoints":
+                            self.userPointsViewModel.fetchUserPoints()
+                            showingUserPoints = true
+                        default: break
+                    }
                     self.showingReportOptions = false // Optionally, close the report options modal
                 }
             }
@@ -43,9 +52,15 @@ struct ContentView: View {
                 MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
             }
         }
+        .sheet(isPresented: $showingUserPoints) {
+            UserPointsView(isPresented: $showingUserPoints) { selectedPoint in
+                MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
+            }
+        }
         .sheet(isPresented: $imagePickerViewModel.isImagePickerPresented) {
             ImagePickerView(image: self.$imagePickerViewModel.image)
         }
         .environmentObject(reportedPointsViewModel)
+        .environmentObject(userPointsViewModel)
     }
 }

@@ -10,6 +10,7 @@ struct PointAdded {
     var title: String
     var imageURL: String
     var uniqueFileName: String
+    var reportReason: String
 }
 
 func removePointByDocumentID(_ documentID: String) {
@@ -59,6 +60,7 @@ func addSnapshotListener(forRegion: MKCoordinateRegion) {
                         if let latitude = data["latitude"] as? Double, let longitude = data["longitude"] as? Double,
                            let title = data["title"] as? String,
                            let imageURL = data["URL"] as? String,
+                           let userUID = data["userUID"] as? String,
                            let uniqueFileName = data["uniqueFileName"] as? String {
                             let documentID = diff.document.documentID // Access the documentID here
                             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -76,9 +78,9 @@ func addSnapshotListener(forRegion: MKCoordinateRegion) {
                                 return
                             }
                             #endif
-                            pointsAdded.append(PointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL, uniqueFileName: uniqueFileName))
+                            pointsAdded.append(PointAdded(documentID: documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL, uniqueFileName: uniqueFileName, reportReason: reportReason))
 
-                            MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL, documentID: documentID)
+                            MapViewManager.shared.addAnnotation(at: coordinate, withTitle: title, imageURL: imageURL, documentID: documentID, userUID: userUID)
                         }
                     }
                     switch diff.type {

@@ -66,6 +66,9 @@
 		50384B582B62A0BF009DF7C7 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B572B62A0BF009DF7C7 /* UploadImage.swift */; };
 		50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */; };
 		50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50384B5C2B62C698009DF7C7 /* AddDocument.swift */; };
+		5056E5C42B8DF9F5000E2A1F /* UserPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5C32B8DF9F5000E2A1F /* UserPointsView.swift */; };
+		5056E5C62B8E2066000E2A1F /* UserPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5C52B8E2066000E2A1F /* UserPointsViewModel.swift */; };
+		5056E5C82B8E4ACD000E2A1F /* showReportPointsAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5C72B8E4ACD000E2A1F /* showReportPointsAlert.swift */; };
 		50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
@@ -122,6 +125,9 @@
 		50384B572B62A0BF009DF7C7 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		50384B5A2B62C5ED009DF7C7 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		50384B5C2B62C698009DF7C7 /* AddDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocument.swift; sourceTree = "<group>"; };
+		5056E5C32B8DF9F5000E2A1F /* UserPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPointsView.swift; sourceTree = "<group>"; };
+		5056E5C52B8E2066000E2A1F /* UserPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPointsViewModel.swift; sourceTree = "<group>"; };
+		5056E5C72B8E4ACD000E2A1F /* showReportPointsAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showReportPointsAlert.swift; sourceTree = "<group>"; };
 		50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showLoginRequiredAlert.swift; sourceTree = "<group>"; };
 		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 				50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 				50DAAEFA2B88C56B00EA0C1E /* SignUpView.swift */,
+				5056E5C32B8DF9F5000E2A1F /* UserPointsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +264,7 @@
 				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
 				50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */,
 				50DAAEF82B88C53400EA0C1E /* UserAuthManager.swift */,
+				5056E5C52B8E2066000E2A1F /* UserPointsViewModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -278,6 +286,7 @@
 				502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */,
 				50DAAEE72B85343600EA0C1E /* showUploadTermsAlert.swift */,
 				50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */,
+				5056E5C72B8E4ACD000E2A1F /* showReportPointsAlert.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				502DA8DB2B7029E3003B8813 /* removeDocument.swift */,
@@ -409,6 +418,7 @@
 				50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */,
 				50DAAF042B8B66EB00EA0C1E /* signInWithGoogle.swift in Sources */,
 				502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */,
+				5056E5C82B8E4ACD000E2A1F /* showReportPointsAlert.swift in Sources */,
 				502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
 				50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */,
@@ -430,9 +440,11 @@
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
 				502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */,
 				50DAAEF22B87C62700EA0C1E /* removeClosePoints.swift in Sources */,
+				5056E5C42B8DF9F5000E2A1F /* UserPointsView.swift in Sources */,
 				502DA8F32B7CE6A6003B8813 /* navigationAlert.swift in Sources */,
 				50384B142B601C3D009DF7C7 /* ButtonsView.swift in Sources */,
 				502DA8F12B7C0B1B003B8813 /* filterView.swift in Sources */,
+				5056E5C62B8E2066000E2A1F /* UserPointsViewModel.swift in Sources */,
 				502DA8D82B7019AB003B8813 /* calculateDistance.swift in Sources */,
 				50DAAEEE2B863A0A00EA0C1E /* ReportedPointsView.swift in Sources */,
 				50384B052B5DB286009DF7C7 /* DrinkingPoint.xcdatamodeld in Sources */,

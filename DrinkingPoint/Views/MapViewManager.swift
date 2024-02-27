@@ -51,12 +51,12 @@ class MapViewManager: NSObject, MKMapViewDelegate {
         mapView.setRegion(lastRegionUsedForListener!, animated: true)
     }
 
-    func addAnnotation(at coordinate: CLLocationCoordinate2D, withTitle title: String, imageURL: String, documentID: String) {
+    func addAnnotation(at coordinate: CLLocationCoordinate2D, withTitle title: String, imageURL: String, documentID: String, userUID: String) {
         var title = title
         if title.isEmpty {
             title = "Water"
         }
-        let annotation = CustomAnnotation(coordinate: coordinate, title: title, imageURL: imageURL, documentID: documentID)
+        let annotation = CustomAnnotation(coordinate: coordinate, title: title, imageURL: imageURL, documentID: documentID, userUID: userUID)
         DispatchQueue.main.async { [weak self] in
             self?.mapView.addAnnotation(annotation)
         }

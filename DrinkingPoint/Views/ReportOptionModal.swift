@@ -3,14 +3,14 @@ import SwiftUI
 struct ReportOptionModal: View {
     let annotation: CustomAnnotation
     @Binding var isPresented: Bool
-    var onShowFlaggedPoints: ([PointAdded]) -> Void = { _ in }
+    var onShowFlaggedOrUserPoints: (String) -> Void = { _  in }
 
     // Dynamic height adjustment based on build configuration
     var dynamicHeight: CGFloat {
 #if DEBUG
-        return 370 // Increased height for Debug mode to accommodate additional debug button
+        return 400 // Increased height for Debug mode to accommodate additional debug button
 #else
-        return 330 // Standard height for Release mode
+        return 360 // Standard height for Release mode
 #endif
     }
 
@@ -83,6 +83,18 @@ struct ReportOptionModal: View {
 
                     Divider()
 
+                    Button("View all uploads of the user") {
+                        // Handle report for spam or misleading
+                        print("View all uploads of the user")
+//                        getDocumentsIn(fieldName: "userUID", values: []) { userPoints in
+                        self.onShowFlaggedOrUserPoints("showUserPoints")
+                            //                            isPresented = false
+//                        }
+                        isPresented = false
+                    }
+
+                    Divider()
+
                     Button("Cancel") {
                         isPresented = false
                     }
@@ -92,10 +104,10 @@ struct ReportOptionModal: View {
 
                     Button("Show flaged points") {
                         // Handle report for spam or misleading
-                        getDocumentsIn(fieldName: "reportReason", values: ["ic","hb","sm"]) { reportedPoints in
-                            self.onShowFlaggedPoints(reportedPoints)
+//                        getDocumentsIn(fieldName: "reportReason", values: ["ic","hb","sm"]) { reportedPoints in
+                    self.onShowFlaggedOrUserPoints("showFlagedPoints")
 //                            isPresented = false
-                        }
+//                        }
                         isPresented = false
                     }
 #endif
