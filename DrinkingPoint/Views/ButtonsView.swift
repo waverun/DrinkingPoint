@@ -3,6 +3,9 @@ import CoreLocation
 
 struct ButtonsView: View {
     var imagePickerViewModel: ImagePickerViewModel
+
+    @EnvironmentObject var reportedPointsViewModel: ReportedPointsViewModel
+
     @State private var showingSearchView = false
     @State private var showingFilterView = false
     @State private var showingLoginActionSheet = false
@@ -195,6 +198,7 @@ struct ButtonsView: View {
                         showingReportOptions = true
                     } else {
                         #if DEBUG
+                        reportedPointsViewModel.fetchReportedPoints()
                         showingReportedPoints = true
                         #endif
                     }

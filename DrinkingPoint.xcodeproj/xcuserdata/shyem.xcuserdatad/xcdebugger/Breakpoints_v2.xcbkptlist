@@ -1321,8 +1321,8 @@
             filePath = "DrinkingPoint/Views/ButtonsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1337,8 +1337,8 @@
             filePath = "DrinkingPoint/Views/ButtonsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1497,8 +1497,8 @@
             filePath = "DrinkingPoint/Views/ButtonsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1560,8 +1560,8 @@
             filePath = "DrinkingPoint/Views/ButtonsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1893,9 +1893,9 @@
             filePath = "DrinkingPoint/Functions/getDocumentsIn.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "getDocumentsIn(fieldName:values:onSuccess:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getDocumentsIn(fieldName:values:completion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1909,9 +1909,9 @@
             filePath = "DrinkingPoint/Functions/getDocumentsIn.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "getDocumentsIn(fieldName:values:onSuccess:)"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "getDocumentsIn(fieldName:values:completion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1925,9 +1925,9 @@
             filePath = "DrinkingPoint/Functions/getDocumentsIn.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getDocumentsIn(fieldName:values:onSuccess:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getDocumentsIn(fieldName:values:completion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2259,8 +2259,8 @@
             filePath = "DrinkingPoint/Views/ButtonsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -2374,6 +2374,181 @@
                   offsetFromSymbolStart = "1118">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "218C3F76-77B4-40CF-93BD-E02699F961D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Views/UserPointsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "reportUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DC683E7-D670-4ABC-8B45-126BFD967EA7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Views/UserPointsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "reportUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E058997E-2F94-407C-98E9-45E1D44EF568"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Functions/markUserAsBlocked.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "markUserAsBlocked(e:completion:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "E058997E-2F94-407C-98E9-45E1D44EF568 - 617463fd2406c06b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DrinkingPoint.markUserAsBlocked(userId: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/markUserAsBlocked.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "397">
+               </Location>
+               <Location
+                  uuid = "E058997E-2F94-407C-98E9-45E1D44EF568 - 2430f1fd21860642"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DrinkingPoint.markUserAsBlocked(userId: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Functions/markUserAsBlocked.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEA6B832-D557-427D-AFA3-72AB5C3911FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Functions/markUserAsBlocked.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "markUserAsBlocked(e:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F020E30-E849-4501-A7EB-BFE7E3531E1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/Classes/ReportedPointsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "fetchReportedPoints()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F020E30-E849-4501-A7EB-BFE7E3531E1C - bb4a36bda633e68e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DrinkingPoint.ReportedPointsViewModel.fetchReportedPoints() -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Classes/ReportedPointsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "7F020E30-E849-4501-A7EB-BFE7E3531E1C - 15dd02425d8620d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Array&lt;DrinkingPoint.PointAdded&gt;) -&gt; () in DrinkingPoint.ReportedPointsViewModel.fetchReportedPoints() -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Classes/ReportedPointsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "7F020E30-E849-4501-A7EB-BFE7E3531E1C - 7098b666f68dd28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Bool, Swift.Array&lt;DrinkingPoint.PointAdded&gt;) -&gt; () in DrinkingPoint.ReportedPointsViewModel.fetchReportedPoints() -&gt; ()"
+                  moduleName = "DrinkingPoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyem/Desktop/Projects/DrinkingPoint/DrinkingPoint/Classes/ReportedPointsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "58">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F774781-AA01-4010-BDCF-4E4E326F06F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrinkingPoint/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

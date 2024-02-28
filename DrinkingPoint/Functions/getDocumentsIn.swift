@@ -1,9 +1,10 @@
 import FirebaseFirestore
 
-func getDocumentsIn(fieldName: String, values: [String], onSuccess: @escaping ([PointAdded]) -> Void) {
+func getDocumentsIn(fieldName: String, values: [String], completion: @escaping (Bool, [PointAdded]) -> Void) {
     FirestoreManager.shared.db.collection("drinkingPoints").whereField(fieldName, in: values).getDocuments { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
+            completion(false, [])
         } else {
             var foundPoints: [PointAdded] = []
             for document in querySnapshot!.documents {
@@ -19,7 +20,7 @@ func getDocumentsIn(fieldName: String, values: [String], onSuccess: @escaping ([
                     foundPoints.append(foundPoint)
                 }
             }
-            onSuccess(foundPoints)
+            completion(true, foundPoints)
         }
     }
 }

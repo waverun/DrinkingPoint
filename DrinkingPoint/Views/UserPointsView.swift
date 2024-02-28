@@ -95,25 +95,68 @@ struct UserPointsView: View {
 //        }
 //    }
 
-    private func deletePoints() {
+    private func reportUser() {
+        guard let lastAnnotationSelected = MapViewManager.shared.lastAnnotationSelected else { return }
+        let userUID = lastAnnotationSelected.userUID
         let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        markUserAsBlocked(userId: userUID) { isSuccessful in
+            guard isSuccessful,
+                let userUID = MapViewManager.shared.lastAnnotationSelected?.userUID else {
+                dispatchGroup.leave()
+                return
+            }
 
-        // Example action for deleting points
-        for id in selectedPoints {
-            // Call delete function here
-            if let point = filteredPoints.first(where: { $0.documentID == id}) {
-                dispatchGroup.enter()
-                print("Deleting point: \(point.title)")
-                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
+            getDocumentsIn(fieldName: "userUID", values: [userUID]) { isSuccessful, userPoints in
+                guard isSuccessful else {
                     dispatchGroup.leave()
+                    return
                 }
+                for userPoint in userPoints {
+                    dispatchGroup.enter()
+                    updateDocument(data: ["reportReason":"ru"], documentID: userPoint.documentID) {
+                        dispatchGroup.leave()
+                    }
+                }
+                dispatchGroup.leave()
             }
         }
+        // Example action for deleting points
+//        for id in selectedPoints {
+//            // Call delete function here
+//            if let point = filteredPoints.first(where: { $0.documentID == id}) {
+//                dispatchGroup.enter()
+//                print("Deleting point: \(point.title)")
+//                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
+//                    dispatchGroup.leave()
+//                }
+//            }
+//        }
         dispatchGroup.notify(queue: .main) {
             // All updates are complete, now fetch the latest data
             viewModel.fetchUserPoints()
         }
     }
+
+//    private func deletePoints() {
+//        let dispatchGroup = DispatchGroup()
+//
+//        // Example action for deleting points
+//        for id in selectedPoints {
+//            // Call delete function here
+//            if let point = filteredPoints.first(where: { $0.documentID == id}) {
+//                dispatchGroup.enter()
+//                print("Deleting point: \(point.title)")
+//                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
+//                    dispatchGroup.leave()
+//                }
+//            }
+//        }
+//        dispatchGroup.notify(queue: .main) {
+//            // All updates are complete, now fetch the latest data
+//            viewModel.fetchUserPoints()
+//        }
+//    }
 
     var body: some View {
         NavigationView {
@@ -147,9 +190,9 @@ struct UserPointsView: View {
 
                     Spacer()
 
-                    Button("Delete Points") {
-                        showReportPointsAlert(numberOfTagedPoints: selectedPoints.count) {
-                            deletePoints()
+                    Button("Report User") {
+                        showReportUserAlert() {
+                            reportUser()
                         }
                     }
                     .padding(.vertical, 10) // Add padding inside the button for height
