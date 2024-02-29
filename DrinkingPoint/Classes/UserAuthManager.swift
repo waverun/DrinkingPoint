@@ -3,13 +3,17 @@ import SwiftUI
 import FirebaseAuth
 import AuthenticationServices
 import CryptoKit
+import FirebaseFirestore
 
 class UserAuthManager: NSObject, ObservableObject {
+    var firestoreListener: ListenerRegistration?
+
     @Published var lastSignedInEmail: String? = UserDefaults.standard.string(forKey: "lastSignedInEmail")
     @Published var isUserAuthenticated: Bool = false
     @Published var currentUserEmail: String? = nil
     @Published var currentUserUID: String? = nil
     @Published var currentUserName: String? = nil
+    @Published var isCurrentUserBlocked: Bool = false
 
     var handle: AuthStateDidChangeListenerHandle?
 
@@ -21,6 +25,7 @@ class UserAuthManager: NSObject, ObservableObject {
             self?.currentUserEmail = user?.email
             self?.currentUserUID = user?.uid
             self?.currentUserName = user?.displayName
+            self?.listenToUserChanges()
         }
     }
 
@@ -29,6 +34,7 @@ class UserAuthManager: NSObject, ObservableObject {
         if let handle = handle {
             Auth.auth().removeStateDidChangeListener(handle)
         }
+        firestoreListener?.remove()
     }
 
     func signUp(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
@@ -96,32 +102,6 @@ class UserAuthManager: NSObject, ObservableObject {
         authController.presentationContextProvider = self
         authController.performRequests()
     }
-
-    // MARK: - ASAuthorizationControllerDelegate
-
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-//        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential, let nonce = currentNonce, let appleIDToken = appleIDCredential.identityToken, let idTokenString = String(data: appleIDToken, encoding: .utf8) {
-//            let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-//            Auth.auth().signIn(with: credential) { (authResult, error) in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                    return
-//                }
-//                // Update user authentication status
-//                self.isUserAuthenticated = true
-//            }
-//        }
-//    }
-
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-//        print("Sign in with Apple errored: \(error)")
-//    }
-
-    // MARK: - ASAuthorizationControllerPresentationContextProviding
-
-//    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-//        return UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIWindow()
-//    }
 
     private func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
@@ -192,5 +172,41 @@ extension UserAuthManager: ASAuthorizationControllerDelegate, ASAuthorizationCon
             fatalError("Unable to find a key window.")
         }
         return window
+    }
+
+    func listenToUserChanges() {
+        guard let userId = currentUserUID else {
+            print("User ID is not set")
+            return
+        }
+
+        let db = Firestore.firestore()
+        let userDocument = db.collection("users").document(userId)
+
+        firestoreListener?.remove()
+
+        firestoreListener = userDocument.addSnapshotListener { [weak self] documentSnapshot, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("Error listening for user changes: \(error.localizedDescription)")
+                return
+            }
+
+            guard let documentSnapshot = documentSnapshot else {
+                print("Users snapshot couldn't be created.")
+                return
+            }
+
+            guard documentSnapshot.exists, let data = documentSnapshot.data(), let isBlocked = data["isBlocked"] as? Bool else {
+                // If the document does not exist, or it doesn't contain the 'isBlocked' field, treat as unblocked
+                print("User document deleted or does not exist, or 'isBlocked' field is missing. Treating as unblocked.")
+                isCurrentUserBlocked = false
+                return
+            }
+
+            // If the code reaches here, it means the document exists, contains the 'isBlocked' field, and you can check the blocked status
+            print("Is user blocked? \(isBlocked)")
+            isCurrentUserBlocked = isBlocked
+        }
     }
 }

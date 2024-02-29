@@ -72,6 +72,10 @@ struct ButtonsView: View {
                         }
                         return
                     }
+                    guard !authManager.isCurrentUserBlocked else {
+                        showBlockedUserAlert()
+                        return
+                    }
                     imagePickerViewModel.showImagePicker()
                 }) {
                     Image(systemName: "plus.circle")

@@ -71,6 +71,7 @@
 		5056E5C82B8E4ACD000E2A1F /* showReportPointsAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5C72B8E4ACD000E2A1F /* showReportPointsAlert.swift */; };
 		5056E5CA2B8E5F36000E2A1F /* showReportUserAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5C92B8E5F36000E2A1F /* showReportUserAlert.swift */; };
 		5056E5CC2B8F37C1000E2A1F /* markUserAsBlocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5CB2B8F37C1000E2A1F /* markUserAsBlocked.swift */; };
+		5056E5CE2B8FCEDA000E2A1F /* showBlockedUserAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5CD2B8FCEDA000E2A1F /* showBlockedUserAlert.swift */; };
 		50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
@@ -132,6 +133,7 @@
 		5056E5C72B8E4ACD000E2A1F /* showReportPointsAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showReportPointsAlert.swift; sourceTree = "<group>"; };
 		5056E5C92B8E5F36000E2A1F /* showReportUserAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showReportUserAlert.swift; sourceTree = "<group>"; };
 		5056E5CB2B8F37C1000E2A1F /* markUserAsBlocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markUserAsBlocked.swift; sourceTree = "<group>"; };
+		5056E5CD2B8FCEDA000E2A1F /* showBlockedUserAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showBlockedUserAlert.swift; sourceTree = "<group>"; };
 		50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showLoginRequiredAlert.swift; sourceTree = "<group>"; };
 		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				502DA8F42B7CE7A2003B8813 /* openInMaps.swift */,
 				50DAAEF12B87C62600EA0C1E /* removeClosePoints.swift */,
 				50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */,
+				5056E5CD2B8FCEDA000E2A1F /* showBlockedUserAlert.swift */,
 				502DA8E52B7A3F94003B8813 /* showRemoveDocumentAlert.swift */,
 				50DAAEE72B85343600EA0C1E /* showUploadTermsAlert.swift */,
 				50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */,
@@ -422,6 +425,7 @@
 				50DAAEEC2B861C9D00EA0C1E /* getDocumentsIn.swift in Sources */,
 				50384B022B5DB286009DF7C7 /* Persistence.swift in Sources */,
 				50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */,
+				5056E5CE2B8FCEDA000E2A1F /* showBlockedUserAlert.swift in Sources */,
 				50DAAF042B8B66EB00EA0C1E /* signInWithGoogle.swift in Sources */,
 				5056E5CC2B8F37C1000E2A1F /* markUserAsBlocked.swift in Sources */,
 				502DA8E62B7A3F94003B8813 /* showRemoveDocumentAlert.swift in Sources */,

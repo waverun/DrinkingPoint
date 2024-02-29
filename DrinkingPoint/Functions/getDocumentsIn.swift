@@ -14,8 +14,8 @@ func getDocumentsIn(fieldName: String, values: [String], completion: @escaping (
                    let longitude = data["longitude"] as? Double,
                    let title = data["title"] as? String,
                    let imageURL = data["URL"] as? String,
-                   let reportReason = data["reportReason"] as? String,
                    let uniqueFileName = data["uniqueFileName"] as? String {
+                    let reportReason = data["reportReason"] as? String ?? ""
                     let foundPoint = PointAdded(documentID: document.documentID, latitude: latitude, longitude: longitude, title: title, imageURL: imageURL, uniqueFileName: uniqueFileName, reportReason: reportReason)
                     foundPoints.append(foundPoint)
                 }
