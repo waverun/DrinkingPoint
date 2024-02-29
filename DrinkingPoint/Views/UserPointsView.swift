@@ -3,7 +3,6 @@ import MapKit
 
 struct UserPointsView: View {
     @Binding var isPresented: Bool
-    //    @Binding var pointsReported: [PointAdded] // Change to Binding
     @EnvironmentObject var viewModel: UserPointsViewModel
 
     @State private var filterText: String = ""
@@ -61,8 +60,6 @@ struct UserPointsView: View {
                 print("Reporting point: \(point.title)")
                 dispatchGroup.enter()
                 updateDocument(data: ["reportReason": "rp"], documentID: point.documentID) {
-//                    let location = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-//                    removeClosePoints(location: location, uniqueFileName: point.uniqueFileName, dispatchGroup: dispatchGroup)
                     dispatchGroup.leave()
                 }
             }
@@ -72,28 +69,6 @@ struct UserPointsView: View {
             viewModel.fetchUserPoints()
         }
     }
-
-//    private func unflagPoints() {
-//        let dispatchGroup = DispatchGroup()
-//
-//        // Example action for unflagging points
-//        for id in selectedPoints {
-//            // Call unflag function here
-//            if let point = filteredPoints.first(where: { $0.documentID == id}) {
-//                print("Unflagging point: \(point.title)")
-//                dispatchGroup.enter()
-//                updateDocument(data: ["reportReason": ""], documentID: point.documentID) {
-//                    let location = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-//                    removeClosePoints(location: location, uniqueFileName: point.uniqueFileName, dispatchGroup: dispatchGroup)
-//                    dispatchGroup.leave()
-//                }
-//            }
-//        }
-//        dispatchGroup.notify(queue: .main) {
-//            // All updates are complete, now fetch the latest data
-//            viewModel.fetchReportedPoints()
-//        }
-//    }
 
     private func reportUser() {
         guard let lastAnnotationSelected = MapViewManager.shared.lastAnnotationSelected else { return }
@@ -121,42 +96,11 @@ struct UserPointsView: View {
                 dispatchGroup.leave()
             }
         }
-        // Example action for deleting points
-//        for id in selectedPoints {
-//            // Call delete function here
-//            if let point = filteredPoints.first(where: { $0.documentID == id}) {
-//                dispatchGroup.enter()
-//                print("Deleting point: \(point.title)")
-//                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
-//                    dispatchGroup.leave()
-//                }
-//            }
-//        }
         dispatchGroup.notify(queue: .main) {
             // All updates are complete, now fetch the latest data
             viewModel.fetchUserPoints()
         }
     }
-
-//    private func deletePoints() {
-//        let dispatchGroup = DispatchGroup()
-//
-//        // Example action for deleting points
-//        for id in selectedPoints {
-//            // Call delete function here
-//            if let point = filteredPoints.first(where: { $0.documentID == id}) {
-//                dispatchGroup.enter()
-//                print("Deleting point: \(point.title)")
-//                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
-//                    dispatchGroup.leave()
-//                }
-//            }
-//        }
-//        dispatchGroup.notify(queue: .main) {
-//            // All updates are complete, now fetch the latest data
-//            viewModel.fetchUserPoints()
-//        }
-//    }
 
     var body: some View {
         NavigationView {

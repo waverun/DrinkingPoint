@@ -4,10 +4,12 @@ struct ContentView: View {
     @StateObject private var imagePickerViewModel = ImagePickerViewModel()
     @StateObject private var reportedPointsViewModel = ReportedPointsViewModel() // Add this line
     @StateObject private var userPointsViewModel = UserPointsViewModel() // Add this line
+    @StateObject private var reportedUsersViewModel = ReportedUsersViewModel() // Add this line
     @State private var showingNavigationOptions = false
     @State private var showingReportOptions = false
     @State private var showingReportedPoints = false
     @State private var showingUserPoints = false
+    @State private var showingReportedUsers = false
 
     // This state is now being updated directly from MapViewManager's lastAnnotationSelected.
     var body: some View {
@@ -41,6 +43,9 @@ struct ContentView: View {
                         case "showUserPoints":
                             self.userPointsViewModel.fetchUserPoints()
                             showingUserPoints = true
+                        case "showReportedUsers":
+                            self.reportedUsersViewModel.fetchReportedUsers()
+                            showingReportedUsers = true
                         default: break
                     }
                     self.showingReportOptions = false // Optionally, close the report options modal
@@ -52,6 +57,12 @@ struct ContentView: View {
                 MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
             }
         }
+        .sheet(isPresented: $showingReportedUsers) {
+            ReportedUsersView(isPresented: $showingReportedUsers) 
+//            { selectedPoint in
+//                MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
+//            }
+        }
         .sheet(isPresented: $showingUserPoints) {
             UserPointsView(isPresented: $showingUserPoints) { selectedPoint in
                 MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
@@ -62,5 +73,6 @@ struct ContentView: View {
         }
         .environmentObject(reportedPointsViewModel)
         .environmentObject(userPointsViewModel)
+        .environmentObject(reportedUsersViewModel)
     }
 }

@@ -72,6 +72,9 @@
 		5056E5CA2B8E5F36000E2A1F /* showReportUserAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5C92B8E5F36000E2A1F /* showReportUserAlert.swift */; };
 		5056E5CC2B8F37C1000E2A1F /* markUserAsBlocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5CB2B8F37C1000E2A1F /* markUserAsBlocked.swift */; };
 		5056E5CE2B8FCEDA000E2A1F /* showBlockedUserAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5CD2B8FCEDA000E2A1F /* showBlockedUserAlert.swift */; };
+		5056E5D02B90C385000E2A1F /* ReportedUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5CF2B90C385000E2A1F /* ReportedUsersViewModel.swift */; };
+		5056E5D22B90C3CE000E2A1F /* getReportedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5D12B90C3CE000E2A1F /* getReportedUsers.swift */; };
+		5056E5D42B90F48E000E2A1F /* ReportedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5D32B90F48D000E2A1F /* ReportedUsersView.swift */; };
 		50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
@@ -134,6 +137,9 @@
 		5056E5C92B8E5F36000E2A1F /* showReportUserAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showReportUserAlert.swift; sourceTree = "<group>"; };
 		5056E5CB2B8F37C1000E2A1F /* markUserAsBlocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markUserAsBlocked.swift; sourceTree = "<group>"; };
 		5056E5CD2B8FCEDA000E2A1F /* showBlockedUserAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showBlockedUserAlert.swift; sourceTree = "<group>"; };
+		5056E5CF2B90C385000E2A1F /* ReportedUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedUsersViewModel.swift; sourceTree = "<group>"; };
+		5056E5D12B90C3CE000E2A1F /* getReportedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getReportedUsers.swift; sourceTree = "<group>"; };
+		5056E5D32B90F48D000E2A1F /* ReportedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedUsersView.swift; sourceTree = "<group>"; };
 		50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showLoginRequiredAlert.swift; sourceTree = "<group>"; };
 		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 				50384B0C2B5DB36C009DF7C7 /* MapViewManager.swift */,
 				502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */,
 				50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */,
+				5056E5D32B90F48D000E2A1F /* ReportedUsersView.swift */,
 				50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 				50DAAEFA2B88C56B00EA0C1E /* SignUpView.swift */,
@@ -269,6 +276,7 @@
 				50384B152B602DE0009DF7C7 /* ImagePickerViewModel.swift */,
 				50384B112B5EFAB9009DF7C7 /* LocationManager.swift */,
 				50DAAEEF2B8766BA00EA0C1E /* ReportedPointsViewModel.swift */,
+				5056E5CF2B90C385000E2A1F /* ReportedUsersViewModel.swift */,
 				50DAAEF82B88C53400EA0C1E /* UserAuthManager.swift */,
 				5056E5C52B8E2066000E2A1F /* UserPointsViewModel.swift */,
 			);
@@ -285,6 +293,7 @@
 				502DA8DD2B73C929003B8813 /* deleteImage.swift */,
 				502DA8D92B702322003B8813 /* findPointByLocation.swift */,
 				50DAAEEB2B861C9D00EA0C1E /* getDocumentsIn.swift */,
+				5056E5D12B90C3CE000E2A1F /* getReportedUsers.swift */,
 				5056E5CB2B8F37C1000E2A1F /* markUserAsBlocked.swift */,
 				502DA8F22B7CE6A6003B8813 /* navigationAlert.swift */,
 				502DA8F42B7CE7A2003B8813 /* openInMaps.swift */,
@@ -433,6 +442,8 @@
 				502DA8FB2B7D66A3003B8813 /* ImageCache.swift in Sources */,
 				50384AFB2B5DB282009DF7C7 /* ContentView.swift in Sources */,
 				50384B5D2B62C698009DF7C7 /* AddDocument.swift in Sources */,
+				5056E5D02B90C385000E2A1F /* ReportedUsersViewModel.swift in Sources */,
+				5056E5D22B90C3CE000E2A1F /* getReportedUsers.swift in Sources */,
 				50CE24642B66FC00004CA5F7 /* addSnapshotListener.swift in Sources */,
 				50CE24662B6AF17F004CA5F7 /* updateDocument.swift in Sources */,
 				50384B162B602DE0009DF7C7 /* ImagePickerViewModel.swift in Sources */,
@@ -449,6 +460,7 @@
 				50384B5B2B62C5EE009DF7C7 /* FirestoreManager.swift in Sources */,
 				50CE24682B6C3651004CA5F7 /* CustomAnnotation.swift in Sources */,
 				5056E5CA2B8E5F36000E2A1F /* showReportUserAlert.swift in Sources */,
+				5056E5D42B90F48E000E2A1F /* ReportedUsersView.swift in Sources */,
 				502DA8E22B7658F0003B8813 /* SearchView.swift in Sources */,
 				502DA8F92B7D4AEF003B8813 /* BlurView.swift in Sources */,
 				50DAAEF22B87C62700EA0C1E /* removeClosePoints.swift in Sources */,

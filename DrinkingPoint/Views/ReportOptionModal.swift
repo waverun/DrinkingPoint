@@ -8,7 +8,7 @@ struct ReportOptionModal: View {
     // Dynamic height adjustment based on build configuration
     var dynamicHeight: CGFloat {
 #if DEBUG
-        return 400 // Increased height for Debug mode to accommodate additional debug button
+        return 460 // Increased height for Debug mode to accommodate additional debug button
 #else
         return 360 // Standard height for Release mode
 #endif
@@ -35,10 +35,6 @@ struct ReportOptionModal: View {
                         // Display the image as the title, similar to the NavigationOptionModal
                         if let imageURL = annotation.imageURL, let url = URL(string: imageURL) {
                             CachedAsyncImage(url: url)
-//                                image.resizable()
-//                            } placeholder: {
-//                                ProgressView()
-//                            }
                             .frame(width: 100, height: 100)
                             .cornerRadius(8)
                         }
@@ -86,28 +82,28 @@ struct ReportOptionModal: View {
                     Button("View all uploads of the user") {
                         // Handle report for spam or misleading
                         print("View all uploads of the user")
-//                        getDocumentsIn(fieldName: "userUID", values: []) { userPoints in
                         self.onShowFlaggedOrUserPoints("showUserPoints")
-                            //                            isPresented = false
-//                        }
                         isPresented = false
                     }
-
                     Divider()
 
                     Button("Cancel") {
                         isPresented = false
                     }
-
 #if DEBUG
                     Divider()
 
                     Button("Show flaged points") {
-                        // Handle report for spam or misleading
-//                        getDocumentsIn(fieldName: "reportReason", values: ["ic","hb","sm"]) { reportedPoints in
                     self.onShowFlaggedOrUserPoints("showFlagedPoints")
-//                            isPresented = false
-//                        }
+                        isPresented = false
+                    }
+
+                    Divider()
+
+                    Button("View reported users") {
+                        // Handle report for spam or misleading
+                        print("View all uploads of the user")
+                        self.onShowFlaggedOrUserPoints("showReportedUsers")
                         isPresented = false
                     }
 #endif
