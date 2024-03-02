@@ -202,8 +202,9 @@ struct ButtonsView: View {
                         showingReportOptions = true
                     } else {
                         #if DEBUG
-                        reportedPointsViewModel.fetchReportedPoints()
-                        showingReportedPoints = true
+                        //reportedPointsViewModel.fetchReportedPoints()
+//                        showingReportedPoints = true
+                        showingReportOptions = true
                         #endif
                     }
                 }) {

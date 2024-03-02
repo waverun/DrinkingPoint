@@ -29,11 +29,14 @@ struct ContentView: View {
                 )) // Pass a binding to the ButtonsView
 
             // Conditionally show the modal view
+//            if showingNavigationOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
             if showingNavigationOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
                 NavigationOptionModal(annotation: annotation, isPresented: $showingNavigationOptions)
             }
 
-            if showingReportOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
+//            if showingReportOptions, let annotation = MapViewManager.shared.lastAnnotationSelected {
+            if showingReportOptions {
+                let annotation = MapViewManager.shared.lastAnnotationSelected
                 ReportOptionModal(annotation: annotation, isPresented: $showingReportOptions) { showFlagedOrUserPoints in
                     // Trigger fetching reported points
                     switch showFlagedOrUserPoints {
