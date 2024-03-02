@@ -1,28 +1,30 @@
 import SwiftUI
 import MapKit
 
-struct ReportedPointsView: View {
+struct ReportedUserView: View {
     @Binding var isPresented: Bool
-    @EnvironmentObject var viewModel: ReportedPointsViewModel
+    @Binding var userUID: String
+    var onPointSelected: (PointAdded) -> Void
+
+    @EnvironmentObject var viewModel: UserPointsViewModel
+    @EnvironmentObject var reportedUsersViewModel: ReportedUsersViewModel
 
     @State private var filterText: String = ""
     @State private var distanceFilter: Double? // Distance in meters
     @State private var selectedPoints: Set<String> = [] // Track selected points by their documentID
     @State private var selectAll: Bool = false // Track whether to select or deselect all
 
-    var onPointSelected: (PointAdded) -> Void
-
     var filteredPoints: [PointAdded] {
-        viewModel.reportedPoints.filter { point in
+        viewModel.userPoints.filter { point in
             // Filter by title
             let titleMatch = filterText.isEmpty || point.title.localizedCaseInsensitiveContains(filterText)
 
             // Filter by distance if distanceFilter is set
             if let distanceFilter = distanceFilter, let userLocation = LocationManager.shared.location {
                 let pointDistance = calculateDistance(lat1: userLocation.latitude, lon1: userLocation.longitude, lat2: point.latitude, lon2: point.longitude)
-                return titleMatch && pointDistance <= distanceFilter
+                return !point.reportReason.isEmpty && titleMatch && pointDistance <= distanceFilter
             } else {
-                return titleMatch
+                return !point.reportReason.isEmpty && titleMatch
             }
         }
     }
@@ -68,33 +70,30 @@ struct ReportedPointsView: View {
         }
         dispatchGroup.notify(queue: .main) {
             // All updates are complete, now fetch the latest data
-            viewModel.fetchReportedPoints()
+            viewModel.fetchUserPoints(userUID: userUID, isReported: true)
         }
     }
 
-    private func deletePoints() {
-        let dispatchGroup = DispatchGroup()
+    private func unflagUser() {
+        deleteDocumentFromUsers(userUID: userUID) {
+            reportedUsersViewModel.fetchReportedUsers()
+        }
+    }
 
-        // Example action for deleting points
-        for id in selectedPoints {
-            // Call delete function here
-            if let point = filteredPoints.first(where: { $0.documentID == id}) {
-                dispatchGroup.enter()
-                print("Deleting point: \(point.title)")
-                removeDocument(documentID: point.documentID, uniqueFileName: point.uniqueFileName) {
-                    dispatchGroup.leave()
-                }
-            }
-        }
-        dispatchGroup.notify(queue: .main) {
-            // All updates are complete, now fetch the latest data
-            viewModel.fetchReportedPoints()
-        }
+    // Computed property to check if the user is reported
+    private var isUserReported: Bool {
+        reportedUsersViewModel.reportedUsers.contains(where: { $0.userUID == userUID })
     }
 
     var body: some View {
         NavigationView {
             VStack {
+                // Replace navigation title with a regular heading
+                Text("User \(userUID)")
+                    .font(.headline)
+                    .foregroundColor(isUserReported ? .red : .green)
+                    .padding()
+
                 HStack {
                     TextField("Filter points", text: $filterText)
                         .padding()
@@ -122,8 +121,8 @@ struct ReportedPointsView: View {
 
                     Spacer()
 
-                    Button("Delete Points") {
-                        deletePoints()
+                    Button("Unflag User") {
+                        unflagUser()
                     }
                     .padding(.vertical, 10) // Add padding inside the button for height
                     .padding(.horizontal, 20) // Add padding inside the button for width
@@ -168,7 +167,7 @@ struct ReportedPointsView: View {
                     }
                 }
             }
-            .navigationTitle("Reported Points")
+//            .navigationTitle("User " + userUID)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -178,6 +177,9 @@ struct ReportedPointsView: View {
                 }
             }
             .foregroundColor(.blue)
+            .onAppear() {
+                viewModel.fetchUserPoints(userUID: userUID, isReported: true)
+            }
         }
     }
 }

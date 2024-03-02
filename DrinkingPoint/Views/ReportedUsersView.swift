@@ -4,6 +4,9 @@ struct ReportedUsersView: View {
     @Binding var isPresented: Bool
     @EnvironmentObject var viewModel: ReportedUsersViewModel
 
+    @State var showingReportedUserView = false
+    @State var userUID: String = ""
+
     var body: some View {
         NavigationView {
             VStack {
@@ -17,12 +20,8 @@ struct ReportedUsersView: View {
                             .foregroundColor(.primary)
                     }
                     .onTapGesture {
-                        // Navigate to ReportedUserAndPointsView with selected user
-                        // Assuming ReportedUserAndPointsView takes a ReportedUser as an init parameter
-                        // NavigationLink(destination: ReportedUserAndPointsView(user: user)) {
-                        //     EmptyView()
-                        // }.hidden()
-                        // Note: Actual navigation or modal presentation logic may vary
+                        self.userUID = user.userUID
+                        showingReportedUserView = true
                     }
                 }
             }
@@ -35,6 +34,12 @@ struct ReportedUsersView: View {
                 }
             }
             .foregroundColor(.blue)
+            .sheet(isPresented: $showingReportedUserView) {
+                ReportedUserView(isPresented: $showingReportedUserView, userUID: $userUID) { selectedPoint in
+                    isPresented = false
+                    MapViewManager.shared.goToSelectedPoint(latitude: selectedPoint.latitude, longitude: selectedPoint.longitude)
+                }
+            }
         }
     }
 }

@@ -75,6 +75,8 @@
 		5056E5D02B90C385000E2A1F /* ReportedUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5CF2B90C385000E2A1F /* ReportedUsersViewModel.swift */; };
 		5056E5D22B90C3CE000E2A1F /* getReportedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5D12B90C3CE000E2A1F /* getReportedUsers.swift */; };
 		5056E5D42B90F48E000E2A1F /* ReportedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5D32B90F48D000E2A1F /* ReportedUsersView.swift */; };
+		5056E5D62B91F72F000E2A1F /* ReportedUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5D52B91F72F000E2A1F /* ReportedUserView.swift */; };
+		5056E5D82B9200C6000E2A1F /* deleteDocumentFromUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5D72B9200C6000E2A1F /* deleteDocumentFromUsers.swift */; };
 		50AB00B62B8D07A200859F14 /* showLoginRequiredAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */; };
 		50CE245F2B66E5DE004CA5F7 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */; };
 		50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE24612B66E732004CA5F7 /* UIViewController.swift */; };
@@ -140,6 +142,8 @@
 		5056E5CF2B90C385000E2A1F /* ReportedUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedUsersViewModel.swift; sourceTree = "<group>"; };
 		5056E5D12B90C3CE000E2A1F /* getReportedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getReportedUsers.swift; sourceTree = "<group>"; };
 		5056E5D32B90F48D000E2A1F /* ReportedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedUsersView.swift; sourceTree = "<group>"; };
+		5056E5D52B91F72F000E2A1F /* ReportedUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedUserView.swift; sourceTree = "<group>"; };
+		5056E5D72B9200C6000E2A1F /* deleteDocumentFromUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteDocumentFromUsers.swift; sourceTree = "<group>"; };
 		50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showLoginRequiredAlert.swift; sourceTree = "<group>"; };
 		50CE245E2B66E5DE004CA5F7 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		50CE24612B66E732004CA5F7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				502DA8F62B7CFEE7003B8813 /* NavigationOptionModal.swift */,
 				50DAAEED2B863A0A00EA0C1E /* ReportedPointsView.swift */,
 				5056E5D32B90F48D000E2A1F /* ReportedUsersView.swift */,
+				5056E5D52B91F72F000E2A1F /* ReportedUserView.swift */,
 				50DAAEE92B85482200EA0C1E /* ReportOptionModal.swift */,
 				502DA8E12B7658F0003B8813 /* SearchView.swift */,
 				50DAAEFA2B88C56B00EA0C1E /* SignUpView.swift */,
@@ -305,6 +310,7 @@
 				50AB00B52B8D07A200859F14 /* showLoginRequiredAlert.swift */,
 				5056E5C72B8E4ACD000E2A1F /* showReportPointsAlert.swift */,
 				5056E5C92B8E5F36000E2A1F /* showReportUserAlert.swift */,
+				5056E5D72B9200C6000E2A1F /* deleteDocumentFromUsers.swift */,
 				50CE24652B6AF17F004CA5F7 /* updateDocument.swift */,
 				50384B572B62A0BF009DF7C7 /* UploadImage.swift */,
 				502DA8DB2B7029E3003B8813 /* removeDocument.swift */,
@@ -478,9 +484,11 @@
 				502DA8F72B7CFEE7003B8813 /* NavigationOptionModal.swift in Sources */,
 				502DA8E42B780AF0003B8813 /* MKPlacemark.swift in Sources */,
 				50DAAEE82B85343600EA0C1E /* showUploadTermsAlert.swift in Sources */,
+				5056E5D82B9200C6000E2A1F /* deleteDocumentFromUsers.swift in Sources */,
 				50DAAEFD2B88C59E00EA0C1E /* LoginView.swift in Sources */,
 				502DA8FE2B7D6723003B8813 /* CachedAsyncImage.swift in Sources */,
 				502DA8DC2B7029E3003B8813 /* removeDocument.swift in Sources */,
+				5056E5D62B91F72F000E2A1F /* ReportedUserView.swift in Sources */,
 				50CE24622B66E732004CA5F7 /* UIViewController.swift in Sources */,
 				502DA8DA2B702322003B8813 /* findPointByLocation.swift in Sources */,
 				502DA8F52B7CE7A2003B8813 /* openInMaps.swift in Sources */,
